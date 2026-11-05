@@ -1,0 +1,58 @@
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: inventra
+      POSTGRES_PASSWORD: inventra_dev
+      POSTGRES_DB: inventra
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - inventory-db:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U inventra -d inventra"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg://inventra:inventra_dev@db:5432/inventra
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8000:8000"
+    command: ["sh", "-c", "alembic upgrade head && exec uvicorn inventory_management_service.main:app --host 0.0.0.0 --port 8000"]
+  test-db:
+    profiles: ["test"]
+    image: postgres:18
+    environment:
+      POSTGRES_PASSWORD: local_test_admin
+      POSTGRES_DB: inventra_test
+    ports:
+      - "127.0.0.1:55432:5432"
+    tmpfs:
+      - /var/lib/postgresql
+    volumes:
+      - ./tests/init-test-db.sql:/docker-entrypoint-initdb.d/01-role.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U inventra_test -d inventra_test"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  tests:
+    profiles: ["test"]
+    build:
+      context: .
+      target: test
+    environment:
+      INVENTRA_TEST_DATABASE_URL: postgresql+psycopg://inventra_test:inventra_test@test-db:5432/inventra_test
+    depends_on:
+      test-db:
+        condition: service_healthy
+
+volumes:
+  inventory-db:
+    name: inventra_inventory-db
