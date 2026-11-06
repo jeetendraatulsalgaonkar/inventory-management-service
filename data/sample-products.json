@@ -1,0 +1,1842 @@
+[
+  {
+    "sku": "DEMO-LAPTOP-001",
+    "name": "Business Laptop 14",
+    "description": "Compact 14-inch laptop for everyday office work",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 899.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "brand": "Northstar",
+      "ram": "16 GB",
+      "storage": "512 GB SSD"
+    }
+  },
+  {
+    "sku": "DEMO-MOUSE-001",
+    "name": "Wireless Mouse",
+    "description": "Ergonomic wireless optical mouse",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 24.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "brand": "Northstar",
+      "color": "Black",
+      "connectivity": "Bluetooth"
+    }
+  },
+  {
+    "sku": "DEMO-KEYBOARD-001",
+    "name": "Mechanical Keyboard",
+    "description": "Compact mechanical keyboard with tactile switches",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 79.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "layout": "DE",
+      "color": "Black",
+      "connection": "USB-C"
+    }
+  },
+  {
+    "sku": "DEMO-MONITOR-001",
+    "name": "27-inch QHD Monitor",
+    "description": "QHD display with an adjustable stand",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 249.0,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "resolution": "2560x1440",
+      "refreshRate": "75 Hz",
+      "panel": "IPS"
+    }
+  },
+  {
+    "sku": "DEMO-DESK-001",
+    "name": "Office Desk",
+    "description": "Work desk with a durable laminate surface",
+    "category": "FURNITURE",
+    "price": {
+      "amount": 179.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "width": "120 cm",
+      "depth": "60 cm",
+      "finish": "Oak"
+    }
+  },
+  {
+    "sku": "DEMO-CHAIR-001",
+    "name": "Ergonomic Office Chair",
+    "description": "Adjustable office chair with lumbar support",
+    "category": "FURNITURE",
+    "price": {
+      "amount": 219.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "material": "Mesh",
+      "armrests": "Adjustable"
+    }
+  },
+  {
+    "sku": "DEMO-PAPER-001",
+    "name": "A4 Copy Paper",
+    "description": "Box containing five reams of white office paper",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 27.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "BOX",
+    "attributes": {
+      "paperSize": "A4",
+      "weight": "80 gsm",
+      "sheets": "2500"
+    }
+  },
+  {
+    "sku": "DEMO-PEN-001",
+    "name": "Blue Ballpoint Pens",
+    "description": "Pack of ten blue ballpoint pens",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 5.49,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PACK",
+    "attributes": {
+      "inkColor": "Blue",
+      "tip": "1 mm",
+      "packSize": "10"
+    }
+  },
+  {
+    "sku": "DEMO-COFFEE-001",
+    "name": "Medium Roast Coffee Beans",
+    "description": "One-kilogram bag of whole coffee beans",
+    "category": "FOOD_AND_BEVERAGES",
+    "price": {
+      "amount": 18.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "KILOGRAM",
+    "attributes": {
+      "roast": "Medium",
+      "type": "Arabica",
+      "packaging": "Resealable bag"
+    }
+  },
+  {
+    "sku": "DEMO-CLEANER-001",
+    "name": "Multi-Surface Cleaner",
+    "description": "One-liter bottle of ready-to-use surface cleaner",
+    "category": "CLEANING",
+    "price": {
+      "amount": 4.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "LITER",
+    "attributes": {
+      "scent": "Lemon",
+      "volume": "1 L",
+      "packaging": "Bottle"
+    }
+  },
+  {
+    "sku": "DEMO-HEADSET-001",
+    "name": "USB Office Headset",
+    "description": "Stereo headset with a noise-reducing microphone",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 59.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "connection": "USB-A",
+      "color": "Black",
+      "microphone": "Adjustable"
+    }
+  },
+  {
+    "sku": "DEMO-WEBCAM-001",
+    "name": "Full HD Webcam",
+    "description": "1080p webcam with a privacy shutter",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 49.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "resolution": "1920x1080",
+      "connection": "USB-A",
+      "mount": "Monitor clip"
+    }
+  },
+  {
+    "sku": "DEMO-NOTEBOOK-001",
+    "name": "A5 Ruled Notebooks",
+    "description": "Pack of three hardcover ruled notebooks",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 12.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PACK",
+    "attributes": {
+      "size": "A5",
+      "pagesPerNotebook": "160",
+      "packSize": "3"
+    }
+  },
+  {
+    "sku": "DEMO-LAMP-001",
+    "name": "LED Desk Lamp",
+    "description": "Adjustable desk lamp with dimmable lighting",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 34.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "power": "8 W",
+      "brightness": "Dimmable"
+    }
+  },
+  {
+    "sku": "DEMO-TEA-001",
+    "name": "Green Tea Bags",
+    "description": "Box of individually wrapped green tea bags",
+    "category": "FOOD_AND_BEVERAGES",
+    "price": {
+      "amount": 6.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "BOX",
+    "attributes": {
+      "type": "Green tea",
+      "bagCount": "50",
+      "caffeine": "Contains caffeine"
+    }
+  },
+  {
+    "sku": "DEMO-USBHUB-001",
+    "name": "USB-C Hub - Black",
+    "description": "Multiport USB-C hub with HDMI and USB-A ports",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 39.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "USBHUB"
+    }
+  },
+  {
+    "sku": "DEMO-USBHUB-002",
+    "name": "USB-C Hub - White",
+    "description": "Multiport USB-C hub with HDMI and USB-A ports",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 39.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "USBHUB"
+    }
+  },
+  {
+    "sku": "DEMO-USBHUB-003",
+    "name": "USB-C Hub - Blue",
+    "description": "Multiport USB-C hub with HDMI and USB-A ports",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 39.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "USBHUB"
+    }
+  },
+  {
+    "sku": "DEMO-USBHUB-004",
+    "name": "USB-C Hub - Green",
+    "description": "Multiport USB-C hub with HDMI and USB-A ports",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 39.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "USBHUB"
+    }
+  },
+  {
+    "sku": "DEMO-USBHUB-005",
+    "name": "USB-C Hub - Grey",
+    "description": "Multiport USB-C hub with HDMI and USB-A ports",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 39.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "USBHUB"
+    }
+  },
+  {
+    "sku": "DEMO-POWERBANK-001",
+    "name": "Portable Power Bank - Black",
+    "description": "10000 mAh rechargeable portable power bank",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 29.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "POWERBANK"
+    }
+  },
+  {
+    "sku": "DEMO-POWERBANK-002",
+    "name": "Portable Power Bank - White",
+    "description": "10000 mAh rechargeable portable power bank",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 29.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "POWERBANK"
+    }
+  },
+  {
+    "sku": "DEMO-POWERBANK-003",
+    "name": "Portable Power Bank - Blue",
+    "description": "10000 mAh rechargeable portable power bank",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 29.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "POWERBANK"
+    }
+  },
+  {
+    "sku": "DEMO-POWERBANK-004",
+    "name": "Portable Power Bank - Green",
+    "description": "10000 mAh rechargeable portable power bank",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 29.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "POWERBANK"
+    }
+  },
+  {
+    "sku": "DEMO-POWERBANK-005",
+    "name": "Portable Power Bank - Grey",
+    "description": "10000 mAh rechargeable portable power bank",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 29.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "POWERBANK"
+    }
+  },
+  {
+    "sku": "DEMO-SPEAKER-001",
+    "name": "Bluetooth Speaker - Black",
+    "description": "Compact rechargeable wireless speaker",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 44.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "SPEAKER"
+    }
+  },
+  {
+    "sku": "DEMO-SPEAKER-002",
+    "name": "Bluetooth Speaker - White",
+    "description": "Compact rechargeable wireless speaker",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 44.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "SPEAKER"
+    }
+  },
+  {
+    "sku": "DEMO-SPEAKER-003",
+    "name": "Bluetooth Speaker - Blue",
+    "description": "Compact rechargeable wireless speaker",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 44.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "SPEAKER"
+    }
+  },
+  {
+    "sku": "DEMO-SPEAKER-004",
+    "name": "Bluetooth Speaker - Green",
+    "description": "Compact rechargeable wireless speaker",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 44.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "SPEAKER"
+    }
+  },
+  {
+    "sku": "DEMO-SPEAKER-005",
+    "name": "Bluetooth Speaker - Grey",
+    "description": "Compact rechargeable wireless speaker",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 44.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "SPEAKER"
+    }
+  },
+  {
+    "sku": "DEMO-TABLETSTAND-001",
+    "name": "Tablet Stand - Black",
+    "description": "Adjustable desktop stand for tablets",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 19.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "TABLETSTAND"
+    }
+  },
+  {
+    "sku": "DEMO-TABLETSTAND-002",
+    "name": "Tablet Stand - White",
+    "description": "Adjustable desktop stand for tablets",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 19.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "TABLETSTAND"
+    }
+  },
+  {
+    "sku": "DEMO-TABLETSTAND-003",
+    "name": "Tablet Stand - Blue",
+    "description": "Adjustable desktop stand for tablets",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 19.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "TABLETSTAND"
+    }
+  },
+  {
+    "sku": "DEMO-TABLETSTAND-004",
+    "name": "Tablet Stand - Green",
+    "description": "Adjustable desktop stand for tablets",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 19.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "TABLETSTAND"
+    }
+  },
+  {
+    "sku": "DEMO-TABLETSTAND-005",
+    "name": "Tablet Stand - Grey",
+    "description": "Adjustable desktop stand for tablets",
+    "category": "ELECTRONICS",
+    "price": {
+      "amount": 19.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "TABLETSTAND"
+    }
+  },
+  {
+    "sku": "DEMO-LAPTOPSLEEVE-001",
+    "name": "Laptop Sleeve - Black",
+    "description": "Padded protective sleeve for 14-inch laptops",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 22.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "LAPTOPSLEEVE"
+    }
+  },
+  {
+    "sku": "DEMO-LAPTOPSLEEVE-002",
+    "name": "Laptop Sleeve - White",
+    "description": "Padded protective sleeve for 14-inch laptops",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 22.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "LAPTOPSLEEVE"
+    }
+  },
+  {
+    "sku": "DEMO-LAPTOPSLEEVE-003",
+    "name": "Laptop Sleeve - Blue",
+    "description": "Padded protective sleeve for 14-inch laptops",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 22.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "LAPTOPSLEEVE"
+    }
+  },
+  {
+    "sku": "DEMO-LAPTOPSLEEVE-004",
+    "name": "Laptop Sleeve - Green",
+    "description": "Padded protective sleeve for 14-inch laptops",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 22.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "LAPTOPSLEEVE"
+    }
+  },
+  {
+    "sku": "DEMO-LAPTOPSLEEVE-005",
+    "name": "Laptop Sleeve - Grey",
+    "description": "Padded protective sleeve for 14-inch laptops",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 22.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "LAPTOPSLEEVE"
+    }
+  },
+  {
+    "sku": "DEMO-BACKPACK-001",
+    "name": "Office Backpack - Black",
+    "description": "Office backpack with a padded laptop compartment",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 54.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "BACKPACK"
+    }
+  },
+  {
+    "sku": "DEMO-BACKPACK-002",
+    "name": "Office Backpack - White",
+    "description": "Office backpack with a padded laptop compartment",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 54.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "BACKPACK"
+    }
+  },
+  {
+    "sku": "DEMO-BACKPACK-003",
+    "name": "Office Backpack - Blue",
+    "description": "Office backpack with a padded laptop compartment",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 54.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "BACKPACK"
+    }
+  },
+  {
+    "sku": "DEMO-BACKPACK-004",
+    "name": "Office Backpack - Green",
+    "description": "Office backpack with a padded laptop compartment",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 54.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "BACKPACK"
+    }
+  },
+  {
+    "sku": "DEMO-BACKPACK-005",
+    "name": "Office Backpack - Grey",
+    "description": "Office backpack with a padded laptop compartment",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 54.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "BACKPACK"
+    }
+  },
+  {
+    "sku": "DEMO-BOTTLE-001",
+    "name": "Insulated Water Bottle - Black",
+    "description": "Reusable 750 ml stainless steel water bottle",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 18.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "BOTTLE"
+    }
+  },
+  {
+    "sku": "DEMO-BOTTLE-002",
+    "name": "Insulated Water Bottle - White",
+    "description": "Reusable 750 ml stainless steel water bottle",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 18.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "BOTTLE"
+    }
+  },
+  {
+    "sku": "DEMO-BOTTLE-003",
+    "name": "Insulated Water Bottle - Blue",
+    "description": "Reusable 750 ml stainless steel water bottle",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 18.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "BOTTLE"
+    }
+  },
+  {
+    "sku": "DEMO-BOTTLE-004",
+    "name": "Insulated Water Bottle - Green",
+    "description": "Reusable 750 ml stainless steel water bottle",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 18.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "BOTTLE"
+    }
+  },
+  {
+    "sku": "DEMO-BOTTLE-005",
+    "name": "Insulated Water Bottle - Grey",
+    "description": "Reusable 750 ml stainless steel water bottle",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 18.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "BOTTLE"
+    }
+  },
+  {
+    "sku": "DEMO-MUG-001",
+    "name": "Ceramic Mug - Black",
+    "description": "Dishwasher-safe 350 ml ceramic mug",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 8.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "MUG"
+    }
+  },
+  {
+    "sku": "DEMO-MUG-002",
+    "name": "Ceramic Mug - White",
+    "description": "Dishwasher-safe 350 ml ceramic mug",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 8.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "MUG"
+    }
+  },
+  {
+    "sku": "DEMO-MUG-003",
+    "name": "Ceramic Mug - Blue",
+    "description": "Dishwasher-safe 350 ml ceramic mug",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 8.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "MUG"
+    }
+  },
+  {
+    "sku": "DEMO-MUG-004",
+    "name": "Ceramic Mug - Green",
+    "description": "Dishwasher-safe 350 ml ceramic mug",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 8.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "MUG"
+    }
+  },
+  {
+    "sku": "DEMO-MUG-005",
+    "name": "Ceramic Mug - Grey",
+    "description": "Dishwasher-safe 350 ml ceramic mug",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 8.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "MUG"
+    }
+  },
+  {
+    "sku": "DEMO-LUNCHBOX-001",
+    "name": "Lunch Box - Black",
+    "description": "Reusable lunch box with removable compartments",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 14.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "LUNCHBOX"
+    }
+  },
+  {
+    "sku": "DEMO-LUNCHBOX-002",
+    "name": "Lunch Box - White",
+    "description": "Reusable lunch box with removable compartments",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 14.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "LUNCHBOX"
+    }
+  },
+  {
+    "sku": "DEMO-LUNCHBOX-003",
+    "name": "Lunch Box - Blue",
+    "description": "Reusable lunch box with removable compartments",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 14.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "LUNCHBOX"
+    }
+  },
+  {
+    "sku": "DEMO-LUNCHBOX-004",
+    "name": "Lunch Box - Green",
+    "description": "Reusable lunch box with removable compartments",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 14.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "LUNCHBOX"
+    }
+  },
+  {
+    "sku": "DEMO-LUNCHBOX-005",
+    "name": "Lunch Box - Grey",
+    "description": "Reusable lunch box with removable compartments",
+    "category": "KITCHEN",
+    "price": {
+      "amount": 14.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "LUNCHBOX"
+    }
+  },
+  {
+    "sku": "DEMO-DESKMAT-001",
+    "name": "Desk Mat - Black",
+    "description": "Large protective desk mat with a nonslip base",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 16.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "DESKMAT"
+    }
+  },
+  {
+    "sku": "DEMO-DESKMAT-002",
+    "name": "Desk Mat - White",
+    "description": "Large protective desk mat with a nonslip base",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 16.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "DESKMAT"
+    }
+  },
+  {
+    "sku": "DEMO-DESKMAT-003",
+    "name": "Desk Mat - Blue",
+    "description": "Large protective desk mat with a nonslip base",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 16.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "DESKMAT"
+    }
+  },
+  {
+    "sku": "DEMO-DESKMAT-004",
+    "name": "Desk Mat - Green",
+    "description": "Large protective desk mat with a nonslip base",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 16.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "DESKMAT"
+    }
+  },
+  {
+    "sku": "DEMO-DESKMAT-005",
+    "name": "Desk Mat - Grey",
+    "description": "Large protective desk mat with a nonslip base",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 16.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "DESKMAT"
+    }
+  },
+  {
+    "sku": "DEMO-FILEBOX-001",
+    "name": "Document Storage Box - Black",
+    "description": "Stackable storage box for A4 documents",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 9.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "FILEBOX"
+    }
+  },
+  {
+    "sku": "DEMO-FILEBOX-002",
+    "name": "Document Storage Box - White",
+    "description": "Stackable storage box for A4 documents",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 9.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "FILEBOX"
+    }
+  },
+  {
+    "sku": "DEMO-FILEBOX-003",
+    "name": "Document Storage Box - Blue",
+    "description": "Stackable storage box for A4 documents",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 9.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "FILEBOX"
+    }
+  },
+  {
+    "sku": "DEMO-FILEBOX-004",
+    "name": "Document Storage Box - Green",
+    "description": "Stackable storage box for A4 documents",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 9.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "FILEBOX"
+    }
+  },
+  {
+    "sku": "DEMO-FILEBOX-005",
+    "name": "Document Storage Box - Grey",
+    "description": "Stackable storage box for A4 documents",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 9.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "FILEBOX"
+    }
+  },
+  {
+    "sku": "DEMO-BINDER-001",
+    "name": "A4 Ring Binder - Black",
+    "description": "Four-ring binder for office document storage",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 5.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "BINDER"
+    }
+  },
+  {
+    "sku": "DEMO-BINDER-002",
+    "name": "A4 Ring Binder - White",
+    "description": "Four-ring binder for office document storage",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 5.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "BINDER"
+    }
+  },
+  {
+    "sku": "DEMO-BINDER-003",
+    "name": "A4 Ring Binder - Blue",
+    "description": "Four-ring binder for office document storage",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 5.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "BINDER"
+    }
+  },
+  {
+    "sku": "DEMO-BINDER-004",
+    "name": "A4 Ring Binder - Green",
+    "description": "Four-ring binder for office document storage",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 5.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "BINDER"
+    }
+  },
+  {
+    "sku": "DEMO-BINDER-005",
+    "name": "A4 Ring Binder - Grey",
+    "description": "Four-ring binder for office document storage",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 5.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "BINDER"
+    }
+  },
+  {
+    "sku": "DEMO-STAPLER-001",
+    "name": "Desktop Stapler - Black",
+    "description": "Metal desktop stapler with a 20-sheet capacity",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 11.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "STAPLER"
+    }
+  },
+  {
+    "sku": "DEMO-STAPLER-002",
+    "name": "Desktop Stapler - White",
+    "description": "Metal desktop stapler with a 20-sheet capacity",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 11.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "STAPLER"
+    }
+  },
+  {
+    "sku": "DEMO-STAPLER-003",
+    "name": "Desktop Stapler - Blue",
+    "description": "Metal desktop stapler with a 20-sheet capacity",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 11.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "STAPLER"
+    }
+  },
+  {
+    "sku": "DEMO-STAPLER-004",
+    "name": "Desktop Stapler - Green",
+    "description": "Metal desktop stapler with a 20-sheet capacity",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 11.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "STAPLER"
+    }
+  },
+  {
+    "sku": "DEMO-STAPLER-005",
+    "name": "Desktop Stapler - Grey",
+    "description": "Metal desktop stapler with a 20-sheet capacity",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 11.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "STAPLER"
+    }
+  },
+  {
+    "sku": "DEMO-SCISSORS-001",
+    "name": "Office Scissors - Black",
+    "description": "Stainless steel scissors with ergonomic handles",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 6.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "SCISSORS"
+    }
+  },
+  {
+    "sku": "DEMO-SCISSORS-002",
+    "name": "Office Scissors - White",
+    "description": "Stainless steel scissors with ergonomic handles",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 6.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "SCISSORS"
+    }
+  },
+  {
+    "sku": "DEMO-SCISSORS-003",
+    "name": "Office Scissors - Blue",
+    "description": "Stainless steel scissors with ergonomic handles",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 6.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "SCISSORS"
+    }
+  },
+  {
+    "sku": "DEMO-SCISSORS-004",
+    "name": "Office Scissors - Green",
+    "description": "Stainless steel scissors with ergonomic handles",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 6.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "SCISSORS"
+    }
+  },
+  {
+    "sku": "DEMO-SCISSORS-005",
+    "name": "Office Scissors - Grey",
+    "description": "Stainless steel scissors with ergonomic handles",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 6.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "SCISSORS"
+    }
+  },
+  {
+    "sku": "DEMO-PENHOLDER-001",
+    "name": "Desktop Pen Holder - Black",
+    "description": "Desk organizer for pens and small accessories",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 7.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "PENHOLDER"
+    }
+  },
+  {
+    "sku": "DEMO-PENHOLDER-002",
+    "name": "Desktop Pen Holder - White",
+    "description": "Desk organizer for pens and small accessories",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 7.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "PENHOLDER"
+    }
+  },
+  {
+    "sku": "DEMO-PENHOLDER-003",
+    "name": "Desktop Pen Holder - Blue",
+    "description": "Desk organizer for pens and small accessories",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 7.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "PENHOLDER"
+    }
+  },
+  {
+    "sku": "DEMO-PENHOLDER-004",
+    "name": "Desktop Pen Holder - Green",
+    "description": "Desk organizer for pens and small accessories",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 7.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "PENHOLDER"
+    }
+  },
+  {
+    "sku": "DEMO-PENHOLDER-005",
+    "name": "Desktop Pen Holder - Grey",
+    "description": "Desk organizer for pens and small accessories",
+    "category": "OFFICE_SUPPLIES",
+    "price": {
+      "amount": 7.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "PENHOLDER"
+    }
+  },
+  {
+    "sku": "DEMO-CUSHION-001",
+    "name": "Lumbar Support Cushion - Black",
+    "description": "Foam lumbar support cushion for office seating",
+    "category": "FURNITURE",
+    "price": {
+      "amount": 24.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "CUSHION"
+    }
+  },
+  {
+    "sku": "DEMO-CUSHION-002",
+    "name": "Lumbar Support Cushion - White",
+    "description": "Foam lumbar support cushion for office seating",
+    "category": "FURNITURE",
+    "price": {
+      "amount": 24.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "CUSHION"
+    }
+  },
+  {
+    "sku": "DEMO-CUSHION-003",
+    "name": "Lumbar Support Cushion - Blue",
+    "description": "Foam lumbar support cushion for office seating",
+    "category": "FURNITURE",
+    "price": {
+      "amount": 24.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "CUSHION"
+    }
+  },
+  {
+    "sku": "DEMO-CUSHION-004",
+    "name": "Lumbar Support Cushion - Green",
+    "description": "Foam lumbar support cushion for office seating",
+    "category": "FURNITURE",
+    "price": {
+      "amount": 24.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "CUSHION"
+    }
+  },
+  {
+    "sku": "DEMO-CUSHION-005",
+    "name": "Lumbar Support Cushion - Grey",
+    "description": "Foam lumbar support cushion for office seating",
+    "category": "FURNITURE",
+    "price": {
+      "amount": 24.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "CUSHION"
+    }
+  },
+  {
+    "sku": "DEMO-FOOTREST-001",
+    "name": "Adjustable Footrest - Black",
+    "description": "Adjustable under-desk footrest with textured surface",
+    "category": "FURNITURE",
+    "price": {
+      "amount": 32.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "FOOTREST"
+    }
+  },
+  {
+    "sku": "DEMO-FOOTREST-002",
+    "name": "Adjustable Footrest - White",
+    "description": "Adjustable under-desk footrest with textured surface",
+    "category": "FURNITURE",
+    "price": {
+      "amount": 32.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "FOOTREST"
+    }
+  },
+  {
+    "sku": "DEMO-FOOTREST-003",
+    "name": "Adjustable Footrest - Blue",
+    "description": "Adjustable under-desk footrest with textured surface",
+    "category": "FURNITURE",
+    "price": {
+      "amount": 32.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "FOOTREST"
+    }
+  },
+  {
+    "sku": "DEMO-FOOTREST-004",
+    "name": "Adjustable Footrest - Green",
+    "description": "Adjustable under-desk footrest with textured surface",
+    "category": "FURNITURE",
+    "price": {
+      "amount": 32.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "FOOTREST"
+    }
+  },
+  {
+    "sku": "DEMO-FOOTREST-005",
+    "name": "Adjustable Footrest - Grey",
+    "description": "Adjustable under-desk footrest with textured surface",
+    "category": "FURNITURE",
+    "price": {
+      "amount": 32.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "FOOTREST"
+    }
+  },
+  {
+    "sku": "DEMO-WASTEBIN-001",
+    "name": "Office Waste Bin - Black",
+    "description": "Compact 12-liter waste bin for office use",
+    "category": "CLEANING",
+    "price": {
+      "amount": 13.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "WASTEBIN"
+    }
+  },
+  {
+    "sku": "DEMO-WASTEBIN-002",
+    "name": "Office Waste Bin - White",
+    "description": "Compact 12-liter waste bin for office use",
+    "category": "CLEANING",
+    "price": {
+      "amount": 13.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "WASTEBIN"
+    }
+  },
+  {
+    "sku": "DEMO-WASTEBIN-003",
+    "name": "Office Waste Bin - Blue",
+    "description": "Compact 12-liter waste bin for office use",
+    "category": "CLEANING",
+    "price": {
+      "amount": 13.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "WASTEBIN"
+    }
+  },
+  {
+    "sku": "DEMO-WASTEBIN-004",
+    "name": "Office Waste Bin - Green",
+    "description": "Compact 12-liter waste bin for office use",
+    "category": "CLEANING",
+    "price": {
+      "amount": 13.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "WASTEBIN"
+    }
+  },
+  {
+    "sku": "DEMO-WASTEBIN-005",
+    "name": "Office Waste Bin - Grey",
+    "description": "Compact 12-liter waste bin for office use",
+    "category": "CLEANING",
+    "price": {
+      "amount": 13.99,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "WASTEBIN"
+    }
+  },
+  {
+    "sku": "DEMO-BRUSH-001",
+    "name": "Desk Cleaning Brush - Black",
+    "description": "Soft-bristle brush for desks and keyboards",
+    "category": "CLEANING",
+    "price": {
+      "amount": 4.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "BRUSH"
+    }
+  },
+  {
+    "sku": "DEMO-BRUSH-002",
+    "name": "Desk Cleaning Brush - White",
+    "description": "Soft-bristle brush for desks and keyboards",
+    "category": "CLEANING",
+    "price": {
+      "amount": 4.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "BRUSH"
+    }
+  },
+  {
+    "sku": "DEMO-BRUSH-003",
+    "name": "Desk Cleaning Brush - Blue",
+    "description": "Soft-bristle brush for desks and keyboards",
+    "category": "CLEANING",
+    "price": {
+      "amount": 4.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "BRUSH"
+    }
+  },
+  {
+    "sku": "DEMO-BRUSH-004",
+    "name": "Desk Cleaning Brush - Green",
+    "description": "Soft-bristle brush for desks and keyboards",
+    "category": "CLEANING",
+    "price": {
+      "amount": 4.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "BRUSH"
+    }
+  },
+  {
+    "sku": "DEMO-BRUSH-005",
+    "name": "Desk Cleaning Brush - Grey",
+    "description": "Soft-bristle brush for desks and keyboards",
+    "category": "CLEANING",
+    "price": {
+      "amount": 4.50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "BRUSH"
+    }
+  },
+  {
+    "sku": "DEMO-CABLECASE-001",
+    "name": "Cable Organizer Case - Black",
+    "description": "Zippered travel case for cables and chargers",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 15.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "brand": "Northstar",
+      "model": "CABLECASE"
+    }
+  },
+  {
+    "sku": "DEMO-CABLECASE-002",
+    "name": "Cable Organizer Case - White",
+    "description": "Zippered travel case for cables and chargers",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 15.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "brand": "Northstar",
+      "model": "CABLECASE"
+    }
+  },
+  {
+    "sku": "DEMO-CABLECASE-003",
+    "name": "Cable Organizer Case - Blue",
+    "description": "Zippered travel case for cables and chargers",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 15.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "brand": "Northstar",
+      "model": "CABLECASE"
+    }
+  },
+  {
+    "sku": "DEMO-CABLECASE-004",
+    "name": "Cable Organizer Case - Green",
+    "description": "Zippered travel case for cables and chargers",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 15.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Green",
+      "brand": "Northstar",
+      "model": "CABLECASE"
+    }
+  },
+  {
+    "sku": "DEMO-CABLECASE-005",
+    "name": "Cable Organizer Case - Grey",
+    "description": "Zippered travel case for cables and chargers",
+    "category": "ACCESSORIES",
+    "price": {
+      "amount": 15.90,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "brand": "Northstar",
+      "model": "CABLECASE"
+    }
+  }
+]

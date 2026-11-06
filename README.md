@@ -1,32 +1,79 @@
 # Inventory Management Service
 
-Inventory Management Service is a product catalog API built with Python 3.14, FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL 18, and Alembic. The first release implements **Create Product**. Python 3.14 supplies the standard-library UUIDv7 generator.
-
-## Run with Docker
-
-From the extracted project directory, with Docker Desktop or an equivalent Docker Engine and Compose running:
-
-```powershell
-docker compose up --build -d
-docker compose logs -f api
-```
-
-Open [Swagger UI](http://localhost:8000/docs). Compose starts PostgreSQL on loopback port 5432, applies the Alembic migration, and serves the API on loopback port 8000. The Compose credentials are for local development. `docker compose down` stops the services and preserves the development database volume. Compose uses the existing `inventra_inventory-db` volume name so the renamed project can reuse local data.
+Inventory Management Service is a product catalog API built with Python 3.14, FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL 18, and Alembic. It implements **Create Product**, **Get Product by ID**, and **List Products** with search, filters, sorting, and pagination. Python 3.14 supplies the standard-library UUIDv7 generator. The schema uses no PostgreSQL 17/18-specific features; the full test suite also passes on PostgreSQL 16.
 
 ## Run Python directly on Windows
 
-Start a fresh PostgreSQL 18 database. The first command below starts just the development database in Docker. If you already have a local PostgreSQL instance, create an empty database and set the matching connection URL instead.
+Install Python 3.14 and PostgreSQL 18, and start the local PostgreSQL service. Using `psql` or pgAdmin as a PostgreSQL administrator, create a development role and an empty database once:
+
+```sql
+CREATE ROLE inventra LOGIN PASSWORD 'inventra_dev';
+CREATE DATABASE inventra OWNER inventra;
+```
+
+These credentials are for local development. From the project root, run the following PowerShell commands, adjusting `DATABASE_URL` if your local credentials or port differ:
 
 ```powershell
-docker compose up -d --wait db
 py -3.14 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
-$env:DATABASE_URL = 'postgresql+psycopg://inventra:inventra_dev@localhost:5432/inventra'
-.\.venv\Scripts\python.exe -m alembic upgrade head
+$env:DATABASE_URL = 'postgresql+psycopg://inventra:inventra_dev@127.0.0.1:5432/inventra?connect_timeout=5'
 .\.venv\Scripts\python.exe -m uvicorn inventory_management_service.main:app --reload
 ```
 
-On macOS or Linux use `python3.14 -m venv .venv`, `.venv/bin/python`, and `export DATABASE_URL=...`. Run migrations from the project root. Revision `0001` is an Alembic baseline for an empty database. Existing Flyway-managed Inventra databases require a separate adoption plan. The baseline downgrade drops the products table and is intended for disposable databases.
+Open [Swagger UI](http://localhost:8000/docs) to try requests, [ReDoc](http://localhost:8000/redoc) for the API reference, or [OpenAPI JSON](http://localhost:8000/openapi.json) to import into an API client. Stop the server with Ctrl+C. Set `DATABASE_URL` again whenever starting from a new terminal.
+
+On macOS or Linux use `python3.14 -m venv .venv`, `.venv/bin/python`, and `export DATABASE_URL=...` (see the next section for a complete walkthrough). Run migrations from the project root. Revision `0001` is an Alembic baseline for an empty database. Existing Flyway-managed Inventra databases require a separate adoption plan. The baseline downgrade drops the products table and is intended for disposable databases.
+
+## Run on Linux without Docker or root (PostgreSQL 16)
+
+These commands create a throwaway PostgreSQL cluster owned by your user under `/tmp/inventra-pg`, so they need neither Docker nor `sudo`. They were used to verify this project with Python 3.14 and PostgreSQL 16 on Ubuntu 24.04. Adjust `PG_BIN` if `pg_config --bindir` reports a different directory, and pick another port if 5432 is taken.
+
+```bash
+# One-time: PostgreSQL cluster, development database, and dedicated test database/role.
+export PG_BIN=/usr/lib/postgresql/16/bin PGDATA=/tmp/inventra-pg/data
+mkdir -p /tmp/inventra-pg
+echo postgres > /tmp/inventra-pg/pwfile
+"$PG_BIN/initdb" -D "$PGDATA" -U postgres --auth=scram-sha-256 --pwfile=/tmp/inventra-pg/pwfile -E UTF8 --locale=C.UTF-8
+"$PG_BIN/pg_ctl" -D "$PGDATA" -l /tmp/inventra-pg/server.log -w start \
+  -o "-c listen_addresses=127.0.0.1 -c port=5432 -c unix_socket_directories=/tmp/inventra-pg"
+export PGPASSWORD=postgres
+psql -h 127.0.0.1 -U postgres -v ON_ERROR_STOP=1 \
+  -c "CREATE ROLE inventra LOGIN PASSWORD 'inventra_dev'" \
+  -c "CREATE DATABASE inventra OWNER inventra" \
+  -c "CREATE DATABASE inventra_test"
+psql -h 127.0.0.1 -U postgres -d inventra_test -v ON_ERROR_STOP=1 -f tests/init-test-db.sql
+unset PGPASSWORD
+
+# One-time: Python environment (from the project root).
+python3.14 -m venv .venv
+.venv/bin/python -m pip install -r requirements-dev.txt
+
+# Verify: API contract tests, then the full suite against PostgreSQL.
+.venv/bin/python -m pytest -m "not postgres" -q
+INVENTRA_TEST_DATABASE_URL='postgresql+psycopg://inventra_test:inventra_test@127.0.0.1:5432/inventra_test' \
+  .venv/bin/python -m pytest -q -rs
+
+# Run the API. Startup applies migrations and seeds the 115 sample products.
+export DATABASE_URL='postgresql+psycopg://inventra:inventra_dev@127.0.0.1:5432/inventra?connect_timeout=5'
+.venv/bin/python -m uvicorn inventory_management_service.main:app --reload
+```
+
+Then open [Swagger UI](http://localhost:8000/docs). In a new terminal, export `PG_BIN` and `PGDATA` again. Stop the cluster with `"$PG_BIN/pg_ctl" -D "$PGDATA" stop`, or remove it completely with `rm -rf /tmp/inventra-pg` after stopping it. If the pytest run reports skipped tests, `INVENTRA_TEST_DATABASE_URL` was not set.
+
+## Startup migrations and sample products
+
+Application startup runs `alembic upgrade head` before accepting requests. Migration failures stop startup. Concurrent application workers serialize startup migrations with a PostgreSQL advisory lock. The database role must have permission to apply schema changes.
+
+Revision `0002` executes `migrations/sql/0002_sample_products.sql`, inserting all 115 sample products (the original 15 plus 100 additional color variants). The SQL uses `ON CONFLICT (sku) DO NOTHING`, preserving existing product data. Alembic records the revision so later starts do not seed again. This seeds every database upgraded to head, including new databases. Downgrading to `0001` preserves seed rows because they may have been edited or referenced; downgrading to base drops the products table.
+
+The catalog is also available in `data/sample-products.json`, with a standalone copy of the insert script at `data/sample-products.sql`. Keep the versioned migration SQL unchanged after deployment; add a new migration for future catalog changes. Include the `migrations` directory and `alembic.ini` when deploying the Python application.
+
+To apply migrations without starting the API:
+
+```powershell
+.\.venv\Scripts\python.exe -m alembic upgrade head
+.\.venv\Scripts\python.exe -m alembic current
+```
 
 ## Create a product
 
@@ -48,7 +95,7 @@ $result.Headers.Location
 $result.Content
 ```
 
-- **201 Created** returns the persisted product and an absolute `Location` for the future GET endpoint. The body includes a UUIDv7 `id`, canonical `sku`, `status: ACTIVE`, UTC `createdAt` and `updatedAt`, and optimistic-locking `version: 0`.
+- **201 Created** returns the persisted product and an absolute `Location` that resolves with [Get a product](#get-a-product). The body includes a UUIDv7 `id`, canonical `sku`, `status: ACTIVE`, UTC `createdAt` and `updatedAt`, and optimistic-locking `version: 0`.
 - **400 Bad Request** covers malformed JSON, missing fields, invalid values, and unknown properties. Field-level errors include `errors` entries with `field` and `message`.
 - **409 Conflict** includes the canonical `sku` and uses `urn:inventra:problem:duplicate-sku`. PostgreSQL enforces uniqueness during insert, including when requests race.
 - **415 Unsupported Media Type** covers a body sent without a JSON media type. Unexpected failures return a generic **500**. Errors use RFC 9457 `application/problem+json`.
@@ -65,38 +112,130 @@ $result.Content
 | `unitOfMeasure` | Required. `PIECE`, `BOX`, `PACK`, `PALLET`, `GRAM`, `KILOGRAM`, `MILLILITER`, `LITER`, `CENTIMETER`, `METER`, `SQUARE_METER`, or `CUBIC_METER`. |
 | `attributes` | Required JSON object with up to 50 entries. Use `{}` for none. Keys are nonblank, at most 64 characters. Values are strings of at most 255 characters. |
 
+## Get a product
+
+`GET /api/v1/products/{productId}` returns the product with the same representation as the create response: `id` first, then the product fields, with an exact JSON-number price, canonical SKU, UTC timestamps, and `version`. Create, get, and list share one serializer, so the three representations are identical. `status` can be `ACTIVE`, `INACTIVE`, or `DISCONTINUED`; create always returns `ACTIVE`.
+
+```bash
+B=http://localhost:8000/api/v1/products
+# A seeded product (sample IDs are fixed by the seed migration).
+curl -s "$B/01a1b052-ec7c-76db-a862-e0da4baa5110"
+# Follow the Location header of a create request.
+LOCATION=$(curl -si -X POST "$B" -H 'Content-Type: application/json' \
+  -d '{"sku":"lap-dell-2","name":"Dell XPS 13","category":"ELECTRONICS","price":{"amount":1199.5,"currency":"EUR"},"unitOfMeasure":"PIECE","attributes":{}}' \
+  | tr -d '\r' | sed -n 's/^[Ll]ocation: //p')
+echo "$LOCATION"
+curl -s "$LOCATION"
+```
+
+```powershell
+Invoke-RestMethod http://localhost:8000/api/v1/products/01a1b052-ec7c-76db-a862-e0da4baa5110
+```
+
+- **200 OK** returns the product.
+- **404 Not Found** uses `urn:inventra:problem:product-not-found` and includes `productId`. Soft-deleted products (`deleted_at` set, status `DELETED`) return the same 404 as products that never existed.
+- **400 Bad Request** uses `urn:inventra:problem:validation-error` when the ID is not a UUID, with an `errors` entry for `productId`.
+
+## List products
+
+`GET /api/v1/products` returns one page of products that are not soft-deleted:
+
+```json
+{"items": [{"id": "01a1b052-ec7d-74d0-bf78-a2852fecfcd6", "sku": "DEMO-MONITOR-001", "...": "..."}], "page": 1, "size": 20, "totalItems": 115, "totalPages": 6}
+```
+
+`items` use the Get Product representation. A page past the end returns `200` with empty `items` and the real totals. The count and the page are read from one snapshot, so they agree even while products are being created.
+
+| Parameter | Default | Rules |
+| --- | --- | --- |
+| `page` | `1` | 1-based page number, 1 to 2,147,483,647. |
+| `size` | `20` | Products per page, 1 to 100. |
+| `search` | none | Case-insensitive. Every whitespace-separated term must occur in the SKU, name, or description, so `ring binder blue` finds `A4 Ring Binder - Blue`. `%`, `_` and `\` match literally. At most 255 characters. Blank means no filter. |
+| `category` | none | Exact category, case-insensitive and trimmed, so `electronics` matches `ELECTRONICS`. Blank means no filter. |
+| `minPrice`, `maxPrice` | none | Inclusive bounds on `price.amount`, nonnegative, up to 15 integer and 4 fractional digits. `minPrice` must not exceed `maxPrice`. |
+| `currency` | none | Uppercase ISO 4217 code. Price bounds compare amounts without currency conversion, so combine them with `currency` when the catalog has several currencies. |
+| `sort` | `name` | `name`, `sku`, `category`, `price`, `createdAt`, or `updatedAt`. |
+| `direction` | `asc` | `asc` or `desc`. |
+
+Sorting is stable: ties are always broken by product `id` in the same direction, so paging through a result never repeats or skips a product while the data is unchanged. This matters for the sample catalog because all 115 seeded products share one `createdAt`. Text sorting follows the database collation. Offset paging can shift by a row if products are created or deleted between page requests.
+
+Filters combine with AND. Unknown parameters, such as a misspelled `categroy`, are rejected instead of being ignored. Invalid parameters return **400** `urn:inventra:problem:validation-error` with one `errors` entry per parameter; unexpected failures return a generic **500**.
+
+```bash
+B=http://localhost:8000/api/v1/products
+curl -s "$B?size=5"                                               # first 5 by name
+curl -s "$B?page=2&size=5"                                        # next 5
+curl -s "$B?search=ring%20binder"                                 # all ring binder variants
+curl -s "$B?category=electronics&sort=price&direction=desc"       # most expensive electronics first
+curl -s "$B?minPrice=10&maxPrice=50&currency=EUR&sort=price"      # 10.00 to 50.00 EUR, cheapest first
+curl -s "$B?search=black&category=ELECTRONICS&maxPrice=100"       # combined filters
+curl -s "$B?size=500"                                             # 400: size must be at most 100
+```
+
+To print a compact table:
+
+```bash
+curl -s "$B?size=100" | python3 -c 'import json, sys
+for p in json.load(sys.stdin)["items"]: print(p["sku"], p["name"], p["price"]["amount"], sep="\t")'
+```
+
+```powershell
+$page = Invoke-RestMethod 'http://localhost:8000/api/v1/products?category=electronics&sort=price&direction=desc&size=5'
+$page.totalItems
+$page.items | Format-Table sku, name, @{n='price'; e={$_.price.amount}}
+```
+
+In Swagger UI, expand **GET /api/v1/products**, choose **Try it out**, and fill in the parameters; `sort` and `direction` are drop-down lists.
+
 ## Test
 
-The API contract tests use FastAPI's in-process client and a stubbed create service. Run them from the project root after installing `requirements-dev.txt`.
+The unit tests need no database:
+
+- `tests/test_api.py` covers the HTTP contract of create, get, and list through FastAPI's in-process client with stubbed services: success responses and `Location`, every validation rule and its boundary values, malformed JSON, unknown properties, media types, 404/405/409/415/500 problem documents, parameter validation, and the OpenAPI document. It also checks that all three endpoints return the same product representation, including `id`, with exact JSON-number prices and UTC timestamps. Tests compare JSON member sets, not member order.
+- `tests/test_service.py` runs the service layer against an in-memory `FakeSession` (in `tests/conftest.py`): how a create command becomes a stored product, duplicate-SKU translation, not-found handling, and the rules that must hold even without PostgreSQL. These are the soft-delete filter, identical criteria for the count and the page, the `id` tiebreaker, and the REPEATABLE READ snapshot. Statements are compared structurally, not as SQL text. What the filters, search, ordering, and paging actually return is verified against PostgreSQL.
+- `tests/test_startup.py` checks that startup runs the migrations and stops when they fail.
+
+Run them from the project root after installing `requirements-dev.txt`.
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -m "not postgres" -q
 ```
 
-For the full suite entirely in Docker:
+For the full suite, create a separate local test database once as a PostgreSQL administrator:
 
-```powershell
-docker compose --profile test run --build --rm tests
-docker compose --profile test rm -s -f test-db
+```sql
+CREATE DATABASE inventra_test;
 ```
 
-This also works on Windows machines where Application Control blocks the native psycopg DLL. To run pytest on the host against the disposable test database, use:
+Then run the role setup script as that administrator (replace `postgres` with your administrator username if needed):
 
 ```powershell
-docker compose --profile test up -d --wait test-db
-$env:INVENTRA_TEST_DATABASE_URL = 'postgresql+psycopg://inventra_test:inventra_test@127.0.0.1:55432/inventra_test'
+psql -h localhost -U postgres -d inventra_test -f tests/init-test-db.sql
+```
+
+Run all tests against that database:
+
+```powershell
+$env:INVENTRA_TEST_DATABASE_URL = 'postgresql+psycopg://inventra_test:inventra_test@localhost:5432/inventra_test'
 .\.venv\Scripts\python.exe -m pytest -q
-docker compose --profile test rm -s -f test-db
 Remove-Item Env:INVENTRA_TEST_DATABASE_URL
 ```
 
-The PostgreSQL tests cover Alembic upgrade, downgrade and re-upgrade, committed rows, exact prices, normalized duplicate rejection, and concurrent inserts. Each test migrates a fresh schema and drops only that schema at cleanup. The fixture requires an explicit test URL and a dedicated `inventra_test` database and role. The role has permission to create schemas in that database and has neither superuser nor CREATEDB privileges. Without the test URL, pytest reports the PostgreSQL tests as skipped. A configured database failure fails the tests.
+The PostgreSQL tests cover Alembic upgrade, downgrade and re-upgrade, committed rows, exact prices, normalized duplicate rejection, and concurrent inserts. For reads, they cover create-then-get round trips, hiding soft-deleted products, gap-free and duplicate-free paging for every sort field and direction over the seeded catalog, search (including literal `%`, `_` and `\`), category, price and currency filters checked against `data/sample-products.json`, and UTC output under a non-UTC session time zone. Each test migrates a fresh schema and drops only that schema at cleanup. The fixture requires an explicit test URL and a dedicated `inventra_test` database and role. The role has permission to create schemas in that database and has neither superuser nor CREATEDB privileges. Without the test URL, pytest reports the PostgreSQL tests as skipped.
+
+IDE test runners such as PyCharm do not inherit variables set in a terminal. Instead of setting `INVENTRA_TEST_DATABASE_URL` in each run configuration, you can put it in a `.env` file in the project root. The file is git-ignored, and a variable set in the environment takes precedence:
+
+```
+INVENTRA_TEST_DATABASE_URL=postgresql+psycopg://inventra_test:inventra_test@localhost:5432/inventra_test
+```
+
+Only the tests read `.env`; the application still needs `DATABASE_URL` in its environment. A configured database failure fails the tests.
 
 ## Extension points
 
-- **GET products** can add read routes alongside POST in `inventory_management_service/main.py`, using the existing session dependency and model. Plan GET by UUID, pagination, filtering, and sorting. Add read-specific indexes through a new Alembic revision.
+- **Read indexes.** The list queries do not add indexes; the sample catalog is small, and each list request counts all matching rows. For large catalogs, add a new Alembic revision with partial indexes `WHERE deleted_at IS NULL` on the sort keys plus `id`, for example `(name, id)`, and on `lower(category)`. Substring search needs a `pg_trgm` GIN index to avoid sequential scans. For deep paging, consider keyset (cursor) pagination on the same `(sort key, id)` order.
 - **Update** can reuse the mapped version column for stale-write detection. Define the request and concurrency contract when implementing the route.
-- **Soft delete** can use the nullable `deleted_at` column and the existing status consistency checks. Retain the SKU reservation and exclude deleted products from future reads.
+- **Soft delete** can use the nullable `deleted_at` column and the existing status consistency checks. Retain the SKU reservation. Get and List already exclude rows with `deleted_at` set.
 - **Bulk create and bulk delete** can use separate request schemas and service operations. The current service owns the single-create transaction. Extract transaction-neutral insertion logic before implementing atomic batches.
 
-The only registered product operation is POST. The project separates HTTP handling and Pydantic schemas from the create transaction and ORM model.
+The registered product operations are POST, GET by ID, and GET list. The project separates HTTP handling and Pydantic schemas (`main.py`, `schemas.py`) from the transactions and queries (`service.py`) and the ORM model.

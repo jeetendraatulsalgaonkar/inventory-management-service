@@ -93,7 +93,74 @@ class CreateProduct(BaseModel):
 
 class ProductResponse(CreateProduct):
     id: UUID
-    status: Literal["ACTIVE"]
+    # Create always returns ACTIVE. Reads can also return the other non-deleted
+    # statuses allowed by ck_products_status; DELETED products are never returned.
+    status: Literal["ACTIVE", "INACTIVE", "DISCONTINUED"]
     created_at: datetime = Field(alias="createdAt")
     updated_at: datetime = Field(alias="updatedAt")
     version: int
+
+
+class ProductSort(StrEnum):
+    NAME = "name"
+    SKU = "sku"
+    CATEGORY = "category"
+    PRICE = "price"
+    CREATED_AT = "createdAt"
+    UPDATED_AT = "updatedAt"
+
+
+class SortDirection(StrEnum):
+    ASC = "asc"
+    DESC = "desc"
+
+
+def blank_to_none(value: str | None) -> str | None:
+    return (value or "").strip() or None
+
+
+Amount = Annotated[Decimal, Field(ge=0, max_digits=19, decimal_places=4, allow_inf_nan=False)]
+
+
+class ProductQuery(BaseModel):
+    """Query parameters of the product list. Unknown parameters are rejected."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    page: int = Field(1, ge=1, le=2_147_483_647, description="1-based page number.")
+    size: int = Field(20, ge=1, le=100, description="Products per page, at most 100.")
+    search: Annotated[Text | None, AfterValidator(blank_to_none)] = Field(
+        None,
+        max_length=255,
+        description=(
+            "Case-insensitive search. Every whitespace-separated term must occur in the "
+            "SKU, name, or description. Blank means no filter."
+        ),
+    )
+    category: Annotated[Text | None, AfterValidator(blank_to_none)] = Field(
+        None, max_length=100, description="Exact category, case-insensitive. Blank means no filter.",
+    )
+    min_price: Amount | None = Field(None, alias="minPrice", description="Inclusive lower bound on price.amount.")
+    max_price: Amount | None = Field(None, alias="maxPrice", description="Inclusive upper bound on price.amount.")
+    currency: StrictStr | None = Field(
+        None,
+        pattern=r"^[A-Z]{3}$",
+        description="ISO 4217 price currency. Price bounds compare amounts without conversion.",
+    )
+    sort: ProductSort = Field(ProductSort.NAME, description="Sort field. Ties are broken by id.")
+    direction: SortDirection = Field(SortDirection.ASC, description="Sort direction.")
+
+    @field_validator("currency")
+    @classmethod
+    def iso_currency(cls, value: str | None) -> str | None:
+        if value is not None:
+            Currency(value)
+        return value
+
+
+class ProductPage(BaseModel):
+    items: list[ProductResponse]
+    page: int
+    size: int
+    total_items: int = Field(alias="totalItems")
+    total_pages: int = Field(alias="totalPages")
