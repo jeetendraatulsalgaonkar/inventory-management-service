@@ -48,10 +48,11 @@ unset PGPASSWORD
 python3.14 -m venv .venv
 .venv/bin/python -m pip install -r requirements-dev.txt
 
-# Verify: API contract tests, then the full suite against PostgreSQL.
+# Verify: database-independent unit tests, then the full verification against PostgreSQL.
 .venv/bin/python -m pytest -m "not postgres" -q
 INVENTRA_TEST_DATABASE_URL='postgresql+psycopg://inventra_test:inventra_test@127.0.0.1:5432/inventra_test' \
-  .venv/bin/python -m pytest -q -rs
+  .venv/bin/python -m pytest --require-postgres
+echo "exit code: $?"    # 0 only if every test, including every PostgreSQL test, ran and passed
 
 # Run the API. Startup applies migrations and seeds the 115 sample products.
 export DATABASE_URL='postgresql+psycopg://inventra:inventra_dev@127.0.0.1:5432/inventra?connect_timeout=5'
@@ -62,7 +63,12 @@ Then open [Swagger UI](http://localhost:8000/docs). In a new terminal, export `P
 
 ## Startup migrations and sample products
 
-Application startup runs `alembic upgrade head` before accepting requests. Migration failures stop startup. Concurrent application workers serialize startup migrations with a PostgreSQL advisory lock. The database role must have permission to apply schema changes.
+Application startup runs `alembic upgrade head` before accepting requests. The database role must have permission to apply schema changes.
+
+- **Ordering.** No request is answered until the migrations have committed. A single uvicorn process opens its port only after startup. With `--workers` or `--reload`, the parent process holds the port earlier, but requests wait until a worker has finished starting.
+- **Failure.** If a migration fails, the whole upgrade rolls back (all revisions run in one transaction), the process exits with a non-zero status, and the port is never opened. For example, a database with a `products` table that these migrations did not create fails with `relation "products" already exists` and is left unchanged.
+- **Concurrency.** Concurrent application processes serialize startup migrations with a PostgreSQL advisory lock. Exactly one applies them, and the others find the database at head. The migration transaction always runs at READ COMMITTED, even if the database or role defaults to REPEATABLE READ or SERIALIZABLE. With those defaults, a waiting process would not see the migration committed while it waited, and would fail at startup.
+- **Repeated startups** change nothing: existing product IDs, edited values, soft deletions, and removed sample products stay as they are.
 
 Revision `0002` executes `migrations/sql/0002_sample_products.sql`, inserting all 115 sample products (the original 15 plus 100 additional color variants). The SQL uses `ON CONFLICT (sku) DO NOTHING`, preserving existing product data. Alembic records the revision so later starts do not seed again. This seeds every database upgraded to head, including new databases. Downgrading to `0001` preserves seed rows because they may have been edited or referenced; downgrading to base drops the products table.
 
@@ -144,7 +150,7 @@ Invoke-RestMethod http://localhost:8000/api/v1/products/01a1b052-ec7c-76db-a862-
 {"items": [{"id": "01a1b052-ec7d-74d0-bf78-a2852fecfcd6", "sku": "DEMO-MONITOR-001", "...": "..."}], "page": 1, "size": 20, "totalItems": 115, "totalPages": 6}
 ```
 
-`items` use the Get Product representation. A page past the end returns `200` with empty `items` and the real totals. The count and the page are read from one snapshot, so they agree even while products are being created.
+`items` use the Get Product representation. A page past the end returns `200` with empty `items` and the real totals. Within one response, the count and the page are read from one snapshot, so `totalItems`, `totalPages`, and `items` describe the same state even if products are created, changed, or deleted while the request runs.
 
 | Parameter | Default | Rules |
 | --- | --- | --- |
@@ -157,7 +163,18 @@ Invoke-RestMethod http://localhost:8000/api/v1/products/01a1b052-ec7c-76db-a862-
 | `sort` | `name` | `name`, `sku`, `category`, `price`, `createdAt`, or `updatedAt`. |
 | `direction` | `asc` | `asc` or `desc`. |
 
-Sorting is stable: ties are always broken by product `id` in the same direction, so paging through a result never repeats or skips a product while the data is unchanged. This matters for the sample catalog because all 115 seeded products share one `createdAt`. Text sorting follows the database collation. Offset paging can shift by a row if products are created or deleted between page requests.
+Ties in the sort order are always broken by product `id` in the same direction, so the order is total and deterministic. This matters for the sample catalog because all 115 seeded products share one `createdAt`. Text sorting follows the database collation.
+
+Paging uses offsets. Page `n` returns rows `(n - 1) × size + 1` to `n × size` of the ordering as it is when that page is requested. Nothing is kept between requests. This guarantees:
+
+- **Unchanged data:** paging from page 1 to `totalPages` returns every matching product exactly once, in order, and repeating a request returns the same page.
+- **Changes between page requests:** pages can repeat or omit products, by as many positions as there were changes before the current position.
+  - A product that *enters* the part already paged through moves later pages back, so the last product already shown appears again. It may have been created, updated to sort there, or updated to start matching the filters. If an update moved it there, it is not shown at all.
+  - A product that *leaves* the part already paged through moves later pages forward, so the next product is omitted. It may have been soft-deleted, updated to sort later, or updated to stop matching the filters. If an update moved it later, it is shown again.
+  - Changes that affect only later positions do not shift later pages, and neither do updates that change neither the sort key nor filter membership. With `sort=updatedAt`, every update changes the sort key.
+  - `totalItems` and `totalPages` describe the data at each request, so they can change between pages.
+
+A client that needs one complete pass without repeats or omissions must page through while the data does not change. Otherwise it should de-duplicate by `id` and accept that products can be missed. Gap-free paging under concurrent changes would need keyset pagination, which is an API change.
 
 Filters combine with AND. Unknown parameters, such as a misspelled `categroy`, are rejected instead of being ignored. Invalid parameters return **400** `urn:inventra:problem:validation-error` with one `errors` entry per parameter; unexpected failures return a generic **500**.
 
@@ -193,7 +210,7 @@ The unit tests need no database:
 
 - `tests/test_api.py` covers the HTTP contract of create, get, and list through FastAPI's in-process client with stubbed services: success responses and `Location`, every validation rule and its boundary values, malformed JSON, unknown properties, media types, 404/405/409/415/500 problem documents, parameter validation, and the OpenAPI document. It also checks that all three endpoints return the same product representation, including `id`, with exact JSON-number prices and UTC timestamps. Tests compare JSON member sets, not member order.
 - `tests/test_service.py` runs the service layer against an in-memory `FakeSession` (in `tests/conftest.py`): how a create command becomes a stored product, duplicate-SKU translation, not-found handling, and the rules that must hold even without PostgreSQL. These are the soft-delete filter, identical criteria for the count and the page, the `id` tiebreaker, and the REPEATABLE READ snapshot. Statements are compared structurally, not as SQL text. What the filters, search, ordering, and paging actually return is verified against PostgreSQL.
-- `tests/test_startup.py` checks that startup runs the migrations and stops when they fail.
+- `tests/test_startup.py` checks that startup runs the migrations and stops when they fail. Its PostgreSQL tests start the real application (uvicorn in separate processes) against isolated schemas. They cover a fresh database, repeated restarts after products were edited, soft-deleted, or removed, an upgrade from release `0001` that already holds products (including one with a sample SKU), four concurrent startups under each isolation level, that no request is answered while migrations are in progress (one process and `--workers 2`), and failed migrations that roll back without opening the port. A fixture holds the migration lock so that the tests control when startup may proceed.
 
 Run them from the project root after installing `requirements-dev.txt`.
 
@@ -213,15 +230,43 @@ Then run the role setup script as that administrator (replace `postgres` with yo
 psql -h localhost -U postgres -d inventra_test -f tests/init-test-db.sql
 ```
 
-Run all tests against that database:
+### Full verification
+
+Run the complete suite against that database with `--require-postgres`:
 
 ```powershell
 $env:INVENTRA_TEST_DATABASE_URL = 'postgresql+psycopg://inventra_test:inventra_test@localhost:5432/inventra_test'
-.\.venv\Scripts\python.exe -m pytest -q
+.\.venv\Scripts\python.exe -m pytest --require-postgres
+$LASTEXITCODE
 Remove-Item Env:INVENTRA_TEST_DATABASE_URL
 ```
 
-The PostgreSQL tests cover Alembic upgrade, downgrade and re-upgrade, committed rows, exact prices, normalized duplicate rejection, and concurrent inserts. For reads, they cover create-then-get round trips, hiding soft-deleted products, gap-free and duplicate-free paging for every sort field and direction over the seeded catalog, search (including literal `%`, `_` and `\`), category, price and currency filters checked against `data/sample-products.json`, and UTC output under a non-UTC session time zone. Each test migrates a fresh schema and drops only that schema at cleanup. The fixture requires an explicit test URL and a dedicated `inventra_test` database and role. The role has permission to create schemas in that database and has neither superuser nor CREATEDB privileges. Without the test URL, pytest reports the PostgreSQL tests as skipped.
+```bash
+INVENTRA_TEST_DATABASE_URL='postgresql+psycopg://inventra_test:inventra_test@127.0.0.1:5432/inventra_test' \
+  .venv/bin/python -m pytest --require-postgres
+echo $?
+```
+
+This is the command to use when a passing result must mean that the PostgreSQL integration tests ran. A plain `pytest` run still skips them when no test database is configured and still exits 0, as before. Before any test starts, `--require-postgres` checks the configuration, read from the environment or `.env`, and refuses to run if:
+
+- `INVENTRA_TEST_DATABASE_URL` is missing or is not a valid URL;
+- the URL does not use `postgresql+psycopg` with a database and role both named `inventra_test` (an accidentally supplied development URL is rejected here);
+- `DATABASE_URL` also names `inventra_test`;
+- PostgreSQL does not answer within 5 seconds;
+- the server reports a different database or role, the role has SUPERUSER or CREATEDB, or it lacks CREATE on the database;
+- only part of the suite would run: individual tests are selected, tests are deselected with `-k`, `-m`, or `--lf`, or a test module is not collected. Naming the project or the `tests` folder is fine.
+
+After the run, it fails if any test failed, any PostgreSQL test was skipped, no PostgreSQL test ran, or a test schema it created still exists. A summary line reports the outcome.
+
+| Exit code | Meaning |
+| --- | --- |
+| 0 | Every test ran and passed, including every PostgreSQL integration test, and all test schemas were removed. |
+| 1 | A test failed, or the verification was incomplete (skipped PostgreSQL tests or leftover schemas). |
+| 4 | Refused before running: configuration missing, invalid, or unsafe, the database is unreachable, or only part of the suite was selected. |
+
+The verification touches only the test database: each PostgreSQL test creates its own `test_<random>` schema and drops it. `DATABASE_URL` is removed from the test process after the checks, so no test can reach the development database through the application. One test starts the application with uvicorn on a free port, pointed at its test schema, and stops that process itself. A server you have running on port 8000 is not affected.
+
+The PostgreSQL tests cover Alembic upgrade, downgrade and re-upgrade, committed rows, exact prices, normalized duplicate rejection, and concurrent inserts. For reads, they cover create-then-get round trips, hiding soft-deleted products, gap-free and duplicate-free paging over unchanged data for every sort field and direction over the seeded catalog, search (including literal `%`, `_` and `\`), category, price and currency filters checked against `data/sample-products.json`, and UTC output under a non-UTC session time zone. For paging under change, they apply creations, soft deletions, sort-key updates, other updates, and filter-membership changes between page requests. Each resulting page must equal the slice of the current ordering, and the tests check the exact repeat or omission that follows. A commit injected between the count and the page query of one request shows that a response never mixes two states. Each test migrates a fresh schema and drops only that schema at cleanup. The fixture requires an explicit test URL and a dedicated `inventra_test` database and role. The role has permission to create schemas in that database and has neither superuser nor CREATEDB privileges. Without the test URL, a plain pytest run reports the PostgreSQL tests as skipped; `--require-postgres` refuses to run instead.
 
 IDE test runners such as PyCharm do not inherit variables set in a terminal. Instead of setting `INVENTRA_TEST_DATABASE_URL` in each run configuration, you can put it in a `.env` file in the project root. The file is git-ignored, and a variable set in the environment takes precedence:
 
@@ -229,7 +274,7 @@ IDE test runners such as PyCharm do not inherit variables set in a terminal. Ins
 INVENTRA_TEST_DATABASE_URL=postgresql+psycopg://inventra_test:inventra_test@localhost:5432/inventra_test
 ```
 
-Only the tests read `.env`; the application still needs `DATABASE_URL` in its environment. A configured database failure fails the tests.
+Only the tests read `.env`; the application still needs `DATABASE_URL` in its environment. A configured database failure fails the tests. To use the full verification from PyCharm, add `--require-postgres` to the pytest run configuration's *Additional Arguments*, with the project or the `tests` folder as the target.
 
 ## Extension points
 

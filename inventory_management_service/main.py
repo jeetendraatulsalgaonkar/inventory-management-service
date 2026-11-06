@@ -307,7 +307,10 @@ read_problem_responses = problem_docs({
     summary="List products",
     description=(
         "Returns one page of products that are not soft-deleted. Filters combine with AND. "
-        "Sorting is stable: ties are broken by id, so pages neither overlap nor skip products."
+        "Ties in the sort order are broken by id, so the order is deterministic: while the "
+        "data does not change, consecutive pages neither repeat nor omit products. Each page "
+        "is computed when it is requested, so products created, updated, or soft-deleted "
+        "between requests can make later pages repeat or omit products."
     ),
 )
 def get_products(

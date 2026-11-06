@@ -95,7 +95,8 @@ def list_products(session: Session, query: ProductQuery) -> ProductSlice:
         conditions.append(Product.price_currency == query.currency)
 
     column = SORT_COLUMNS[query.sort]
-    # id is unique, so the order is total and pages neither overlap nor skip rows.
+    # id is unique, so the order is total and deterministic. Offsets are applied to the
+    # data as it is at each request; changes between requests can shift later pages.
     if query.direction is SortDirection.DESC:
         order = (column.desc(), Product.id.desc())
     else:
@@ -103,7 +104,7 @@ def list_products(session: Session, query: ProductQuery) -> ProductSlice:
     offset = (query.page - 1) * query.size
 
     with session.begin():
-        # One snapshot for the count and the page keeps the totals consistent.
+        # One snapshot for the count and the page keeps this response's totals consistent.
         session.connection(execution_options={"isolation_level": "REPEATABLE READ"})
         total = session.scalar(select(func.count()).select_from(Product).where(*conditions))
         items = []

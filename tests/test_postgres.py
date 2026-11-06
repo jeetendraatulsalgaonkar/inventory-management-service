@@ -1,12 +1,7 @@
 from concurrent.futures import ThreadPoolExecutor
 from decimal import Decimal
 import json
-import os
 from pathlib import Path
-import socket
-import subprocess
-import sys
-import time
 from threading import Barrier
 from uuid import UUID
 
@@ -14,7 +9,7 @@ import httpx
 import pytest
 from alembic import command
 from fastapi.testclient import TestClient
-from sqlalchemy import create_engine, inspect, select, text
+from sqlalchemy import create_engine, event, inspect, select, text
 from sqlalchemy.orm import Session
 
 from inventory_management_service.db import get_session
@@ -361,47 +356,232 @@ def test_every_seeded_product_is_served_with_its_id(database, client):
         assert (data["id"], data["sku"]) == (product_id, sku)
 
 
-def free_port():
-    with socket.socket() as probe:
-        probe.bind(("127.0.0.1", 0))
-        return probe.getsockname()[1]
-
-
-def test_running_server_serves_ids_and_this_codes_openapi(database):
+def test_running_server_serves_ids_and_this_codes_openapi(database, app_servers):
     """Start the application the way users do (uvicorn in its own process) and call it
     over HTTP. Startup migrations run against the test schema, which is already at head."""
     engine, _ = database
     with engine.connect() as connection:
         schema = connection.scalar(text("SELECT current_schema()"))
     url = engine.url.update_query_dict({"options": f"-csearch_path={schema}"})
-    port = free_port()
-    server = subprocess.Popen(
-        [sys.executable, "-m", "uvicorn", "inventory_management_service.main:app",
-         "--host", "127.0.0.1", "--port", str(port)],
-        cwd=Path(__file__).resolve().parents[1],
-        env={**os.environ, "DATABASE_URL": url.render_as_string(hide_password=False)},
-        stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-    )
-    base = f"http://127.0.0.1:{port}"
+    server = app_servers(url.render_as_string(hide_password=False))
+    server.wait_until_serving()
+    with httpx.Client(base_url=server.base_url, timeout=10) as http:
+        # The process serves the contract of the code under test.
+        assert http.get("/openapi.json").json() == app.openapi()
+        listed = http.get(PRODUCTS, params={"size": 5}).json(parse_float=Decimal)
+        assert listed["totalItems"] == 115
+        for item in listed["items"]:
+            fetched = http.get(f"{PRODUCTS}/{item['id']}")
+            assert fetched.status_code == 200, fetched.text
+            assert fetched.json(parse_float=Decimal) == item
+
+
+# ---------------------------------------------------------------------------
+# Offset pagination while the data changes
+#
+# What offset pagination guarantees: each response is computed afresh as the slice
+# [(page - 1) * size, page * size) of the current ordering of the products that are
+# not soft-deleted, and its totals describe that same state. Between requests nothing
+# is pinned, so changes before the current position make later pages repeat or omit
+# products. These tests pin down both the guarantee and the exact anomalies.
+# ---------------------------------------------------------------------------
+
+NAME_ORDER = "SELECT sku FROM products WHERE deleted_at IS NULL ORDER BY name, id"
+
+
+def name_order(engine):
+    """The current ordering for sort=name, computed independently of the API."""
+    with engine.connect() as connection:
+        return connection.scalars(text(NAME_ORDER)).all()
+
+
+def page_of(client, page, size=10, **params):
+    response = client.get(PRODUCTS, params={"page": page, "size": size, "sort": "name"} | params)
+    assert response.status_code == 200, response.text
+    body = response.json()
+    return skus(body["items"]), body
+
+
+def create_named(client, payload, sku, name):
+    assert client.post(PRODUCTS, json=payload | {"sku": sku, "name": name}).status_code == 201
+
+
+def soft_delete(engine, sku):
+    with engine.begin() as connection:
+        connection.execute(text(
+            "UPDATE products SET status = 'DELETED', deleted_at = updated_at WHERE sku = :sku"
+        ), {"sku": sku})
+
+
+def update(engine, sku, **values):
+    assignments = ", ".join(f"{column} = :{column}" for column in values)
+    with engine.begin() as connection:
+        connection.execute(text(
+            f"UPDATE products SET {assignments}, version = version + 1, "
+            "updated_at = updated_at + interval '1 second' WHERE sku = :sku"
+        ), {"sku": sku, **values})
+
+
+# Each scenario: a change made between the page 1 and page 2 requests (size 10,
+# sort=name), and the page 2 that results, in terms of the original order `o`.
+PAGE_CHANGES = {
+    "create-sorting-before": (
+        lambda engine, client, payload, o: create_named(client, payload, "NEW-1", "000 Early product"),
+        lambda o: [o[9]] + o[10:19],                  # the last item of page 1 repeats
+    ),
+    "three-creates-sorting-before": (
+        lambda engine, client, payload, o: [
+            create_named(client, payload, f"NEW-{n}", f"000 Early product {n}") for n in range(3)
+        ],
+        lambda o: o[7:10] + o[10:17],                 # the shift equals the number of changes
+    ),
+    "create-sorting-after": (
+        lambda engine, client, payload, o: create_named(client, payload, "NEW-1", "zzz Late product"),
+        lambda o: o[10:20],                           # no effect on the next page
+    ),
+    "soft-delete-seen": (
+        lambda engine, client, payload, o: soft_delete(engine, o[0]),
+        lambda o: o[11:21],                           # o[10] is never shown
+    ),
+    "soft-delete-not-yet-seen": (
+        lambda engine, client, payload, o: soft_delete(engine, o[14]),
+        lambda o: o[10:14] + o[15:21],                # it disappears; nothing else is affected
+    ),
+    "update-moves-seen-product-later": (
+        lambda engine, client, payload, o: update(engine, o[0], name="zzz Renamed"),
+        lambda o: o[11:21],                           # o[10] is skipped; o[0] will be shown again
+    ),
+    "update-moves-unseen-product-earlier": (
+        lambda engine, client, payload, o: update(engine, o[12], name="000 Renamed"),
+        lambda o: [o[9]] + o[10:12] + o[13:20],       # o[9] repeats; o[12] is never shown
+    ),
+    "update-without-sort-key-change": (
+        lambda engine, client, payload, o: [
+            update(engine, sku, description="Changed") for sku in (o[0], o[12])
+        ],
+        lambda o: o[10:20],                           # no effect
+    ),
+}
+
+
+@pytest.mark.parametrize("scenario", list(PAGE_CHANGES))
+def test_changes_between_page_requests(database, client, payload, scenario):
+    engine, _ = database
+    change, expected_second_page = PAGE_CHANGES[scenario]
+    original = name_order(engine)
+    first, _ = page_of(client, 1)
+    assert first == original[0:10]
+
+    change(engine, client, payload, original)
+    second, body = page_of(client, 2)
+
+    # The guarantee: the slice of the current ordering, with totals for the current state.
+    current = name_order(engine)
+    assert second == current[10:20]
+    assert (body["totalItems"], body["totalPages"]) == (len(current), -(-len(current) // 10))
+    # The consequence for a client paging through: the exact repeat or omission.
+    assert second == expected_second_page(original)
+
+
+def test_filter_membership_change_between_requests(database, client):
+    """A product that stops matching a filter behaves like a deletion for later pages."""
+    engine, _ = database
+    params = {"maxPrice": "30", "sort": "price", "size": 5}
+    order_sql = ("SELECT sku FROM products WHERE deleted_at IS NULL AND price_amount <= 30 "
+                 "ORDER BY price_amount, id")
+    with engine.connect() as connection:
+        original = connection.scalars(text(order_sql)).all()
+    first = skus(client.get(PRODUCTS, params=params | {"page": 1}).json()["items"])
+    assert first == original[0:5]
+
+    update(engine, original[0], price_amount=Decimal("99"))          # no longer matches maxPrice=30
+    second = client.get(PRODUCTS, params=params | {"page": 2}).json()
+    with engine.connect() as connection:
+        current = connection.scalars(text(order_sql)).all()
+    assert skus(second["items"]) == current[5:10] == original[6:11]  # original[5] is never shown
+    assert second["totalItems"] == len(original) - 1
+
+
+def test_every_page_reflects_the_data_at_request_time(database, client, payload):
+    """Walk all pages while something changes before every request."""
+    engine, _ = database
+    changes = [
+        lambda o: create_named(client, payload, "WALK-1", "000 Walk early"),
+        lambda o: soft_delete(engine, o[3]),
+        lambda o: update(engine, o[40], name="000 Walk renamed"),
+        lambda o: create_named(client, payload, "WALK-2", "zzz Walk late"),
+        lambda o: soft_delete(engine, o[-1]),
+        lambda o: update(engine, o[5], description="Walk"),
+        lambda o: soft_delete(engine, o[60]),
+    ]
+    page, shown = 1, []
+    while True:
+        current = name_order(engine)
+        items, body = page_of(client, page, size=12)
+        assert items == current[(page - 1) * 12:page * 12]
+        assert body["totalItems"] == len(current)
+        assert body["totalPages"] == -(-len(current) // 12)
+        shown += items
+        if page >= body["totalPages"]:
+            break
+        if page <= len(changes):
+            changes[page - 1](name_order(engine))
+        page += 1
+    # Across the walk, products were repeated and omitted, which is why a client that
+    # needs a complete pass must not change the data, or must tolerate both.
+    final = name_order(engine)
+    repeated = {sku for sku in shown if shown.count(sku) > 1}
+    omitted = set(final) - set(shown)
+    assert repeated and omitted
+
+
+# ---------------------------------------------------------------------------
+# Within one request: the count and the page come from one snapshot
+# ---------------------------------------------------------------------------
+
+def commit_before_page_query(engine, change):
+    """Make `change` commit from another connection just before the next page query."""
+    fired = []
+
+    def before_cursor_execute(connection, cursor, statement, parameters, context, executemany):
+        if not fired and "FROM products" in statement and "LIMIT" in statement:
+            fired.append(True)          # set first: the change below also runs statements
+            with engine.begin() as other:
+                change(other)
+
+    event.listen(engine, "before_cursor_execute", before_cursor_execute)
+    return fired, lambda: event.remove(engine, "before_cursor_execute", before_cursor_execute)
+
+
+SNAPSHOT_CHANGES = {
+    "create": lambda connection: connection.execute(text("""
+        INSERT INTO products (id, sku, name, category, price_amount, price_currency, unit_of_measure,
+                              attributes, status, created_at, updated_at)
+        VALUES (gen_random_uuid(), 'RACE-1', '000 Racing product', 'RACE', 1, 'EUR', 'PIECE', '{}',
+                'ACTIVE', now(), now())
+    """)),
+    "soft-delete": lambda connection: connection.execute(text("""
+        UPDATE products SET status = 'DELETED', deleted_at = updated_at
+        WHERE id = (SELECT id FROM products ORDER BY name, id LIMIT 1)
+    """)),
+}
+
+
+@pytest.mark.parametrize("scenario", list(SNAPSHOT_CHANGES))
+def test_count_and_page_come_from_one_snapshot(database, client, scenario):
+    engine, _ = database
+    before = name_order(engine)
+    fired, remove = commit_before_page_query(engine, SNAPSHOT_CHANGES[scenario])
     try:
-        with httpx.Client(base_url=base, timeout=10) as http:
-            deadline = time.monotonic() + 30
-            while True:
-                assert server.poll() is None, server.stdout.read().decode()
-                try:
-                    served_openapi = http.get("/openapi.json").json()
-                    break
-                except httpx.TransportError:
-                    assert time.monotonic() < deadline, "the server did not start within 30 seconds"
-                    time.sleep(0.2)
-            # The process serves the contract of the code under test.
-            assert served_openapi == app.openapi()
-            listed = http.get(PRODUCTS, params={"size": 5}).json(parse_float=Decimal)
-            assert listed["totalItems"] == 115
-            for item in listed["items"]:
-                fetched = http.get(f"{PRODUCTS}/{item['id']}")
-                assert fetched.status_code == 200, fetched.text
-                assert fetched.json(parse_float=Decimal) == item
+        items, body = page_of(client, 2, size=100)
     finally:
-        server.terminate()
-        server.wait(timeout=10)
+        remove()
+    assert fired, "the change was not injected during the request"
+    after = name_order(engine)
+    assert len(after) != len(before)
+    # The change committed between the two queries. The response must describe one state,
+    # either before or after the change, never a count from one and items from the other.
+    assert (body["totalItems"], items) in [(len(before), before[100:200]), (len(after), after[100:200])]
+    assert len(items) == body["totalItems"] - 100
+    # The next request sees the change.
+    assert page_of(client, 2, size=100)[1]["totalItems"] == len(after)
