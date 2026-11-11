@@ -1,6 +1,6 @@
 # Inventory Management Service
 
-Inventory Management Service is a product catalog API built with Python 3.14, FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL 18, and Alembic. It implements **Create Product**, **Get Product by ID**, and **List Products** with search, filters, sorting, and pagination. Python 3.14 supplies the standard-library UUIDv7 generator. The schema uses no PostgreSQL 17/18-specific features; the full test suite also passes on PostgreSQL 16.
+Inventory Management Service is a product catalog API built with Python 3.14, FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL 18, and Alembic. It implements **Create Product**, **Get Product by ID**, **List Products** with search, filters, sorting, and pagination, and **Soft-delete Products**. Python 3.14 supplies the standard-library UUIDv7 generator. The schema uses no PostgreSQL 17/18-specific features; the full test suite also passes on PostgreSQL 16.
 
 ## Run Python directly on Windows
 
@@ -139,7 +139,7 @@ Invoke-RestMethod http://localhost:8000/api/v1/products/01a1b052-ec7c-76db-a862-
 ```
 
 - **200 OK** returns the product.
-- **404 Not Found** uses `urn:inventra:problem:product-not-found` and includes `productId`. Soft-deleted products (`deleted_at` set, status `DELETED`) return the same 404 as products that never existed.
+- **404 Not Found** uses `urn:inventra:problem:product-not-found` and includes `productId`. [Soft-deleted products](#soft-delete-products) (`deleted_at` set, status `DELETED`) return the same 404 as products that never existed.
 - **400 Bad Request** uses `urn:inventra:problem:validation-error` when the ID is not a UUID, with an `errors` entry for `productId`.
 
 ## List products
@@ -204,12 +204,76 @@ $page.items | Format-Table sku, name, @{n='price'; e={$_.price.amount}}
 
 In Swagger UI, expand **GET /api/v1/products**, choose **Try it out**, and fill in the parameters; `sort` and `direction` are drop-down lists.
 
+## Product status
+
+Every product has a `status`. It is stored in the `products.status` column (`varchar(16) NOT NULL`, created by revision `0001`), mapped as `Product.status`, and included in every product representation: the create response, Get a product, and each item of List products.
+
+| Status | Meaning |
+| --- | --- |
+| `ACTIVE` | Every created product starts as `ACTIVE`. |
+| `INACTIVE`, `DISCONTINUED` | Allowed by the database and shown by Get and List. No endpoint sets them yet. |
+| `DELETED` | Set by [soft delete](#soft-delete-products). Get and List never return these products. |
+
+The database accepts only these values (`ck_products_status`) and ties `DELETED` to the deletion time: `status` is `DELETED` exactly when `deleted_at` is set (`ck_products_deleted_state`), and `deleted_at` is never earlier than `created_at` (`ck_products_deleted_at`). `deleted_at` is internal and not part of the API representation.
+
+## Soft-delete products
+
+`DELETE /api/v1/products` marks products as deleted. The JSON body lists their IDs in `productIds`:
+
+```json
+{"productIds": ["01a1b052-ec7c-76db-a862-e0da4baa5110", "01a1b052-ec7d-74d0-bf78-a283a884700e"]}
+```
+
+Nothing is physically deleted. In one transaction, each listed product gets status `DELETED`, `deleted_at` and `updatedAt` set to the deletion time, and `version` incremented; every other column keeps its value. The deletion time is never earlier than the product's previous `updatedAt`, even if another server's clock runs ahead. Afterwards:
+
+- Get a product returns 404 for the product, and List products neither returns nor counts it.
+- Its SKU stays reserved: creating a product with the same SKU returns 409.
+- The row stays in the `products` table.
+
+The request is all or nothing. If any listed product does not exist or is already deleted, nothing is deleted, and the 404 response lists those IDs. As with Get, deleted products and products that never existed are indistinguishable.
+
+```bash
+B=http://localhost:8000/api/v1/products
+# Soft-delete two seeded products (sample IDs are fixed by the seed migration).
+curl -si -X DELETE "$B" -H 'Content-Type: application/json' \
+  -d '{"productIds": ["01a1b052-ec7c-76db-a862-e0da4baa5110", "01a1b052-ec7d-74d0-bf78-a283a884700e"]}'
+# 204 No Content. Reads no longer return them:
+curl -s -o /dev/null -w '%{http_code}\n' "$B/01a1b052-ec7c-76db-a862-e0da4baa5110"    # 404
+curl -s "$B?size=1" | python3 -c 'import json, sys; print(json.load(sys.stdin)["totalItems"])'    # 113 after a fresh seed
+# Repeating the request deletes nothing and reports both IDs (404):
+curl -s -X DELETE "$B" -H 'Content-Type: application/json' \
+  -d '{"productIds": ["01a1b052-ec7c-76db-a862-e0da4baa5110", "01a1b052-ec7d-74d0-bf78-a283a884700e"]}'
+# Without product IDs, the request is rejected (400):
+curl -s -X DELETE "$B" -H 'Content-Type: application/json' -d '{"productIds": []}'
+# The rows are still stored, marked DELETED:
+PGPASSWORD=inventra_dev psql -h 127.0.0.1 -U inventra -d inventra \
+  -c "SELECT sku, status, deleted_at, version FROM products WHERE status = 'DELETED'"
+```
+
+```powershell
+$body = '{"productIds": ["01a1b052-ec7c-76db-a862-e0da4baa5110"]}'
+$result = Invoke-WebRequest -Method Delete -Uri http://localhost:8000/api/v1/products -ContentType application/json -Body $body
+$result.StatusCode    # 204
+```
+
+- **204 No Content**: every listed product is now marked `DELETED`.
+- **400 Bad Request** with `urn:inventra:problem:malformed-request` when the body is missing, JSON `null`, or not a JSON object (a bare array of IDs is not accepted), when `productIds` is `null`, is not an array, or holds a non-string, and for unknown properties.
+- **400 Bad Request** with `urn:inventra:problem:validation-error` when `productIds` is missing or empty, has more than 100 IDs, repeats an ID, or holds a string that is not a UUID. Each `errors` entry names the field, such as `productIds` or `productIds.2`.
+- **404 Not Found** with `urn:inventra:problem:products-not-found`: `productIds` lists the IDs that do not exist or are already deleted, in request order. Nothing was deleted.
+- **415 Unsupported Media Type** when a body is sent without a JSON media type. Unexpected failures return a generic **500**.
+
+IDs accept the same spellings as the Get path: any letter case, with or without hyphens, in braces, or with a `urn:uuid:` prefix. A request holds at most 100 IDs, the size of the largest list page; delete larger sets in several requests.
+
+Concurrent requests that list the same product delete it once: one succeeds, and the other returns 404 for that product and deletes nothing. Rows are locked in id order, so such requests cannot deadlock. A request that waits for another transaction's lock on a listed product sees that transaction's outcome even if the database defaults to REPEATABLE READ or SERIALIZABLE, because the deletion always runs at READ COMMITTED.
+
+Some HTTP clients and proxies do not forward a DELETE body; such a request fails with 400. In Swagger UI, expand **DELETE /api/v1/products**, choose **Try it out**, and replace the example ID with IDs from the list endpoint.
+
 ## Test
 
 The unit tests need no database:
 
-- `tests/test_api.py` covers the HTTP contract of create, get, and list through FastAPI's in-process client with stubbed services: success responses and `Location`, every validation rule and its boundary values, malformed JSON, unknown properties, media types, 404/405/409/415/500 problem documents, parameter validation, and the OpenAPI document. It also checks that all three endpoints return the same product representation, including `id`, with exact JSON-number prices and UTC timestamps. Tests compare JSON member sets, not member order.
-- `tests/test_service.py` runs the service layer against an in-memory `FakeSession` (in `tests/conftest.py`): how a create command becomes a stored product, duplicate-SKU translation, not-found handling, and the rules that must hold even without PostgreSQL. These are the soft-delete filter, identical criteria for the count and the page, the `id` tiebreaker, and the REPEATABLE READ snapshot. Statements are compared structurally, not as SQL text. What the filters, search, ordering, and paging actually return is verified against PostgreSQL.
+- `tests/test_api.py` covers the HTTP contract of create, get, list, and soft delete through FastAPI's in-process client with stubbed services: success responses and `Location`, every validation rule and its boundary values, malformed JSON, unknown properties, media types, 404/405/409/415/500 problem documents, parameter validation, and the OpenAPI document. It also checks that all three read and create endpoints return the same product representation, including `id` and `status`, with exact JSON-number prices and UTC timestamps. For soft delete, it covers the 204 response, missing and `null` bodies, missing, `null`, empty, oversized, and repeated ID lists, invalid IDs, and the 404 that lists every missing ID, and it runs the real service on a `FakeSession` end to end. Tests compare JSON member sets, not member order.
+- `tests/test_service.py` runs the service layer against an in-memory `FakeSession` (in `tests/conftest.py`): how a create command becomes a stored product, duplicate-SKU translation, not-found handling, and the rules that must hold even without PostgreSQL. These are the soft-delete filter, identical criteria for the count and the page, the `id` tiebreaker, and the REPEATABLE READ snapshot. For soft deletion, they check all or nothing with missing IDs reported in request order, the fields it changes and keeps, one deletion time per request that never precedes a product's previous `updated_at`, the READ COMMITTED transaction, and the row-lock query in id order. Statements are compared structurally, not as SQL text. What the filters, search, ordering, and paging actually return is verified against PostgreSQL.
 - `tests/test_startup.py` checks that startup runs the migrations and stops when they fail. Its PostgreSQL tests start the real application (uvicorn in separate processes) against isolated schemas. They cover a fresh database, repeated restarts after products were edited, soft-deleted, or removed, an upgrade from release `0001` that already holds products (including one with a sample SKU), four concurrent startups under each isolation level, that no request is answered while migrations are in progress (one process and `--workers 2`), and failed migrations that roll back without opening the port. A fixture holds the migration lock so that the tests control when startup may proceed.
 
 Run them from the project root after installing `requirements-dev.txt`.
@@ -266,7 +330,7 @@ After the run, it fails if any test failed, any PostgreSQL test was skipped, no 
 
 The verification touches only the test database: each PostgreSQL test creates its own `test_<random>` schema and drops it. `DATABASE_URL` is removed from the test process after the checks, so no test can reach the development database through the application. One test starts the application with uvicorn on a free port, pointed at its test schema, and stops that process itself. A server you have running on port 8000 is not affected.
 
-The PostgreSQL tests cover Alembic upgrade, downgrade and re-upgrade, committed rows, exact prices, normalized duplicate rejection, and concurrent inserts. For reads, they cover create-then-get round trips, hiding soft-deleted products, gap-free and duplicate-free paging over unchanged data for every sort field and direction over the seeded catalog, search (including literal `%`, `_` and `\`), category, price and currency filters checked against `data/sample-products.json`, and UTC output under a non-UTC session time zone. For paging under change, they apply creations, soft deletions, sort-key updates, other updates, and filter-membership changes between page requests. Each resulting page must equal the slice of the current ordering, and the tests check the exact repeat or omission that follows. A commit injected between the count and the page query of one request shows that a response never mixes two states. Each test migrates a fresh schema and drops only that schema at cleanup. The fixture requires an explicit test URL and a dedicated `inventra_test` database and role. The role has permission to create schemas in that database and has neither superuser nor CREATEDB privileges. Without the test URL, a plain pytest run reports the PostgreSQL tests as skipped; `--require-postgres` refuses to run instead.
+The PostgreSQL tests cover Alembic upgrade, downgrade and re-upgrade, committed rows, exact prices, normalized duplicate rejection, and concurrent inserts. For reads, they cover create-then-get round trips, hiding soft-deleted products, gap-free and duplicate-free paging over unchanged data for every sort field and direction over the seeded catalog, search (including literal `%`, `_` and `\`), category, price and currency filters checked against `data/sample-products.json`, and UTC output under a non-UTC session time zone. For soft delete, they check that deleted rows stay stored with only `status`, `deleted_at`, `updated_at`, and `version` changed, that Get and List hide them, that a request with an unknown or already deleted ID and a request without product IDs leave every row unchanged, that SKUs stay reserved, that rows written by a server whose clock runs ahead can be deleted, that Get and List show each stored status, that concurrent requests delete a product once, that a request waiting for a locked product reports it as not found if it was deleted meanwhile, at every default isolation level, and that DELETE works over HTTP against uvicorn. For paging under change, they apply creations, soft deletions, sort-key updates, other updates, and filter-membership changes between page requests. Each resulting page must equal the slice of the current ordering, and the tests check the exact repeat or omission that follows. A commit injected between the count and the page query of one request shows that a response never mixes two states. Each test migrates a fresh schema and drops only that schema at cleanup. The fixture requires an explicit test URL and a dedicated `inventra_test` database and role. The role has permission to create schemas in that database and has neither superuser nor CREATEDB privileges. Without the test URL, a plain pytest run reports the PostgreSQL tests as skipped; `--require-postgres` refuses to run instead.
 
 IDE test runners such as PyCharm do not inherit variables set in a terminal. Instead of setting `INVENTRA_TEST_DATABASE_URL` in each run configuration, you can put it in a `.env` file in the project root. The file is git-ignored, and a variable set in the environment takes precedence:
 
@@ -276,11 +340,30 @@ INVENTRA_TEST_DATABASE_URL=postgresql+psycopg://inventra_test:inventra_test@loca
 
 Only the tests read `.env`; the application still needs `DATABASE_URL` in its environment. A configured database failure fails the tests. To use the full verification from PyCharm, add `--require-postgres` to the pytest run configuration's *Additional Arguments*, with the project or the `tests` folder as the target.
 
+### Coverage
+
+`requirements-dev.txt` includes pytest-cov. Add `--cov` to the full verification to measure line and branch coverage of the `inventory_management_service` package. `.coveragerc` configures the measurement and fails the run with exit code 1 unless total coverage is more than 95%:
+
+```powershell
+$env:INVENTRA_TEST_DATABASE_URL = 'postgresql+psycopg://inventra_test:inventra_test@localhost:5432/inventra_test'
+.\.venv\Scripts\python.exe -m pytest --require-postgres --cov
+$LASTEXITCODE
+Remove-Item Env:INVENTRA_TEST_DATABASE_URL
+```
+
+```bash
+INVENTRA_TEST_DATABASE_URL='postgresql+psycopg://inventra_test:inventra_test@127.0.0.1:5432/inventra_test' \
+  .venv/bin/python -m pytest --require-postgres --cov
+echo $?
+```
+
+The report lists the lines and branches that no test ran. The full suite currently covers about 99%, and the unit tests alone (`pytest -m "not postgres" --cov`) about 97%. Coverage is measured in the pytest process only, so the engine and session factory in `db.py`, which run in the uvicorn processes that some tests start, are reported as missed. A partial run, such as a single test file, covers less and can fail the threshold. For an HTML report as well, add `--cov-report=term --cov-report=html` and open `htmlcov/index.html`.
+
 ## Extension points
 
 - **Read indexes.** The list queries do not add indexes; the sample catalog is small, and each list request counts all matching rows. For large catalogs, add a new Alembic revision with partial indexes `WHERE deleted_at IS NULL` on the sort keys plus `id`, for example `(name, id)`, and on `lower(category)`. Substring search needs a `pg_trgm` GIN index to avoid sequential scans. For deep paging, consider keyset (cursor) pagination on the same `(sort key, id)` order.
 - **Update** can reuse the mapped version column for stale-write detection. Define the request and concurrency contract when implementing the route.
-- **Soft delete** can use the nullable `deleted_at` column and the existing status consistency checks. Retain the SKU reservation. Get and List already exclude rows with `deleted_at` set.
-- **Bulk create and bulk delete** can use separate request schemas and service operations. The current service owns the single-create transaction. Extract transaction-neutral insertion logic before implementing atomic batches.
+- **Restore** of soft-deleted products would clear `deleted_at` and set a non-deleted status in one update, as `ck_products_deleted_state` requires. Their SKUs are still reserved, so restoring cannot create duplicates.
+- **Bulk create** can use a separate request schema and service operation, as soft delete does for several products. The current service owns the single-create transaction. Extract transaction-neutral insertion logic before implementing atomic batches.
 
-The registered product operations are POST, GET by ID, and GET list. The project separates HTTP handling and Pydantic schemas (`main.py`, `schemas.py`) from the transactions and queries (`service.py`) and the ORM model.
+The registered product operations are POST, GET by ID, GET list, and DELETE (soft delete). The project separates HTTP handling and Pydantic schemas (`main.py`, `schemas.py`) from the transactions and queries (`service.py`) and the ORM model.

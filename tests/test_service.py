@@ -4,13 +4,16 @@ The services run against FakeSession (see conftest.py), which records every call
 Statements are inspected structurally with SQLAlchemy's ClauseElement.compare(),
 which ignores SQL formatting and parameter naming. Only rules that must hold even
 when PostgreSQL is unavailable are checked here: the soft-delete filter, identical
-criteria for the count and the page, the id tiebreaker, and the snapshot. What the
-SQL actually returns (search, case-insensitive category, price bounds, paging, and
-ordering) is verified against PostgreSQL in test_postgres.py.
+criteria for the count and the page, the id tiebreaker, and the snapshot. For soft
+deletion: all or nothing, the state each product is left in, its timestamps, and the
+locking query. What the SQL actually returns (search, case-insensitive category,
+price bounds, paging, and ordering) and how deletions behave under concurrency are
+verified against PostgreSQL in test_postgres.py.
 """
 
 import re
-from datetime import UTC, datetime
+import time
+from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from types import SimpleNamespace
 from uuid import uuid7
@@ -25,10 +28,12 @@ from inventory_management_service.schemas import CreateProduct, ProductQuery
 from inventory_management_service.service import (
     DuplicateSku,
     ProductNotFound,
+    ProductsNotFound,
     ProductSlice,
     create_product,
     get_product,
     list_products,
+    soft_delete_products,
 )
 
 SORT_COLUMNS = {
@@ -54,7 +59,7 @@ def has_criterion(statement, expected):
 def order_keys(statement):
     """ORDER BY as [(column, direction)]. Select has no public accessor for it."""
     sql = str(statement.compile(dialect=postgresql.dialect()))
-    clause = re.search(r"ORDER BY (.*?)(?: LIMIT| OFFSET|$)", sql, re.S).group(1)
+    clause = re.search(r"ORDER BY (.*?)(?: LIMIT| OFFSET| FOR UPDATE|$)", sql, re.S).group(1)
     return [tuple(key.split()) for key in clause.split(",")]
 
 
@@ -221,3 +226,116 @@ def test_list_breaks_ties_by_id_in_the_sort_direction(fake_session, sort, direct
     assert order_keys(fake_session.statements[1]) == [
         (f"products.{SORT_COLUMNS[sort]}", keyword), ("products.id", keyword),
     ]
+
+
+# ---------------------------------------------------------------------------
+# soft_delete_products
+# ---------------------------------------------------------------------------
+
+CREATED = datetime(2025, 3, 1, 12, 0, tzinfo=UTC)
+
+
+def active_product(**changes) -> Product:
+    """A stored product that is not deleted, as the locking query returns it."""
+    values = dict(
+        id=uuid7(), sku="LAP-DELL-1", status="ACTIVE", created_at=CREATED,
+        updated_at=CREATED + timedelta(days=1), deleted_at=None, version=3,
+    )
+    return Product(**values | changes)
+
+
+def run_delete(fake_session, requested, found):
+    """Soft-delete the `requested` IDs while the locking query returns the `found` rows."""
+    fake_session.results.append(found)
+    return soft_delete_products(fake_session, requested)
+
+
+def test_delete_marks_every_product_deleted_in_one_transaction(fake_session):
+    products = [active_product(), active_product(status="INACTIVE"), active_product(status="DISCONTINUED")]
+    before = datetime.now(UTC)
+    run_delete(fake_session, [product.id for product in products], products)
+    after = datetime.now(UTC)
+
+    kinds = [event[0] for event in fake_session.events]
+    assert kinds.count("begin") == 1
+    assert kinds[-1] == "commit"
+    # Only the status and the timestamps change: rows are kept, not removed.
+    for product in products:
+        assert product.status == "DELETED"
+        assert before <= product.deleted_at <= after
+        assert product.updated_at == product.deleted_at
+        assert product.created_at == CREATED
+        assert product.version == 3                     # left to the mapper, which increments it on flush
+    # One deletion time for the whole batch.
+    assert len({product.deleted_at for product in products}) == 1
+
+
+def test_delete_locks_the_requested_products_that_are_not_deleted(fake_session):
+    ids = [uuid7(), uuid7()]
+    run_delete(fake_session, ids, [active_product(id=product_id) for product_id in ids])
+    (statement,) = fake_session.statements
+    assert has_criterion(statement, Product.id.in_(ids))
+    assert not has_criterion(statement, Product.id.in_(ids[:1]))
+    assert has_criterion(statement, NOT_DELETED)
+    # Locking in id order keeps concurrent requests with overlapping IDs free of deadlocks.
+    assert order_keys(statement) == [("products.id",)]
+    assert str(statement.compile(dialect=postgresql.dialect())).endswith(" FOR UPDATE")
+
+
+def test_delete_runs_at_read_committed(fake_session):
+    product = active_product()
+    run_delete(fake_session, [product.id], [product])
+    kinds = [event[0] for event in fake_session.events]
+    # Chosen before the first query, when it can still apply to the transaction.
+    assert ("connection", {"isolation_level": "READ COMMITTED"}) in fake_session.events[:kinds.index("scalars")]
+
+
+@pytest.mark.parametrize("found", [[], [1], [0, 2]], ids=["none-found", "one-found", "two-found"])
+def test_delete_with_missing_products_changes_nothing(fake_session, found):
+    # The query skips deleted rows, so missing and already deleted products look alike.
+    products = [active_product() for _ in range(3)]
+    with pytest.raises(ProductsNotFound) as raised:
+        run_delete(fake_session, [product.id for product in products], [products[index] for index in found])
+    # Every missing ID is reported, in request order.
+    assert raised.value.product_ids == [product.id for index, product in enumerate(products) if index not in found]
+    assert ("commit",) not in fake_session.events
+    for product in products:
+        assert (product.status, product.deleted_at, product.updated_at) == ("ACTIVE", None, CREATED + timedelta(days=1))
+
+
+def test_delete_reports_missing_ids_in_request_order(fake_session):
+    first, second, third = uuid7(), uuid7(), uuid7()
+    with pytest.raises(ProductsNotFound) as raised:
+        run_delete(fake_session, [third, first, second], [active_product(id=first)])
+    assert raised.value.product_ids == [third, second]
+
+
+def test_delete_never_moves_updated_at_backwards(fake_session):
+    # Another server whose clock runs ahead last wrote this row "in the future".
+    future = datetime.now(UTC) + timedelta(hours=1)
+    ahead, current = active_product(updated_at=future), active_product()
+    before = datetime.now(UTC)
+    run_delete(fake_session, [ahead.id, current.id], [ahead, current])
+    assert ahead.deleted_at == ahead.updated_at == future
+    assert before <= current.deleted_at == current.updated_at <= datetime.now(UTC)
+
+
+def test_delete_time_is_taken_after_the_rows_are_locked(fake_session):
+    product = active_product()
+    locked = []
+
+    def rows():
+        # The lock can wait for concurrent transactions; the deletion time must follow it.
+        time.sleep(0.002)
+        locked.append(datetime.now(UTC))
+        yield product
+
+    run_delete(fake_session, [product.id], rows())
+    assert product.deleted_at >= locked[0]
+
+
+def test_delete_propagates_database_failures(fake_session):
+    product = active_product()
+    fake_session.commit_error = OperationalError("UPDATE", {}, Exception("server closed the connection"))
+    with pytest.raises(OperationalError):
+        run_delete(fake_session, [product.id], [product])

@@ -20,6 +20,13 @@ class ProductNotFound(Exception):
         self.product_id = product_id
 
 
+class ProductsNotFound(Exception):
+    """Products of a batch that do not exist or are already deleted, in request order."""
+
+    def __init__(self, product_ids: list[UUID]):
+        self.product_ids = product_ids
+
+
 @dataclass(frozen=True)
 class ProductSlice:
     items: list[Product]
@@ -113,3 +120,40 @@ def list_products(session: Session, query: ProductQuery) -> ProductSlice:
                 select(Product).where(*conditions).order_by(*order).offset(offset).limit(query.size)
             ))
     return ProductSlice(items, total)
+
+
+def soft_delete_products(session: Session, product_ids: list[UUID]) -> None:
+    """Mark every listed product as deleted in one transaction: all of them or none.
+
+    The rows stay stored. Each gets status DELETED and deleted_at, which
+    ck_products_deleted_state requires together, so Get and List stop returning it
+    while its SKU stays reserved. If any listed product does not exist or is already
+    deleted, nothing changes and ProductsNotFound lists every such ID.
+    """
+    with session.begin():
+        # READ COMMITTED whatever the database or role default: a request that waits
+        # for a row that a concurrent request deletes then finds it deleted (404)
+        # instead of failing with a serialization error.
+        session.connection(execution_options={"isolation_level": "READ COMMITTED"})
+        # Lock the rows in id order, so concurrent requests with overlapping IDs
+        # cannot deadlock.
+        products = list(session.scalars(
+            select(Product)
+            .where(Product.id.in_(product_ids), Product.deleted_at.is_(None))
+            .order_by(Product.id)
+            .with_for_update()
+        ))
+        found = {product.id for product in products}
+        missing = [product_id for product_id in product_ids if product_id not in found]
+        if missing:
+            # Raising inside the transaction rolls it back and releases the locks.
+            raise ProductsNotFound(missing)
+        timestamp = datetime.now(UTC)
+        for product in products:
+            # Never move updated_at backwards, even if another server's clock was ahead
+            # when it last wrote the row. This also keeps deleted_at >= created_at.
+            deleted_at = max(timestamp, product.updated_at)
+            product.status = "DELETED"
+            product.deleted_at = deleted_at
+            product.updated_at = deleted_at
+        # The commit flushes one UPDATE per product, and the mapper increments version.

@@ -91,6 +91,36 @@ class CreateProduct(BaseModel):
         return stripped.upper()
 
 
+MAX_DELETE_BATCH = 100
+
+
+class DeleteProducts(BaseModel):
+    """Body of the soft-delete request: the IDs of the products to mark as deleted."""
+
+    model_config = ConfigDict(extra="forbid", loc_by_alias=True)
+
+    product_ids: list[UUID] = Field(
+        alias="productIds",
+        min_length=1,
+        max_length=MAX_DELETE_BATCH,
+        description=f"IDs of the products to soft-delete: 1 to {MAX_DELETE_BATCH}, each at most once.",
+        json_schema_extra={"uniqueItems": True},
+    )
+
+    @field_validator("product_ids")
+    @classmethod
+    def distinct(cls, value: list[UUID]) -> list[UUID]:
+        # Compare parsed UUIDs, so different spellings of one ID also count as a repeat.
+        seen, repeated = set(), []
+        for product_id in value:
+            if product_id in seen and product_id not in repeated:
+                repeated.append(product_id)
+            seen.add(product_id)
+        if repeated:
+            raise ValueError("must not repeat a product ID: " + ", ".join(map(str, repeated)))
+        return value
+
+
 class ProductResponse(CreateProduct):
     id: UUID
     # Create always returns ACTIVE. Reads can also return the other non-deleted

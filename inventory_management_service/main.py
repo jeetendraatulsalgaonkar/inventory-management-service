@@ -10,7 +10,7 @@ from uuid import UUID
 import simplejson
 from fastapi import Depends, FastAPI, Path, Query, Request, Response
 from fastapi.exceptions import RequestValidationError
-from pydantic import TypeAdapter, ValidationError
+from pydantic import BaseModel, TypeAdapter, ValidationError
 from sqlalchemy.orm import Session
 from starlette.exceptions import HTTPException
 from starlette.responses import JSONResponse
@@ -19,13 +19,21 @@ from starlette.concurrency import run_in_threadpool
 from inventory_management_service.db import get_session
 from inventory_management_service.migration import run_migrations
 from inventory_management_service.models import Product
-from inventory_management_service.schemas import CreateProduct, ProductPage, ProductQuery, ProductResponse
+from inventory_management_service.schemas import (
+    CreateProduct,
+    DeleteProducts,
+    ProductPage,
+    ProductQuery,
+    ProductResponse,
+)
 from inventory_management_service.service import (
     DuplicateSku,
     ProductNotFound,
+    ProductsNotFound,
     create_product,
     get_product,
     list_products,
+    soft_delete_products,
 )
 
 @asynccontextmanager
@@ -92,10 +100,22 @@ async def not_found(request, error):
     )
 
 
+@app.exception_handler(ProductsNotFound)
+async def products_not_found(request, error):
+    # Like Get, this does not distinguish deleted products from ones that never existed.
+    return problem(
+        request, 404,
+        f"{len(error.product_ids)} requested product(s) do not exist or are already deleted. "
+        "No product was deleted.",
+        kind="products-not-found", title="Products not found",
+        productIds=[str(product_id) for product_id in error.product_ids],
+    )
+
+
 @app.exception_handler(RequestValidationError)
 async def invalid_parameters(request, error):
-    # Only path and query parameters reach FastAPI validation; parse_product
-    # validates the create body itself. Report them like invalid body fields.
+    # Only path and query parameters reach FastAPI validation; parse_body validates
+    # request bodies itself. Report them like invalid body fields.
     violations = sorted(
         (
             {
@@ -127,13 +147,15 @@ def reject_constant(token):
     raise ValueError("Non-finite JSON number")
 
 
-async def parse_product(request: Request) -> CreateProduct:
+async def parse_body[Model: BaseModel](request: Request, model: type[Model], content: str) -> Model:
+    """Validate a JSON object body. A missing body, JSON null, or any other non-object
+    is malformed. ``content`` names what the client sends, for the 415 detail."""
     body = await request.body()
     media = request.headers.get("content-type", "").partition(";")[0].strip().lower()
     if body and media != "application/json" and not (
         media.startswith("application/") and media.endswith("+json")
     ):
-        raise HTTPException(415, "Send the product as JSON.")
+        raise HTTPException(415, f"Send the {content} as JSON.")
     try:
         payload = json.loads(body, parse_float=Decimal, parse_constant=reject_constant)
     except (ValueError, RecursionError, InvalidOperation) as error:
@@ -141,7 +163,7 @@ async def parse_product(request: Request) -> CreateProduct:
     if not isinstance(payload, dict):
         raise InvalidBody()
     try:
-        return CreateProduct.model_validate(payload)
+        return model.model_validate(payload)
     except ValidationError as error:
         errors = error.errors(include_input=False, include_context=False, include_url=False)
         violations = [
@@ -160,6 +182,14 @@ async def parse_product(request: Request) -> CreateProduct:
             for item in errors
         )
         raise InvalidBody(violations, malformed) from error
+
+
+async def parse_product(request: Request) -> CreateProduct:
+    return await parse_body(request, CreateProduct, "product")
+
+
+async def parse_product_ids(request: Request) -> DeleteProducts:
+    return await parse_body(request, DeleteProducts, "product IDs")
 
 
 def problem_docs(descriptions, **extensions):
@@ -343,6 +373,44 @@ def get_product_by_id(
     session: Annotated[Session, Depends(get_session)],
 ):
     return json_response(product_data(get_product(session, product_id)))
+
+
+delete_request_schema = DeleteProducts.model_json_schema(ref_template="#/components/schemas/{model}")
+
+
+@app.delete(
+    PRODUCTS,
+    status_code=204,
+    responses={
+        204: {"description": "Every listed product was marked as deleted"},
+        **problem_docs({400: "Missing or null body, no product IDs, or another invalid request"}),
+        **problem_docs(
+            {404: "A listed product does not exist or is already deleted. Nothing was deleted."},
+            productIds={"type": "array", "items": {"type": "string", "format": "uuid"}},
+        ),
+        **problem_docs({415: "Unsupported media type", 500: "Unexpected server error"}),
+    },
+    openapi_extra={
+        "requestBody": {
+            "required": True,
+            "content": {"application/json": {"schema": delete_request_schema}},
+        }
+    },
+    tags=["Products"],
+    summary="Soft-delete products",
+    description=(
+        "Marks every listed product as deleted: its status becomes DELETED. The products stay "
+        "stored, but Get and List no longer return them, and their SKUs stay reserved. The "
+        "request is atomic: if any listed product does not exist or is already deleted, "
+        "nothing is deleted and the 404 response lists those IDs in productIds."
+    ),
+)
+def delete_products(
+    command: Annotated[DeleteProducts, Depends(parse_product_ids)],
+    session: Annotated[Session, Depends(get_session)],
+):
+    soft_delete_products(session, command.product_ids)
+    return Response(status_code=204)
 
 
 default_openapi = app.openapi

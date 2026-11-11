@@ -3,7 +3,8 @@ from decimal import Decimal
 import json
 from pathlib import Path
 from threading import Barrier
-from uuid import UUID
+import time
+from uuid import UUID, uuid7
 
 import httpx
 import pytest
@@ -585,3 +586,286 @@ def test_count_and_page_come_from_one_snapshot(database, client, scenario):
     assert len(items) == body["totalItems"] - 100
     # The next request sees the change.
     assert page_of(client, 2, size=100)[1]["totalItems"] == len(after)
+
+
+# ---------------------------------------------------------------------------
+# Soft-delete Products
+# ---------------------------------------------------------------------------
+
+def delete_ids(client, product_ids):
+    return client.request("DELETE", PRODUCTS, json={"productIds": [str(product_id) for product_id in product_ids]})
+
+
+def ids_of(engine, *sku_list):
+    """The stored ids of the given SKUs, in the same order."""
+    with engine.connect() as connection:
+        stored = dict(connection.execute(
+            text("SELECT sku, id FROM products WHERE sku = ANY(:skus)"), {"skus": list(sku_list)},
+        ).all())
+    return [stored[sku] for sku in sku_list]
+
+
+def rows_by_id(engine):
+    """Every stored product row, complete, keyed by id."""
+    with engine.connect() as connection:
+        return {row.id: row._asdict() for row in connection.execute(text("SELECT * FROM products"))}
+
+
+CHANGED_BY_DELETE = {"status", "deleted_at", "updated_at", "version"}
+
+
+def test_delete_marks_products_deleted_and_keeps_them_stored(database, client):
+    engine, _ = database
+    laptop, mouse = ids_of(engine, "DEMO-LAPTOP-001", "DEMO-MOUSE-001")
+    before = rows_by_id(engine)
+
+    response = delete_ids(client, [mouse, laptop])
+    assert response.status_code == 204, response.text
+    assert response.content == b""
+
+    after = rows_by_id(engine)
+    assert after.keys() == before.keys()                  # no row was physically deleted
+    for product_id in (laptop, mouse):
+        old, new = before[product_id], after[product_id]
+        assert new["status"] == "DELETED"
+        assert new["deleted_at"] == new["updated_at"] > old["updated_at"]
+        assert new["version"] == old["version"] + 1
+        assert {key: new[key] for key in new.keys() - CHANGED_BY_DELETE} == \
+            {key: old[key] for key in old.keys() - CHANGED_BY_DELETE}
+    assert after[laptop]["deleted_at"] == after[mouse]["deleted_at"]   # one time for the batch
+    others = before.keys() - {laptop, mouse}
+    assert {key: after[key] for key in others} == {key: before[key] for key in others}
+
+    # Get and List no longer return the deleted products.
+    for product_id in (laptop, mouse):
+        missing = client.get(f"{PRODUCTS}/{product_id}")
+        assert missing.status_code == 404
+        assert missing.json()["type"] == "urn:inventra:problem:product-not-found"
+    items, envelope = get_all(client, size=100)
+    assert envelope["totalItems"] == len(items) == 113
+    assert {"DEMO-LAPTOP-001", "DEMO-MOUSE-001"}.isdisjoint(skus(items))
+
+
+def test_created_product_can_be_deleted(database, client, payload):
+    engine, _ = database
+    created = client.post(PRODUCTS, json=payload)
+    assert created.status_code == 201, created.text
+    assert delete_ids(client, [created.json()["id"]]).status_code == 204
+    assert client.get(created.headers["location"]).status_code == 404
+    with engine.connect() as connection:
+        row = connection.execute(text("SELECT * FROM products WHERE sku = 'LAP-DELL-1'")).one()
+    assert (row.status, row.version) == ("DELETED", 1)
+    assert row.deleted_at == row.updated_at >= row.created_at
+
+
+@pytest.mark.parametrize("absent", ["never-existed", "already-deleted"])
+def test_delete_is_all_or_nothing(database, client, absent):
+    engine, _ = database
+    laptop, mouse, keyboard = ids_of(engine, "DEMO-LAPTOP-001", "DEMO-MOUSE-001", "DEMO-KEYBOARD-001")
+    if absent == "already-deleted":
+        assert delete_ids(client, [keyboard]).status_code == 204
+        gone = keyboard
+    else:
+        gone = uuid7()
+    before = rows_by_id(engine)
+
+    response = delete_ids(client, [laptop, gone, mouse])
+    assert response.status_code == 404, response.text
+    assert response.headers["content-type"] == "application/problem+json"
+    body = response.json()
+    assert body["type"] == "urn:inventra:problem:products-not-found"
+    assert body["productIds"] == [str(gone)]
+    # Nothing changed, not even the listed products that exist.
+    assert rows_by_id(engine) == before
+    assert [client.get(f"{PRODUCTS}/{product_id}").status_code for product_id in (laptop, mouse)] == [200, 200]
+
+
+def test_deleting_a_deleted_product_again_is_not_found(database, client):
+    engine, _ = database
+    (laptop,) = ids_of(engine, "DEMO-LAPTOP-001")
+    assert delete_ids(client, [laptop]).status_code == 204
+    deleted = rows_by_id(engine)
+    again = delete_ids(client, [laptop])
+    assert again.status_code == 404
+    assert again.json()["productIds"] == [str(laptop)]
+    assert rows_by_id(engine) == deleted        # the first deletion's time and version are kept
+
+
+@pytest.mark.parametrize(("raw", "kind"), [
+    ("", "malformed-request"),
+    ("null", "malformed-request"),
+    ("{}", "validation-error"),
+    ('{"productIds": []}', "validation-error"),
+    ('{"productIds": null}', "malformed-request"),
+], ids=["no-body", "null-body", "no-productIds", "empty-productIds", "null-productIds"])
+def test_delete_without_product_ids_is_a_bad_request(database, client, raw, kind):
+    engine, _ = database
+    before = rows_by_id(engine)
+    response = client.request("DELETE", PRODUCTS, content=raw, headers={"Content-Type": "application/json"})
+    assert response.status_code == 400, response.text
+    assert response.json()["type"] == f"urn:inventra:problem:{kind}"
+    assert rows_by_id(engine) == before
+
+
+def test_delete_of_a_row_written_by_a_clock_that_runs_ahead(database, client):
+    """Another server whose clock runs ahead created the row. Deleting it at this server's
+    earlier time would violate ck_products_deleted_at and ck_products_timestamps."""
+    engine, _ = database
+    with engine.begin() as connection:
+        laptop, future = connection.execute(text("""
+            UPDATE products SET created_at = now() + interval '1 hour', updated_at = now() + interval '1 hour'
+            WHERE sku = 'DEMO-LAPTOP-001' RETURNING id, updated_at
+        """)).one()
+    assert delete_ids(client, [laptop]).status_code == 204
+    row = rows_by_id(engine)[laptop]
+    assert (row["status"], row["deleted_at"], row["updated_at"]) == ("DELETED", future, future)
+
+
+def test_deleted_products_keep_their_sku(database, client, payload):
+    engine, _ = database
+    (laptop,) = ids_of(engine, "DEMO-LAPTOP-001")
+    assert delete_ids(client, [laptop]).status_code == 204
+    conflict = client.post(PRODUCTS, json=payload | {"sku": "demo-laptop-001"})
+    assert conflict.status_code == 409
+    assert conflict.json()["sku"] == "DEMO-LAPTOP-001"
+
+
+def test_reads_show_the_stored_status_until_a_product_is_deleted(database, client):
+    engine, _ = database
+    with engine.begin() as connection:
+        connection.execute(text("UPDATE products SET status = 'INACTIVE' WHERE sku = 'DEMO-MOUSE-001'"))
+        connection.execute(text("UPDATE products SET status = 'DISCONTINUED' WHERE sku = 'DEMO-KEYBOARD-001'"))
+    expected = {"DEMO-LAPTOP-001": "ACTIVE", "DEMO-MOUSE-001": "INACTIVE", "DEMO-KEYBOARD-001": "DISCONTINUED"}
+    ids = dict(zip(expected, ids_of(engine, *expected)))
+
+    for sku, status in expected.items():
+        assert client.get(f"{PRODUCTS}/{ids[sku]}").json()["status"] == status
+    items, _ = get_all(client, size=100)
+    shown = {item["sku"]: item["status"] for item in items}
+    assert {sku: shown[sku] for sku in expected} == expected
+    assert {status for sku, status in shown.items() if sku not in expected} == {"ACTIVE"}
+
+    # Products with any status that is not DELETED can be soft-deleted.
+    assert delete_ids(client, list(ids.values())).status_code == 204
+    with engine.connect() as connection:
+        stored = dict(connection.execute(text(
+            "SELECT sku, status FROM products WHERE sku = ANY(:skus)"), {"skus": list(expected)},
+        ).all())
+    assert stored == dict.fromkeys(expected, "DELETED")
+    items, envelope = get_all(client, size=100)
+    assert envelope["totalItems"] == 112 and set(expected).isdisjoint(skus(items))
+
+
+def test_concurrent_overlapping_deletes_have_one_winner(database, client):
+    engine, _ = database
+    laptop, mouse, keyboard = ids_of(engine, "DEMO-LAPTOP-001", "DEMO-MOUSE-001", "DEMO-KEYBOARD-001")
+    barrier = Barrier(2)
+
+    def delete(product_ids):
+        barrier.wait(timeout=10)
+        return delete_ids(client, product_ids)
+
+    # Both requests list the mouse, in different positions.
+    requests = [[laptop, mouse], [mouse, keyboard]]
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        responses = list(executor.map(delete, requests))
+    assert sorted(response.status_code for response in responses) == [204, 404]
+    winner = next(ids for ids, response in zip(requests, responses) if response.status_code == 204)
+    loser = next(response for response in responses if response.status_code == 404)
+    assert loser.json()["productIds"] == [str(mouse)]
+    with engine.connect() as connection:
+        deleted = set(connection.scalars(text("SELECT id FROM products WHERE status = 'DELETED'")))
+    assert deleted == set(winner)               # the losing request deleted nothing
+
+
+def wait_until_waiting_for_a_lock(engine, application_name, timeout=30):
+    deadline = time.monotonic() + timeout
+    while True:
+        # A new transaction per check: pg_stat_activity stays fixed within one.
+        with engine.connect() as connection:
+            waiting = connection.scalar(text("""
+                SELECT count(*) FROM pg_stat_activity
+                WHERE application_name = :name AND wait_event_type = 'Lock'
+            """), {"name": application_name})
+        if waiting:
+            return
+        assert time.monotonic() < deadline, "the delete request did not wait for the row lock"
+        time.sleep(0.05)
+
+
+@pytest.mark.parametrize("isolation", [None, "repeatable read", "serializable"],
+                         ids=["server-default", "repeatable-read", "serializable"])
+@pytest.mark.parametrize("other_transaction", ["deletes-it", "rolls-back"])
+def test_delete_waits_for_a_locked_product(database, client, isolation, other_transaction):
+    """Another transaction holds the row lock of one listed product. The request waits for
+    it and then sees its outcome. A product deleted meanwhile is reported as not found
+    (never a 500 serialization failure), whatever the default isolation level."""
+    engine, _ = database
+    laptop, mouse = ids_of(engine, "DEMO-LAPTOP-001", "DEMO-MOUSE-001")
+    with engine.connect() as connection:
+        schema = connection.scalar(text("SELECT current_schema()"))
+    settings = [f"search_path={schema}"] + ([f"default_transaction_isolation={isolation}"] if isolation else [])
+    name = "inventra-delete-waiter"
+    waiter = create_engine(engine.url, connect_args={
+        "options": " ".join("-c" + setting.replace(" ", "\\ ") for setting in settings),
+        "application_name": name,
+    })
+
+    def session():
+        with Session(waiter, expire_on_commit=False) as value:
+            yield value
+
+    app.dependency_overrides[get_session] = session
+    try:
+        # The connection closes first on any failure, releasing the lock the request waits for.
+        with ThreadPoolExecutor(max_workers=1) as executor, engine.connect() as other:
+            other.execute(text("SELECT id FROM products WHERE id = :id FOR UPDATE"), {"id": mouse})
+            pending = executor.submit(delete_ids, client, [mouse, laptop])
+            wait_until_waiting_for_a_lock(engine, name)
+            if other_transaction == "deletes-it":
+                other.execute(text(
+                    "UPDATE products SET status = 'DELETED', deleted_at = updated_at WHERE id = :id"
+                ), {"id": mouse})
+                other.commit()
+            else:
+                other.rollback()
+            response = pending.result(timeout=30)
+    finally:
+        waiter.dispose()
+
+    rows = rows_by_id(engine)
+    states = [(rows[product_id]["status"], rows[product_id]["version"]) for product_id in (laptop, mouse)]
+    if other_transaction == "deletes-it":
+        assert response.status_code == 404, response.text
+        assert response.json()["productIds"] == [str(mouse)]
+        # The request changed neither product; the other transaction did not bump the version.
+        assert states == [("ACTIVE", 0), ("DELETED", 0)]
+    else:
+        assert response.status_code == 204, response.text
+        assert states == [("DELETED", 1), ("DELETED", 1)]
+
+
+def test_running_server_soft_deletes_over_http(database, app_servers):
+    """The DELETE body travels over a real socket to uvicorn, as it does for users."""
+    engine, _ = database
+    with engine.connect() as connection:
+        schema = connection.scalar(text("SELECT current_schema()"))
+    url = engine.url.update_query_dict({"options": f"-csearch_path={schema}"})
+    server = app_servers(url.render_as_string(hide_password=False))
+    server.wait_until_serving()
+    with httpx.Client(base_url=server.base_url, timeout=10) as http:
+        listed = http.get(PRODUCTS, params={"size": 2}).json()["items"]
+        assert [item["status"] for item in listed] == ["ACTIVE", "ACTIVE"]
+        ids = [item["id"] for item in listed]
+        deleted = http.request("DELETE", PRODUCTS, json={"productIds": ids})
+        assert deleted.status_code == 204, deleted.text
+        assert [http.get(f"{PRODUCTS}/{product_id}").status_code for product_id in ids] == [404, 404]
+        assert http.get(PRODUCTS, params={"size": 1}).json()["totalItems"] == 113
+        assert http.request("DELETE", PRODUCTS).status_code == 400          # no body
+        again = http.request("DELETE", PRODUCTS, json={"productIds": ids})
+        assert (again.status_code, again.json()["productIds"]) == (404, ids)
+    with engine.connect() as connection:
+        stored = connection.execute(text(
+            "SELECT status, deleted_at IS NOT NULL FROM products WHERE id = ANY(:ids)"
+        ), {"ids": [UUID(product_id) for product_id in ids]}).all()
+    assert stored == [("DELETED", True)] * 2

@@ -3,8 +3,8 @@
 The session dependency is replaced, and the service functions are stubbed where
 main.py looks them up. These tests pin down status codes, headers, the product
 representation, validation rules, and problem documents for Create Product, Get
-Product by ID, and List Products. The service logic is unit tested in
-test_service.py, and test_postgres.py runs the whole stack against PostgreSQL.
+Product by ID, List Products, and Soft-delete Products. The service logic is unit
+tested in test_service.py, and test_postgres.py runs the whole stack against PostgreSQL.
 """
 
 import json
@@ -20,8 +20,8 @@ from fastapi.testclient import TestClient
 from inventory_management_service.db import get_session
 from inventory_management_service.main import PRODUCTS, app
 from inventory_management_service.models import Product
-from inventory_management_service.schemas import ProductSort, SortDirection, Unit
-from inventory_management_service.service import DuplicateSku, ProductNotFound, ProductSlice
+from inventory_management_service.schemas import MAX_DELETE_BATCH, ProductSort, SortDirection, Unit
+from inventory_management_service.service import DuplicateSku, ProductNotFound, ProductsNotFound, ProductSlice
 
 PROBLEM_MEDIA = "application/problem+json"
 SEEDED_ID = "01a1b052-ec7c-76db-a862-e0da4baa5110"
@@ -80,15 +80,17 @@ class ServiceStub:
 
 @pytest.fixture
 def services(monkeypatch):
-    """Stub the three product services with realistic default results."""
+    """Stub the four product services with realistic default results."""
     stubs = SimpleNamespace(
         create=ServiceStub(lambda command: stored_product(sku=command.sku)),
         get=ServiceStub(lambda product_id: stored_product(id=product_id)),
         list=ServiceStub(ProductSlice([], 0)),
+        delete=ServiceStub(None),
     )
     monkeypatch.setattr("inventory_management_service.main.create_product", stubs.create)
     monkeypatch.setattr("inventory_management_service.main.get_product", stubs.get)
     monkeypatch.setattr("inventory_management_service.main.list_products", stubs.list)
+    monkeypatch.setattr("inventory_management_service.main.soft_delete_products", stubs.delete)
     return stubs
 
 
@@ -411,7 +413,7 @@ def test_create_unexpected_failure_is_generic_and_logged(client, payload, servic
     assert [str(error) for error in logged] == ["connection to 10.0.0.5 failed: password=secret"]
 
 
-@pytest.mark.parametrize("method", ["PUT", "PATCH", "DELETE"])
+@pytest.mark.parametrize("method", ["PUT", "PATCH"])
 def test_unsupported_methods_on_the_collection(client, method):
     assert_problem(client.request(method, PRODUCTS), 405)
 
@@ -635,6 +637,209 @@ def test_list_unexpected_failure_is_generic(client, services):
 
 
 # ---------------------------------------------------------------------------
+# Soft-delete Products
+# ---------------------------------------------------------------------------
+
+OTHER_ID = "01a1b052-ec7d-74d0-bf78-a283a884700e"
+
+
+def delete_ids(client, product_ids):
+    """DELETE the collection with {"productIds": product_ids} as the JSON body."""
+    return client.request("DELETE", PRODUCTS, json={"productIds": product_ids})
+
+
+def delete_raw(client, raw, content_type="application/json"):
+    """DELETE the collection with an exact request body, bypassing client-side JSON encoding."""
+    headers = {"Content-Type": content_type} if content_type is not None else {}
+    return client.request("DELETE", PRODUCTS, content=raw, headers=headers)
+
+
+def test_delete_returns_no_content(client, services):
+    response = delete_ids(client, [SEEDED_ID, OTHER_ID])
+    assert response.status_code == 204, response.text
+    assert response.content == b""
+    assert "content-type" not in response.headers
+    # The service receives parsed UUIDs, in request order.
+    assert services.delete.calls == [[UUID(SEEDED_ID), UUID(OTHER_ID)]]
+
+
+def test_delete_accepts_uuid_spellings(client, services):
+    ids = [uuid7() for _ in range(4)]
+    spellings = [str(ids[0]).upper(), ids[1].hex, "{" + str(ids[2]) + "}", "urn:uuid:" + str(ids[3])]
+    assert delete_ids(client, spellings).status_code == 204
+    assert services.delete.calls == [ids]
+
+
+@pytest.mark.parametrize("count", [1, 2, MAX_DELETE_BATCH])
+def test_delete_accepts_one_to_the_maximum_number_of_ids(client, services, count):
+    ids = [uuid7() for _ in range(count)]
+    assert delete_ids(client, [str(product_id) for product_id in ids]).status_code == 204
+    assert services.delete.calls == [ids]
+
+
+@pytest.mark.parametrize("content_type", [
+    "application/json; charset=utf-8", "APPLICATION/JSON", "application/vnd.inventra.delete+json",
+])
+def test_delete_accepts_json_media_types(client, services, content_type):
+    raw = json.dumps({"productIds": [SEEDED_ID]})
+    assert delete_raw(client, raw, content_type).status_code == 204
+    assert services.delete.calls == [[UUID(SEEDED_ID)]]
+
+
+@pytest.mark.parametrize(("raw", "content_type"), [
+    ("", None),                                 # no body at all
+    ("", "application/json"),                   # JSON declared, but no body
+    ("null", "application/json"),               # a JSON null body
+    (" null\n", "application/json"),
+], ids=["no-body", "empty-json-body", "null", "null-with-whitespace"])
+def test_delete_rejects_a_missing_or_null_body(client, services, raw, content_type):
+    body = assert_problem(delete_raw(client, raw, content_type), 400, "malformed-request")
+    assert body["title"] == "Malformed request body"
+    assert body["detail"] == "The request body is missing or has invalid JSON fields or types."
+    assert body["instance"] == PRODUCTS
+    assert services.delete.calls == []
+
+
+@pytest.mark.parametrize(("document", "message"), [
+    ({}, "Field required"),
+    ({"productIds": []}, "List should have at least 1 item after validation, not 0"),
+], ids=["no-productIds", "empty-productIds"])
+def test_delete_rejects_a_request_without_product_ids(client, services, document, message):
+    body = assert_problem(client.request("DELETE", PRODUCTS, json=document), 400, "validation-error")
+    assert body["errors"] == [{"field": "productIds", "message": message}]
+    assert body["detail"] == "The request contains 1 invalid field(s)."
+    assert services.delete.calls == []
+
+
+@pytest.mark.parametrize("raw", [
+    "   ", "{", '{"productIds": }', "[]", f'["{SEEDED_ID}"]', '"product"', "42", "true",
+    '{"productIds": NaN}', b'{"productIds": ["\xff"]}',
+], ids=lambda raw: repr(raw)[:24])
+def test_delete_rejects_malformed_json(client, services, raw):
+    # The body must be an object with productIds; a bare array of IDs is malformed.
+    assert_problem(delete_raw(client, raw), 400, "malformed-request")
+    assert services.delete.calls == []
+
+
+@pytest.mark.parametrize(("document", "field"), [
+    ({"productIds": None}, "productIds"),
+    ({"productIds": SEEDED_ID}, "productIds"),              # one ID instead of a list
+    ({"productIds": {"id": SEEDED_ID}}, "productIds"),
+    ({"productIds": [1]}, "productIds.0"),
+    ({"productIds": [SEEDED_ID, None]}, "productIds.1"),
+    ({"productIds": [[SEEDED_ID]]}, "productIds.0"),
+    # Unknown properties, including misspelled ones.
+    ({"productIds": [SEEDED_ID], "force": True}, "force"),
+    ({"product_ids": [SEEDED_ID]}, "product_ids"),
+    ({"ids": [SEEDED_ID]}, "ids"),
+])
+def test_delete_rejects_wrong_types_and_unknown_properties(client, services, document, field):
+    body = assert_problem(client.request("DELETE", PRODUCTS, json=document), 400, "malformed-request")
+    assert field in error_fields(body)
+    assert services.delete.calls == []
+
+
+@pytest.mark.parametrize(("ids", "field"), [
+    (["not-a-uuid"], "productIds.0"),
+    ([""], "productIds.0"),
+    ([SEEDED_ID, SEEDED_ID[:-1]], "productIds.1"),
+    ([SEEDED_ID + "0"], "productIds.0"),
+    (["g" * 32], "productIds.0"),
+])
+def test_delete_rejects_invalid_ids(client, services, ids, field):
+    body = assert_problem(delete_ids(client, ids), 400, "validation-error")
+    assert error_fields(body) == [field]
+    assert services.delete.calls == []
+
+
+def test_delete_reports_every_invalid_id(client, services):
+    body = assert_problem(delete_ids(client, ["x", SEEDED_ID, "y"]), 400, "validation-error")
+    assert error_fields(body) == ["productIds.0", "productIds.2"]
+    assert body["detail"] == "The request contains 2 invalid field(s)."
+
+
+def test_delete_rejects_more_than_the_maximum_number_of_ids(client, services):
+    ids = [str(uuid7()) for _ in range(MAX_DELETE_BATCH + 1)]
+    body = assert_problem(delete_ids(client, ids), 400, "validation-error")
+    assert body["errors"] == [{
+        "field": "productIds",
+        "message": f"List should have at most {MAX_DELETE_BATCH} items after validation, not {MAX_DELETE_BATCH + 1}",
+    }]
+    assert services.delete.calls == []
+
+
+@pytest.mark.parametrize("repeat", [SEEDED_ID, SEEDED_ID.upper(), "urn:uuid:" + SEEDED_ID])
+def test_delete_rejects_repeated_ids(client, services, repeat):
+    # Any spelling of an ID that is already listed is a repeat.
+    body = assert_problem(delete_ids(client, [SEEDED_ID, OTHER_ID, repeat]), 400, "validation-error")
+    assert body["errors"] == [{"field": "productIds", "message": f"must not repeat a product ID: {SEEDED_ID}"}]
+    assert services.delete.calls == []
+
+
+def test_delete_names_each_repeated_id_once(client, services):
+    body = assert_problem(
+        delete_ids(client, [SEEDED_ID, OTHER_ID, SEEDED_ID, OTHER_ID, SEEDED_ID]), 400, "validation-error",
+    )
+    assert body["errors"] == [
+        {"field": "productIds", "message": f"must not repeat a product ID: {SEEDED_ID}, {OTHER_ID}"},
+    ]
+
+
+@pytest.mark.parametrize("content_type", [
+    "text/plain", "application/xml", "application/x-www-form-urlencoded", "multipart/form-data", None,
+])
+def test_delete_rejects_non_json_media_types(client, services, content_type):
+    body = assert_problem(delete_raw(client, json.dumps({"productIds": [SEEDED_ID]}), content_type), 415)
+    assert body["title"] == "Unsupported Media Type"
+    assert body["detail"] == "Send the product IDs as JSON."
+    assert services.delete.calls == []
+
+
+def test_delete_not_found_lists_every_missing_id(client, services):
+    missing = [uuid7(), uuid7()]
+    services.delete.error = ProductsNotFound(missing)
+    response = delete_ids(client, [SEEDED_ID, *map(str, missing)])
+    assert assert_problem(response, 404, "products-not-found") == {
+        "type": "urn:inventra:problem:products-not-found",
+        "title": "Products not found",
+        "status": 404,
+        "detail": "2 requested product(s) do not exist or are already deleted. No product was deleted.",
+        "instance": PRODUCTS,
+        "productIds": [str(product_id) for product_id in missing],
+    }
+
+
+def test_delete_unexpected_failure_is_generic(client, services):
+    services.delete.error = RuntimeError("connection lost: secret details")
+    response = delete_ids(client, [SEEDED_ID])
+    assert assert_problem(response, 500)["detail"] == "An unexpected error occurred."
+    assert "secret" not in response.text
+
+
+def test_delete_marks_products_deleted_end_to_end(client, fake_session):
+    """Run the real soft-delete service on a fake session: request to stored state, no stubs."""
+    products = [stored_product(sku="A-1"), stored_product(sku="B-2")]
+    fake_session.results.append(sorted(products, key=lambda product: product.id))  # the locked rows
+    app.dependency_overrides[get_session] = lambda: fake_session
+    response = delete_ids(client, [str(product.id) for product in reversed(products)])
+    assert response.status_code == 204, response.text
+    assert ("commit",) in fake_session.events
+    for product in products:
+        assert product.status == "DELETED"
+        assert product.deleted_at == product.updated_at > product.created_at
+
+
+def test_delete_with_a_missing_product_changes_nothing_end_to_end(client, fake_session):
+    present, missing = stored_product(), uuid7()
+    fake_session.results.append([present])      # the lookup finds only one of the two
+    app.dependency_overrides[get_session] = lambda: fake_session
+    body = assert_problem(delete_ids(client, [str(missing), str(present.id)]), 404, "products-not-found")
+    assert body["productIds"] == [str(missing)]
+    assert ("commit",) not in fake_session.events
+    assert (present.status, present.deleted_at, present.updated_at) == ("ACTIVE", None, present.created_at)
+
+
+# ---------------------------------------------------------------------------
 # One product representation across create, get, and list
 # ---------------------------------------------------------------------------
 
@@ -678,6 +883,14 @@ def test_every_endpoint_returns_the_same_representation(client, services, payloa
     assert create == get == listed
 
 
+@pytest.mark.parametrize("endpoint", ["get", "list"])
+@pytest.mark.parametrize("status", ["ACTIVE", "INACTIVE", "DISCONTINUED"])
+def test_reads_show_the_product_status(client, services, payload, endpoint, status):
+    # Both GET operations show the stored status of every product they return.
+    data = represent(client, services, payload, endpoint, stored_product(status=status))
+    assert data["status"] == status
+
+
 @pytest.mark.parametrize("endpoint", ENDPOINTS)
 @pytest.mark.parametrize(("stored", "emitted"), [
     ("249.0000", "249"), ("0.0000", "0"), ("24.9000", "24.9"), ("0.0001", "0.0001"),
@@ -710,7 +923,7 @@ def test_timestamps_are_utc(client, services, payload, endpoint):
 
 def test_openapi(client):
     schema = client.get("/openapi.json").json()
-    assert set(schema["paths"][PRODUCTS]) == {"get", "post"}
+    assert set(schema["paths"][PRODUCTS]) == {"get", "post", "delete"}
     operation = schema["paths"][PRODUCTS]["post"]
     assert set(operation["responses"]) == {"201", "400", "409", "415", "500"}
     assert operation["requestBody"]["required"]
@@ -748,3 +961,19 @@ def test_openapi_read_operations(client):
     assert "HTTPValidationError" not in components
     assert components["ProductResponse"]["properties"]["price"] == {"$ref": "#/components/schemas/PriceResponse"}
     assert set(components["ProductPage"]["required"]) == {"items", "page", "size", "totalItems", "totalPages"}
+
+
+def test_openapi_delete_operation(client):
+    operation = client.get("/openapi.json").json()["paths"][PRODUCTS]["delete"]
+    assert set(operation["responses"]) == {"204", "400", "404", "415", "500"}
+    assert "content" not in operation["responses"]["204"]
+    for code in ("400", "404", "415", "500"):
+        assert "application/problem+json" in operation["responses"][code]["content"]
+    not_found = operation["responses"]["404"]["content"]["application/problem+json"]["schema"]
+    assert not_found["properties"]["productIds"] == {"type": "array", "items": {"type": "string", "format": "uuid"}}
+    assert operation["requestBody"]["required"]
+    body = operation["requestBody"]["content"]["application/json"]["schema"]
+    assert (body["required"], body["additionalProperties"]) == (["productIds"], False)
+    ids = body["properties"]["productIds"]
+    assert (ids["type"], ids["minItems"], ids["maxItems"], ids["uniqueItems"]) == ("array", 1, MAX_DELETE_BATCH, True)
+    assert ids["items"] == {"type": "string", "format": "uuid"}
