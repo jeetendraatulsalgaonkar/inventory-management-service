@@ -4,3 +4,8 @@ __pycache__/
 .env
 .coverage
 htmlcov/
+/.coveragerc
+/data/add-product.json
+/tmp/full-suite-coverage.log
+/tmp/full-suite-results.xml
+/inventory-management-service.tar.gz
