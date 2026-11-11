@@ -231,16 +231,21 @@ def pytest_terminal_summary(terminalreporter, exitstatus):
 class FakeSession:
     """In-memory stand-in for the SQLAlchemy Session used by the service layer.
 
-    It supports the calls the services make (begin, add, connection, scalar, and
-    scalars), records them in ``events`` in call order, and returns queued
-    ``results``. This lets unit tests check service logic and the statements it
-    issues without PostgreSQL.
+    It supports the calls the services make (begin, add, add_all, connection, scalar,
+    scalars, and COPY through the driver cursor of ``connection()``), records them in
+    ``events`` in call order, and returns queued ``results``; a queued exception is
+    raised instead. ``copied`` holds the rows of every COPY whose transaction committed. This lets unit
+    tests check service logic and the statements it issues without PostgreSQL.
+    ``commit_error`` fails the next commit only, as a failed transaction does; later
+    transactions of the session commit normally.
     """
 
     def __init__(self, *results):
         self.results = list(results)
         self.events = []
         self.added = []
+        self.copied = []
+        self.pending_rows = []          # copied in the current transaction, not yet committed
         self.commit_error = None
         self.in_transaction = False
 
@@ -252,7 +257,10 @@ class FakeSession:
         try:
             yield self
             if self.commit_error is not None:
-                raise self.commit_error
+                error, self.commit_error = self.commit_error, None
+                self.events.append(("rollback",))
+                raise error
+            self.copied += self.pending_rows
             # A real flush assigns the initial optimistic-locking version.
             for instance in self.added:
                 if instance.version is None:
@@ -260,25 +268,46 @@ class FakeSession:
             self.events.append(("commit",))
         finally:
             self.in_transaction = False
+            self.pending_rows = []
 
     def add(self, instance):
         assert self.in_transaction, "add() must run inside a transaction"
         self.added.append(instance)
         self.events.append(("add", instance))
 
+    def add_all(self, instances):
+        for instance in instances:
+            self.add(instance)
+
     def connection(self, execution_options=None):
         assert self.in_transaction, "connection() must run inside a transaction"
         self.events.append(("connection", execution_options or {}))
+        # session.connection().connection.cursor() is the driver cursor.
+        return SimpleNamespace(connection=SimpleNamespace(cursor=lambda: SimpleNamespace(copy=self.copy)))
+
+    @contextmanager
+    def copy(self, statement):
+        assert self.in_transaction, "COPY must run inside a transaction"
+        rows = []
+        yield SimpleNamespace(write_row=lambda row: rows.append(tuple(row)))
+        self.pending_rows += rows
+        self.events.append(("copy", statement, rows))
+
+    def next_result(self):
+        result = self.results.pop(0)
+        if isinstance(result, Exception):
+            raise result                # a queued exception makes the query fail
+        return result
 
     def scalar(self, statement):
         assert self.in_transaction, "queries must run inside a transaction"
         self.events.append(("scalar", statement))
-        return self.results.pop(0)
+        return self.next_result()
 
     def scalars(self, statement):
         assert self.in_transaction, "queries must run inside a transaction"
         self.events.append(("scalars", statement))
-        return iter(self.results.pop(0))
+        return iter(self.next_result())
 
     @property
     def statements(self):

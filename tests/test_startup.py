@@ -122,11 +122,13 @@ def test_restarts_preserve_products_and_never_reseed(blank_database, app_servers
     engine = blank_database.engine
     first = app_servers(blank_database.app_url())
     first.wait_until_serving()
-    created = httpx.post(f"{first.base_url}{PRODUCTS}", timeout=10, json={
+    created = httpx.post(f"{first.base_url}{PRODUCTS}", timeout=10, json=[{
         "sku": "user-1", "name": "User product", "category": "TOOLS",
         "price": {"amount": "12.3400", "currency": "EUR"}, "unitOfMeasure": "PIECE", "attributes": {},
-    })
+    }])
     assert created.status_code == 201, created.text
+    ((user_product_id, user_product_sku),) = [(item["id"], item["sku"]) for item in created.json()]
+    assert user_product_sku == "USER-1"
     first.stop()
 
     # Edits made while the application was down: an edited sample, a soft-deleted
@@ -159,7 +161,7 @@ def test_restarts_preserve_products_and_never_reseed(blank_database, app_servers
     edited = httpx.get(f"{server.base_url}{PRODUCTS}/{SEEDS['DEMO-LAPTOP-001']}", timeout=10).json()
     assert (edited["name"], edited["price"]["amount"], edited["version"]) == ("Edited laptop", 1.2345, 4)
     assert httpx.get(f"{server.base_url}{PRODUCTS}/{SEEDS['DEMO-MOUSE-001']}", timeout=10).status_code == 404
-    assert httpx.get(created.headers["location"].replace(first.base_url, server.base_url), timeout=10).status_code == 200
+    assert httpx.get(f"{server.base_url}{PRODUCTS}/{user_product_id}", timeout=10).status_code == 200
 
 
 @pytest.mark.postgres

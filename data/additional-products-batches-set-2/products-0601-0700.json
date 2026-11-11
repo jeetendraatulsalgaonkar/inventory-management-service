@@ -1,0 +1,1602 @@
+[
+  {
+    "sku": "EXTRA2-07-01-01",
+    "name": "Black Precision Screwdriver Set - Standard",
+    "description": "Standard precision screwdriver set in black for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 25.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-02",
+    "name": "White Precision Screwdriver Set - Standard",
+    "description": "Standard precision screwdriver set in white for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 26.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-03",
+    "name": "Navy Precision Screwdriver Set - Standard",
+    "description": "Standard precision screwdriver set in navy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 27.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-04",
+    "name": "Teal Precision Screwdriver Set - Standard",
+    "description": "Standard precision screwdriver set in teal for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 28.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-05",
+    "name": "Grey Precision Screwdriver Set - Standard",
+    "description": "Standard precision screwdriver set in grey for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 29.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-06",
+    "name": "Burgundy Precision Screwdriver Set - Standard",
+    "description": "Standard precision screwdriver set in burgundy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 30,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-07",
+    "name": "Blue Precision Screwdriver Set - Standard",
+    "description": "Standard precision screwdriver set in blue for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 30.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-08",
+    "name": "Sand Precision Screwdriver Set - Standard",
+    "description": "Standard precision screwdriver set in sand for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 31.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-09",
+    "name": "Yellow Precision Screwdriver Set - Standard",
+    "description": "Standard precision screwdriver set in yellow for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 32.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-10",
+    "name": "Lavender Precision Screwdriver Set - Standard",
+    "description": "Standard precision screwdriver set in lavender for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 33.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-11",
+    "name": "Black Precision Screwdriver Set - Deluxe",
+    "description": "Deluxe precision screwdriver set in black for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 34.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-12",
+    "name": "White Precision Screwdriver Set - Deluxe",
+    "description": "Deluxe precision screwdriver set in white for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 35.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-13",
+    "name": "Navy Precision Screwdriver Set - Deluxe",
+    "description": "Deluxe precision screwdriver set in navy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 36.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-14",
+    "name": "Teal Precision Screwdriver Set - Deluxe",
+    "description": "Deluxe precision screwdriver set in teal for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 37.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-15",
+    "name": "Grey Precision Screwdriver Set - Deluxe",
+    "description": "Deluxe precision screwdriver set in grey for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 38.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-16",
+    "name": "Burgundy Precision Screwdriver Set - Deluxe",
+    "description": "Deluxe precision screwdriver set in burgundy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 39.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-17",
+    "name": "Blue Precision Screwdriver Set - Deluxe",
+    "description": "Deluxe precision screwdriver set in blue for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 40.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-18",
+    "name": "Sand Precision Screwdriver Set - Deluxe",
+    "description": "Deluxe precision screwdriver set in sand for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 41.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-19",
+    "name": "Yellow Precision Screwdriver Set - Deluxe",
+    "description": "Deluxe precision screwdriver set in yellow for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 42.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-01-20",
+    "name": "Lavender Precision Screwdriver Set - Deluxe",
+    "description": "Deluxe precision screwdriver set in lavender for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 43.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-01",
+    "name": "Black Tape Measure - Standard",
+    "description": "Standard tape measure in black for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 28.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-02",
+    "name": "White Tape Measure - Standard",
+    "description": "Standard tape measure in white for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 29.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-03",
+    "name": "Navy Tape Measure - Standard",
+    "description": "Standard tape measure in navy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 30.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-04",
+    "name": "Teal Tape Measure - Standard",
+    "description": "Standard tape measure in teal for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 31.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-05",
+    "name": "Grey Tape Measure - Standard",
+    "description": "Standard tape measure in grey for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 32.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-06",
+    "name": "Burgundy Tape Measure - Standard",
+    "description": "Standard tape measure in burgundy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 33.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-07",
+    "name": "Blue Tape Measure - Standard",
+    "description": "Standard tape measure in blue for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 34.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-08",
+    "name": "Sand Tape Measure - Standard",
+    "description": "Standard tape measure in sand for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 35.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-09",
+    "name": "Yellow Tape Measure - Standard",
+    "description": "Standard tape measure in yellow for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 36.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-10",
+    "name": "Lavender Tape Measure - Standard",
+    "description": "Standard tape measure in lavender for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 37.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-11",
+    "name": "Black Tape Measure - Deluxe",
+    "description": "Deluxe tape measure in black for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 38,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-12",
+    "name": "White Tape Measure - Deluxe",
+    "description": "Deluxe tape measure in white for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 38.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-13",
+    "name": "Navy Tape Measure - Deluxe",
+    "description": "Deluxe tape measure in navy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 39.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-14",
+    "name": "Teal Tape Measure - Deluxe",
+    "description": "Deluxe tape measure in teal for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 40.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-15",
+    "name": "Grey Tape Measure - Deluxe",
+    "description": "Deluxe tape measure in grey for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 41.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-16",
+    "name": "Burgundy Tape Measure - Deluxe",
+    "description": "Deluxe tape measure in burgundy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 42.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-17",
+    "name": "Blue Tape Measure - Deluxe",
+    "description": "Deluxe tape measure in blue for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 43.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-18",
+    "name": "Sand Tape Measure - Deluxe",
+    "description": "Deluxe tape measure in sand for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 44.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-19",
+    "name": "Yellow Tape Measure - Deluxe",
+    "description": "Deluxe tape measure in yellow for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 45.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-02-20",
+    "name": "Lavender Tape Measure - Deluxe",
+    "description": "Deluxe tape measure in lavender for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 46.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-01",
+    "name": "Black Utility Knife - Standard",
+    "description": "Standard utility knife in black for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 31.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-02",
+    "name": "White Utility Knife - Standard",
+    "description": "Standard utility knife in white for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 32.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-03",
+    "name": "Navy Utility Knife - Standard",
+    "description": "Standard utility knife in navy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 33.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-04",
+    "name": "Teal Utility Knife - Standard",
+    "description": "Standard utility knife in teal for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 34.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-05",
+    "name": "Grey Utility Knife - Standard",
+    "description": "Standard utility knife in grey for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 35.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-06",
+    "name": "Burgundy Utility Knife - Standard",
+    "description": "Standard utility knife in burgundy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 36.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-07",
+    "name": "Blue Utility Knife - Standard",
+    "description": "Standard utility knife in blue for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 37.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-08",
+    "name": "Sand Utility Knife - Standard",
+    "description": "Standard utility knife in sand for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 38.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-09",
+    "name": "Yellow Utility Knife - Standard",
+    "description": "Standard utility knife in yellow for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 39.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-10",
+    "name": "Lavender Utility Knife - Standard",
+    "description": "Standard utility knife in lavender for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 40.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-11",
+    "name": "Black Utility Knife - Deluxe",
+    "description": "Deluxe utility knife in black for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 41.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-12",
+    "name": "White Utility Knife - Deluxe",
+    "description": "Deluxe utility knife in white for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 42.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-13",
+    "name": "Navy Utility Knife - Deluxe",
+    "description": "Deluxe utility knife in navy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 43.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-14",
+    "name": "Teal Utility Knife - Deluxe",
+    "description": "Deluxe utility knife in teal for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 44.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-15",
+    "name": "Grey Utility Knife - Deluxe",
+    "description": "Deluxe utility knife in grey for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 45.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-16",
+    "name": "Burgundy Utility Knife - Deluxe",
+    "description": "Deluxe utility knife in burgundy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 46,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-17",
+    "name": "Blue Utility Knife - Deluxe",
+    "description": "Deluxe utility knife in blue for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 46.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-18",
+    "name": "Sand Utility Knife - Deluxe",
+    "description": "Deluxe utility knife in sand for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 47.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-19",
+    "name": "Yellow Utility Knife - Deluxe",
+    "description": "Deluxe utility knife in yellow for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 48.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-03-20",
+    "name": "Lavender Utility Knife - Deluxe",
+    "description": "Deluxe utility knife in lavender for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 49.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-01",
+    "name": "Black Small Parts Tray - Standard",
+    "description": "Standard small parts tray in black for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-02",
+    "name": "White Small Parts Tray - Standard",
+    "description": "Standard small parts tray in white for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 35.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-03",
+    "name": "Navy Small Parts Tray - Standard",
+    "description": "Standard small parts tray in navy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 36.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-04",
+    "name": "Teal Small Parts Tray - Standard",
+    "description": "Standard small parts tray in teal for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 37.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-05",
+    "name": "Grey Small Parts Tray - Standard",
+    "description": "Standard small parts tray in grey for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 38.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-06",
+    "name": "Burgundy Small Parts Tray - Standard",
+    "description": "Standard small parts tray in burgundy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 39.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-07",
+    "name": "Blue Small Parts Tray - Standard",
+    "description": "Standard small parts tray in blue for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 40.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-08",
+    "name": "Sand Small Parts Tray - Standard",
+    "description": "Standard small parts tray in sand for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 41.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-09",
+    "name": "Yellow Small Parts Tray - Standard",
+    "description": "Standard small parts tray in yellow for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 42.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-10",
+    "name": "Lavender Small Parts Tray - Standard",
+    "description": "Standard small parts tray in lavender for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 43.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-11",
+    "name": "Black Small Parts Tray - Deluxe",
+    "description": "Deluxe small parts tray in black for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 44.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-12",
+    "name": "White Small Parts Tray - Deluxe",
+    "description": "Deluxe small parts tray in white for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 45.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-13",
+    "name": "Navy Small Parts Tray - Deluxe",
+    "description": "Deluxe small parts tray in navy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 46.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-14",
+    "name": "Teal Small Parts Tray - Deluxe",
+    "description": "Deluxe small parts tray in teal for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 47.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-15",
+    "name": "Grey Small Parts Tray - Deluxe",
+    "description": "Deluxe small parts tray in grey for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 48.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-16",
+    "name": "Burgundy Small Parts Tray - Deluxe",
+    "description": "Deluxe small parts tray in burgundy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 49.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-17",
+    "name": "Blue Small Parts Tray - Deluxe",
+    "description": "Deluxe small parts tray in blue for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 50.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-18",
+    "name": "Sand Small Parts Tray - Deluxe",
+    "description": "Deluxe small parts tray in sand for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 51.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-19",
+    "name": "Yellow Small Parts Tray - Deluxe",
+    "description": "Deluxe small parts tray in yellow for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 52.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-04-20",
+    "name": "Lavender Small Parts Tray - Deluxe",
+    "description": "Deluxe small parts tray in lavender for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 53.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-01",
+    "name": "Black Safety Glasses - Standard",
+    "description": "Standard safety glasses in black for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 38.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-02",
+    "name": "White Safety Glasses - Standard",
+    "description": "Standard safety glasses in white for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 39.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-03",
+    "name": "Navy Safety Glasses - Standard",
+    "description": "Standard safety glasses in navy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 40.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-04",
+    "name": "Teal Safety Glasses - Standard",
+    "description": "Standard safety glasses in teal for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 41.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-05",
+    "name": "Grey Safety Glasses - Standard",
+    "description": "Standard safety glasses in grey for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 42.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-06",
+    "name": "Burgundy Safety Glasses - Standard",
+    "description": "Standard safety glasses in burgundy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 43,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-07",
+    "name": "Blue Safety Glasses - Standard",
+    "description": "Standard safety glasses in blue for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 43.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-08",
+    "name": "Sand Safety Glasses - Standard",
+    "description": "Standard safety glasses in sand for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 44.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-09",
+    "name": "Yellow Safety Glasses - Standard",
+    "description": "Standard safety glasses in yellow for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 45.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-10",
+    "name": "Lavender Safety Glasses - Standard",
+    "description": "Standard safety glasses in lavender for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 46.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-11",
+    "name": "Black Safety Glasses - Deluxe",
+    "description": "Deluxe safety glasses in black for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 47.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-12",
+    "name": "White Safety Glasses - Deluxe",
+    "description": "Deluxe safety glasses in white for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 48.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-13",
+    "name": "Navy Safety Glasses - Deluxe",
+    "description": "Deluxe safety glasses in navy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 49.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-14",
+    "name": "Teal Safety Glasses - Deluxe",
+    "description": "Deluxe safety glasses in teal for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 50.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-15",
+    "name": "Grey Safety Glasses - Deluxe",
+    "description": "Deluxe safety glasses in grey for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 51.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-16",
+    "name": "Burgundy Safety Glasses - Deluxe",
+    "description": "Deluxe safety glasses in burgundy for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 52.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-17",
+    "name": "Blue Safety Glasses - Deluxe",
+    "description": "Deluxe safety glasses in blue for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 53.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-18",
+    "name": "Sand Safety Glasses - Deluxe",
+    "description": "Deluxe safety glasses in sand for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 54.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-19",
+    "name": "Yellow Safety Glasses - Deluxe",
+    "description": "Deluxe safety glasses in yellow for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 55.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-07-05-20",
+    "name": "Lavender Safety Glasses - Deluxe",
+    "description": "Deluxe safety glasses in lavender for everyday use.",
+    "category": "Workshop",
+    "price": {
+      "amount": 56.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  }
+]

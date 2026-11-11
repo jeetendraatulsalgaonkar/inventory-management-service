@@ -1,0 +1,1602 @@
+[
+  {
+    "sku": "EXTRA2-03-01-01",
+    "name": "Black Pet Food Bowl - Standard",
+    "description": "Standard pet food bowl in black for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 16.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-02",
+    "name": "White Pet Food Bowl - Standard",
+    "description": "Standard pet food bowl in white for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 17.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-03",
+    "name": "Navy Pet Food Bowl - Standard",
+    "description": "Standard pet food bowl in navy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 18.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-04",
+    "name": "Teal Pet Food Bowl - Standard",
+    "description": "Standard pet food bowl in teal for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 19.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-05",
+    "name": "Grey Pet Food Bowl - Standard",
+    "description": "Standard pet food bowl in grey for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 20.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-06",
+    "name": "Burgundy Pet Food Bowl - Standard",
+    "description": "Standard pet food bowl in burgundy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 21.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-07",
+    "name": "Blue Pet Food Bowl - Standard",
+    "description": "Standard pet food bowl in blue for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 22.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-08",
+    "name": "Sand Pet Food Bowl - Standard",
+    "description": "Standard pet food bowl in sand for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 23.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-09",
+    "name": "Yellow Pet Food Bowl - Standard",
+    "description": "Standard pet food bowl in yellow for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 24.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-10",
+    "name": "Lavender Pet Food Bowl - Standard",
+    "description": "Standard pet food bowl in lavender for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 25.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-11",
+    "name": "Black Pet Food Bowl - Deluxe",
+    "description": "Deluxe pet food bowl in black for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 26.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-12",
+    "name": "White Pet Food Bowl - Deluxe",
+    "description": "Deluxe pet food bowl in white for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 27.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-13",
+    "name": "Navy Pet Food Bowl - Deluxe",
+    "description": "Deluxe pet food bowl in navy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 28.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-14",
+    "name": "Teal Pet Food Bowl - Deluxe",
+    "description": "Deluxe pet food bowl in teal for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 29,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-15",
+    "name": "Grey Pet Food Bowl - Deluxe",
+    "description": "Deluxe pet food bowl in grey for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 29.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-16",
+    "name": "Burgundy Pet Food Bowl - Deluxe",
+    "description": "Deluxe pet food bowl in burgundy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 30.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-17",
+    "name": "Blue Pet Food Bowl - Deluxe",
+    "description": "Deluxe pet food bowl in blue for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 31.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-18",
+    "name": "Sand Pet Food Bowl - Deluxe",
+    "description": "Deluxe pet food bowl in sand for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 32.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-19",
+    "name": "Yellow Pet Food Bowl - Deluxe",
+    "description": "Deluxe pet food bowl in yellow for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 33.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-01-20",
+    "name": "Lavender Pet Food Bowl - Deluxe",
+    "description": "Deluxe pet food bowl in lavender for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 34.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-01",
+    "name": "Black Pet Grooming Brush - Standard",
+    "description": "Standard pet grooming brush in black for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 19.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-02",
+    "name": "White Pet Grooming Brush - Standard",
+    "description": "Standard pet grooming brush in white for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 20.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-03",
+    "name": "Navy Pet Grooming Brush - Standard",
+    "description": "Standard pet grooming brush in navy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 21.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-04",
+    "name": "Teal Pet Grooming Brush - Standard",
+    "description": "Standard pet grooming brush in teal for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 22.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-05",
+    "name": "Grey Pet Grooming Brush - Standard",
+    "description": "Standard pet grooming brush in grey for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 23.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-06",
+    "name": "Burgundy Pet Grooming Brush - Standard",
+    "description": "Standard pet grooming brush in burgundy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 24.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-07",
+    "name": "Blue Pet Grooming Brush - Standard",
+    "description": "Standard pet grooming brush in blue for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 25.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-08",
+    "name": "Sand Pet Grooming Brush - Standard",
+    "description": "Standard pet grooming brush in sand for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 26.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-09",
+    "name": "Yellow Pet Grooming Brush - Standard",
+    "description": "Standard pet grooming brush in yellow for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 27.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-10",
+    "name": "Lavender Pet Grooming Brush - Standard",
+    "description": "Standard pet grooming brush in lavender for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 28.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-11",
+    "name": "Black Pet Grooming Brush - Deluxe",
+    "description": "Deluxe pet grooming brush in black for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 29.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-12",
+    "name": "White Pet Grooming Brush - Deluxe",
+    "description": "Deluxe pet grooming brush in white for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 30.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-13",
+    "name": "Navy Pet Grooming Brush - Deluxe",
+    "description": "Deluxe pet grooming brush in navy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 31.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-14",
+    "name": "Teal Pet Grooming Brush - Deluxe",
+    "description": "Deluxe pet grooming brush in teal for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 32.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-15",
+    "name": "Grey Pet Grooming Brush - Deluxe",
+    "description": "Deluxe pet grooming brush in grey for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 33.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-16",
+    "name": "Burgundy Pet Grooming Brush - Deluxe",
+    "description": "Deluxe pet grooming brush in burgundy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 34.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-17",
+    "name": "Blue Pet Grooming Brush - Deluxe",
+    "description": "Deluxe pet grooming brush in blue for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 35.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-18",
+    "name": "Sand Pet Grooming Brush - Deluxe",
+    "description": "Deluxe pet grooming brush in sand for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 36.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-19",
+    "name": "Yellow Pet Grooming Brush - Deluxe",
+    "description": "Deluxe pet grooming brush in yellow for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 37,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-02-20",
+    "name": "Lavender Pet Grooming Brush - Deluxe",
+    "description": "Deluxe pet grooming brush in lavender for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 37.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-01",
+    "name": "Black Pet Travel Bottle - Standard",
+    "description": "Standard pet travel bottle in black for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 23.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-02",
+    "name": "White Pet Travel Bottle - Standard",
+    "description": "Standard pet travel bottle in white for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 24.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-03",
+    "name": "Navy Pet Travel Bottle - Standard",
+    "description": "Standard pet travel bottle in navy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 25.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-04",
+    "name": "Teal Pet Travel Bottle - Standard",
+    "description": "Standard pet travel bottle in teal for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 26,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-05",
+    "name": "Grey Pet Travel Bottle - Standard",
+    "description": "Standard pet travel bottle in grey for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 26.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-06",
+    "name": "Burgundy Pet Travel Bottle - Standard",
+    "description": "Standard pet travel bottle in burgundy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 27.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-07",
+    "name": "Blue Pet Travel Bottle - Standard",
+    "description": "Standard pet travel bottle in blue for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 28.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-08",
+    "name": "Sand Pet Travel Bottle - Standard",
+    "description": "Standard pet travel bottle in sand for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 29.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-09",
+    "name": "Yellow Pet Travel Bottle - Standard",
+    "description": "Standard pet travel bottle in yellow for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 30.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-10",
+    "name": "Lavender Pet Travel Bottle - Standard",
+    "description": "Standard pet travel bottle in lavender for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 31.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-11",
+    "name": "Black Pet Travel Bottle - Deluxe",
+    "description": "Deluxe pet travel bottle in black for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 32.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-12",
+    "name": "White Pet Travel Bottle - Deluxe",
+    "description": "Deluxe pet travel bottle in white for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 33.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-13",
+    "name": "Navy Pet Travel Bottle - Deluxe",
+    "description": "Deluxe pet travel bottle in navy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 34.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-14",
+    "name": "Teal Pet Travel Bottle - Deluxe",
+    "description": "Deluxe pet travel bottle in teal for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 35.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-15",
+    "name": "Grey Pet Travel Bottle - Deluxe",
+    "description": "Deluxe pet travel bottle in grey for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 36.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-16",
+    "name": "Burgundy Pet Travel Bottle - Deluxe",
+    "description": "Deluxe pet travel bottle in burgundy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 37.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-17",
+    "name": "Blue Pet Travel Bottle - Deluxe",
+    "description": "Deluxe pet travel bottle in blue for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 38.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-18",
+    "name": "Sand Pet Travel Bottle - Deluxe",
+    "description": "Deluxe pet travel bottle in sand for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 39.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-19",
+    "name": "Yellow Pet Travel Bottle - Deluxe",
+    "description": "Deluxe pet travel bottle in yellow for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 40.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-03-20",
+    "name": "Lavender Pet Travel Bottle - Deluxe",
+    "description": "Deluxe pet travel bottle in lavender for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 41.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-01",
+    "name": "Black Pet Toy Ball - Standard",
+    "description": "Standard pet toy ball in black for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 26.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-02",
+    "name": "White Pet Toy Ball - Standard",
+    "description": "Standard pet toy ball in white for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 27.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-03",
+    "name": "Navy Pet Toy Ball - Standard",
+    "description": "Standard pet toy ball in navy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 28.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-04",
+    "name": "Teal Pet Toy Ball - Standard",
+    "description": "Standard pet toy ball in teal for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 29.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-05",
+    "name": "Grey Pet Toy Ball - Standard",
+    "description": "Standard pet toy ball in grey for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 30.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-06",
+    "name": "Burgundy Pet Toy Ball - Standard",
+    "description": "Standard pet toy ball in burgundy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 31.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-07",
+    "name": "Blue Pet Toy Ball - Standard",
+    "description": "Standard pet toy ball in blue for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 32.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-08",
+    "name": "Sand Pet Toy Ball - Standard",
+    "description": "Standard pet toy ball in sand for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 33.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-09",
+    "name": "Yellow Pet Toy Ball - Standard",
+    "description": "Standard pet toy ball in yellow for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 34,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-10",
+    "name": "Lavender Pet Toy Ball - Standard",
+    "description": "Standard pet toy ball in lavender for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 34.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-11",
+    "name": "Black Pet Toy Ball - Deluxe",
+    "description": "Deluxe pet toy ball in black for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 35.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-12",
+    "name": "White Pet Toy Ball - Deluxe",
+    "description": "Deluxe pet toy ball in white for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 36.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-13",
+    "name": "Navy Pet Toy Ball - Deluxe",
+    "description": "Deluxe pet toy ball in navy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 37.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-14",
+    "name": "Teal Pet Toy Ball - Deluxe",
+    "description": "Deluxe pet toy ball in teal for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 38.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-15",
+    "name": "Grey Pet Toy Ball - Deluxe",
+    "description": "Deluxe pet toy ball in grey for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 39.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-16",
+    "name": "Burgundy Pet Toy Ball - Deluxe",
+    "description": "Deluxe pet toy ball in burgundy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 40.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-17",
+    "name": "Blue Pet Toy Ball - Deluxe",
+    "description": "Deluxe pet toy ball in blue for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 41.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-18",
+    "name": "Sand Pet Toy Ball - Deluxe",
+    "description": "Deluxe pet toy ball in sand for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 42.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-19",
+    "name": "Yellow Pet Toy Ball - Deluxe",
+    "description": "Deluxe pet toy ball in yellow for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 43.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-04-20",
+    "name": "Lavender Pet Toy Ball - Deluxe",
+    "description": "Deluxe pet toy ball in lavender for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 44.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-01",
+    "name": "Black Pet Blanket - Standard",
+    "description": "Standard pet blanket in black for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 29.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-02",
+    "name": "White Pet Blanket - Standard",
+    "description": "Standard pet blanket in white for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 30.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-03",
+    "name": "Navy Pet Blanket - Standard",
+    "description": "Standard pet blanket in navy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 31.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-04",
+    "name": "Teal Pet Blanket - Standard",
+    "description": "Standard pet blanket in teal for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 32.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-05",
+    "name": "Grey Pet Blanket - Standard",
+    "description": "Standard pet blanket in grey for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 33.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-06",
+    "name": "Burgundy Pet Blanket - Standard",
+    "description": "Standard pet blanket in burgundy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 34.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-07",
+    "name": "Blue Pet Blanket - Standard",
+    "description": "Standard pet blanket in blue for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 35.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-08",
+    "name": "Sand Pet Blanket - Standard",
+    "description": "Standard pet blanket in sand for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 36.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-09",
+    "name": "Yellow Pet Blanket - Standard",
+    "description": "Standard pet blanket in yellow for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 37.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-10",
+    "name": "Lavender Pet Blanket - Standard",
+    "description": "Standard pet blanket in lavender for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 38.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-11",
+    "name": "Black Pet Blanket - Deluxe",
+    "description": "Deluxe pet blanket in black for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 39.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-12",
+    "name": "White Pet Blanket - Deluxe",
+    "description": "Deluxe pet blanket in white for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 40.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-13",
+    "name": "Navy Pet Blanket - Deluxe",
+    "description": "Deluxe pet blanket in navy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 41.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-14",
+    "name": "Teal Pet Blanket - Deluxe",
+    "description": "Deluxe pet blanket in teal for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 42,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-15",
+    "name": "Grey Pet Blanket - Deluxe",
+    "description": "Deluxe pet blanket in grey for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 42.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-16",
+    "name": "Burgundy Pet Blanket - Deluxe",
+    "description": "Deluxe pet blanket in burgundy for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 43.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-17",
+    "name": "Blue Pet Blanket - Deluxe",
+    "description": "Deluxe pet blanket in blue for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 44.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-18",
+    "name": "Sand Pet Blanket - Deluxe",
+    "description": "Deluxe pet blanket in sand for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 45.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-19",
+    "name": "Yellow Pet Blanket - Deluxe",
+    "description": "Deluxe pet blanket in yellow for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 46.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-03-05-20",
+    "name": "Lavender Pet Blanket - Deluxe",
+    "description": "Deluxe pet blanket in lavender for everyday use.",
+    "category": "Pet Supplies",
+    "price": {
+      "amount": 47.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  }
+]

@@ -1,0 +1,1602 @@
+[
+  {
+    "sku": "EXTRA2-10-01-01",
+    "name": "Black Controller Stand - Standard",
+    "description": "Standard controller stand in black for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 31.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-02",
+    "name": "White Controller Stand - Standard",
+    "description": "Standard controller stand in white for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 32.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-03",
+    "name": "Navy Controller Stand - Standard",
+    "description": "Standard controller stand in navy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 33.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-04",
+    "name": "Teal Controller Stand - Standard",
+    "description": "Standard controller stand in teal for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 34.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-05",
+    "name": "Grey Controller Stand - Standard",
+    "description": "Standard controller stand in grey for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 35.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-06",
+    "name": "Burgundy Controller Stand - Standard",
+    "description": "Standard controller stand in burgundy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 36.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-07",
+    "name": "Blue Controller Stand - Standard",
+    "description": "Standard controller stand in blue for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 37.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-08",
+    "name": "Sand Controller Stand - Standard",
+    "description": "Standard controller stand in sand for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 38.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-09",
+    "name": "Yellow Controller Stand - Standard",
+    "description": "Standard controller stand in yellow for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 39.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-10",
+    "name": "Lavender Controller Stand - Standard",
+    "description": "Standard controller stand in lavender for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 40.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-11",
+    "name": "Black Controller Stand - Deluxe",
+    "description": "Deluxe controller stand in black for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 41.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-12",
+    "name": "White Controller Stand - Deluxe",
+    "description": "Deluxe controller stand in white for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 42.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-13",
+    "name": "Navy Controller Stand - Deluxe",
+    "description": "Deluxe controller stand in navy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 43.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-14",
+    "name": "Teal Controller Stand - Deluxe",
+    "description": "Deluxe controller stand in teal for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 44.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-15",
+    "name": "Grey Controller Stand - Deluxe",
+    "description": "Deluxe controller stand in grey for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-16",
+    "name": "Burgundy Controller Stand - Deluxe",
+    "description": "Deluxe controller stand in burgundy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 45.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-17",
+    "name": "Blue Controller Stand - Deluxe",
+    "description": "Deluxe controller stand in blue for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 46.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-18",
+    "name": "Sand Controller Stand - Deluxe",
+    "description": "Deluxe controller stand in sand for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 47.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-19",
+    "name": "Yellow Controller Stand - Deluxe",
+    "description": "Deluxe controller stand in yellow for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 48.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-01-20",
+    "name": "Lavender Controller Stand - Deluxe",
+    "description": "Deluxe controller stand in lavender for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 49.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-01",
+    "name": "Black Headset Holder - Standard",
+    "description": "Standard headset holder in black for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 34.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-02",
+    "name": "White Headset Holder - Standard",
+    "description": "Standard headset holder in white for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 35.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-03",
+    "name": "Navy Headset Holder - Standard",
+    "description": "Standard headset holder in navy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 36.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-04",
+    "name": "Teal Headset Holder - Standard",
+    "description": "Standard headset holder in teal for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 37.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-05",
+    "name": "Grey Headset Holder - Standard",
+    "description": "Standard headset holder in grey for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 38.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-06",
+    "name": "Burgundy Headset Holder - Standard",
+    "description": "Standard headset holder in burgundy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 39.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-07",
+    "name": "Blue Headset Holder - Standard",
+    "description": "Standard headset holder in blue for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 40.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-08",
+    "name": "Sand Headset Holder - Standard",
+    "description": "Standard headset holder in sand for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 41.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-09",
+    "name": "Yellow Headset Holder - Standard",
+    "description": "Standard headset holder in yellow for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 42.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-10",
+    "name": "Lavender Headset Holder - Standard",
+    "description": "Standard headset holder in lavender for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 43.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-11",
+    "name": "Black Headset Holder - Deluxe",
+    "description": "Deluxe headset holder in black for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 44.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-12",
+    "name": "White Headset Holder - Deluxe",
+    "description": "Deluxe headset holder in white for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 45.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-13",
+    "name": "Navy Headset Holder - Deluxe",
+    "description": "Deluxe headset holder in navy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 46.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-14",
+    "name": "Teal Headset Holder - Deluxe",
+    "description": "Deluxe headset holder in teal for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 47.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-15",
+    "name": "Grey Headset Holder - Deluxe",
+    "description": "Deluxe headset holder in grey for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 48.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-16",
+    "name": "Burgundy Headset Holder - Deluxe",
+    "description": "Deluxe headset holder in burgundy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 49.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-17",
+    "name": "Blue Headset Holder - Deluxe",
+    "description": "Deluxe headset holder in blue for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 50.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-18",
+    "name": "Sand Headset Holder - Deluxe",
+    "description": "Deluxe headset holder in sand for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 51.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-19",
+    "name": "Yellow Headset Holder - Deluxe",
+    "description": "Deluxe headset holder in yellow for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 52.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-02-20",
+    "name": "Lavender Headset Holder - Deluxe",
+    "description": "Deluxe headset holder in lavender for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 53,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-01",
+    "name": "Black Gaming Mouse Pad - Standard",
+    "description": "Standard gaming mouse pad in black for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 38.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-02",
+    "name": "White Gaming Mouse Pad - Standard",
+    "description": "Standard gaming mouse pad in white for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 39.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-03",
+    "name": "Navy Gaming Mouse Pad - Standard",
+    "description": "Standard gaming mouse pad in navy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 40.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-04",
+    "name": "Teal Gaming Mouse Pad - Standard",
+    "description": "Standard gaming mouse pad in teal for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 41.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-05",
+    "name": "Grey Gaming Mouse Pad - Standard",
+    "description": "Standard gaming mouse pad in grey for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 42,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-06",
+    "name": "Burgundy Gaming Mouse Pad - Standard",
+    "description": "Standard gaming mouse pad in burgundy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 42.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-07",
+    "name": "Blue Gaming Mouse Pad - Standard",
+    "description": "Standard gaming mouse pad in blue for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 43.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-08",
+    "name": "Sand Gaming Mouse Pad - Standard",
+    "description": "Standard gaming mouse pad in sand for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 44.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-09",
+    "name": "Yellow Gaming Mouse Pad - Standard",
+    "description": "Standard gaming mouse pad in yellow for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 45.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-10",
+    "name": "Lavender Gaming Mouse Pad - Standard",
+    "description": "Standard gaming mouse pad in lavender for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 46.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-11",
+    "name": "Black Gaming Mouse Pad - Deluxe",
+    "description": "Deluxe gaming mouse pad in black for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 47.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-12",
+    "name": "White Gaming Mouse Pad - Deluxe",
+    "description": "Deluxe gaming mouse pad in white for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 48.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-13",
+    "name": "Navy Gaming Mouse Pad - Deluxe",
+    "description": "Deluxe gaming mouse pad in navy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 49.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-14",
+    "name": "Teal Gaming Mouse Pad - Deluxe",
+    "description": "Deluxe gaming mouse pad in teal for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 50.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-15",
+    "name": "Grey Gaming Mouse Pad - Deluxe",
+    "description": "Deluxe gaming mouse pad in grey for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 51.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-16",
+    "name": "Burgundy Gaming Mouse Pad - Deluxe",
+    "description": "Deluxe gaming mouse pad in burgundy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 52.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-17",
+    "name": "Blue Gaming Mouse Pad - Deluxe",
+    "description": "Deluxe gaming mouse pad in blue for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 53.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-18",
+    "name": "Sand Gaming Mouse Pad - Deluxe",
+    "description": "Deluxe gaming mouse pad in sand for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 54.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-19",
+    "name": "Yellow Gaming Mouse Pad - Deluxe",
+    "description": "Deluxe gaming mouse pad in yellow for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 55.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-03-20",
+    "name": "Lavender Gaming Mouse Pad - Deluxe",
+    "description": "Deluxe gaming mouse pad in lavender for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 56.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-01",
+    "name": "Black Console Dust Cover - Standard",
+    "description": "Standard console dust cover in black for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 41.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-02",
+    "name": "White Console Dust Cover - Standard",
+    "description": "Standard console dust cover in white for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 42.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-03",
+    "name": "Navy Console Dust Cover - Standard",
+    "description": "Standard console dust cover in navy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 43.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-04",
+    "name": "Teal Console Dust Cover - Standard",
+    "description": "Standard console dust cover in teal for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 44.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-05",
+    "name": "Grey Console Dust Cover - Standard",
+    "description": "Standard console dust cover in grey for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 45.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-06",
+    "name": "Burgundy Console Dust Cover - Standard",
+    "description": "Standard console dust cover in burgundy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 46.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-07",
+    "name": "Blue Console Dust Cover - Standard",
+    "description": "Standard console dust cover in blue for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 47.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-08",
+    "name": "Sand Console Dust Cover - Standard",
+    "description": "Standard console dust cover in sand for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 48.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-09",
+    "name": "Yellow Console Dust Cover - Standard",
+    "description": "Standard console dust cover in yellow for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 49.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-10",
+    "name": "Lavender Console Dust Cover - Standard",
+    "description": "Standard console dust cover in lavender for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 50,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-11",
+    "name": "Black Console Dust Cover - Deluxe",
+    "description": "Deluxe console dust cover in black for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 50.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-12",
+    "name": "White Console Dust Cover - Deluxe",
+    "description": "Deluxe console dust cover in white for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 51.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-13",
+    "name": "Navy Console Dust Cover - Deluxe",
+    "description": "Deluxe console dust cover in navy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 52.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-14",
+    "name": "Teal Console Dust Cover - Deluxe",
+    "description": "Deluxe console dust cover in teal for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 53.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-15",
+    "name": "Grey Console Dust Cover - Deluxe",
+    "description": "Deluxe console dust cover in grey for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 54.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-16",
+    "name": "Burgundy Console Dust Cover - Deluxe",
+    "description": "Deluxe console dust cover in burgundy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 55.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-17",
+    "name": "Blue Console Dust Cover - Deluxe",
+    "description": "Deluxe console dust cover in blue for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 56.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-18",
+    "name": "Sand Console Dust Cover - Deluxe",
+    "description": "Deluxe console dust cover in sand for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 57.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-19",
+    "name": "Yellow Console Dust Cover - Deluxe",
+    "description": "Deluxe console dust cover in yellow for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 58.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-04-20",
+    "name": "Lavender Console Dust Cover - Deluxe",
+    "description": "Deluxe console dust cover in lavender for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 59.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-01",
+    "name": "Black Game Storage Case - Standard",
+    "description": "Standard game storage case in black for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 44.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-02",
+    "name": "White Game Storage Case - Standard",
+    "description": "Standard game storage case in white for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 45.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-03",
+    "name": "Navy Game Storage Case - Standard",
+    "description": "Standard game storage case in navy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 46.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-04",
+    "name": "Teal Game Storage Case - Standard",
+    "description": "Standard game storage case in teal for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 47.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-05",
+    "name": "Grey Game Storage Case - Standard",
+    "description": "Standard game storage case in grey for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 48.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-06",
+    "name": "Burgundy Game Storage Case - Standard",
+    "description": "Standard game storage case in burgundy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 49.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-07",
+    "name": "Blue Game Storage Case - Standard",
+    "description": "Standard game storage case in blue for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 50.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-08",
+    "name": "Sand Game Storage Case - Standard",
+    "description": "Standard game storage case in sand for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 51.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-09",
+    "name": "Yellow Game Storage Case - Standard",
+    "description": "Standard game storage case in yellow for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 52.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-10",
+    "name": "Lavender Game Storage Case - Standard",
+    "description": "Standard game storage case in lavender for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 53.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-11",
+    "name": "Black Game Storage Case - Deluxe",
+    "description": "Deluxe game storage case in black for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 54.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-12",
+    "name": "White Game Storage Case - Deluxe",
+    "description": "Deluxe game storage case in white for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 55.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-13",
+    "name": "Navy Game Storage Case - Deluxe",
+    "description": "Deluxe game storage case in navy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 56.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-14",
+    "name": "Teal Game Storage Case - Deluxe",
+    "description": "Deluxe game storage case in teal for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 57.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-15",
+    "name": "Grey Game Storage Case - Deluxe",
+    "description": "Deluxe game storage case in grey for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 58,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-16",
+    "name": "Burgundy Game Storage Case - Deluxe",
+    "description": "Deluxe game storage case in burgundy for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 58.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-17",
+    "name": "Blue Game Storage Case - Deluxe",
+    "description": "Deluxe game storage case in blue for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 59.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-18",
+    "name": "Sand Game Storage Case - Deluxe",
+    "description": "Deluxe game storage case in sand for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 60.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-19",
+    "name": "Yellow Game Storage Case - Deluxe",
+    "description": "Deluxe game storage case in yellow for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 61.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-10-05-20",
+    "name": "Lavender Game Storage Case - Deluxe",
+    "description": "Deluxe game storage case in lavender for everyday use.",
+    "category": "Gaming Accessories",
+    "price": {
+      "amount": 62.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  }
+]

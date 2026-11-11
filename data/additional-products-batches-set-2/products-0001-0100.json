@@ -1,0 +1,1602 @@
+[
+  {
+    "sku": "EXTRA2-01-01-01",
+    "name": "Black LED Desk Lamp - Standard",
+    "description": "Standard led desk lamp in black for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 12.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-02",
+    "name": "White LED Desk Lamp - Standard",
+    "description": "Standard led desk lamp in white for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 13.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-03",
+    "name": "Navy LED Desk Lamp - Standard",
+    "description": "Standard led desk lamp in navy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 14.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-04",
+    "name": "Teal LED Desk Lamp - Standard",
+    "description": "Standard led desk lamp in teal for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 15.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-05",
+    "name": "Grey LED Desk Lamp - Standard",
+    "description": "Standard led desk lamp in grey for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 16.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-06",
+    "name": "Burgundy LED Desk Lamp - Standard",
+    "description": "Standard led desk lamp in burgundy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 17.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-07",
+    "name": "Blue LED Desk Lamp - Standard",
+    "description": "Standard led desk lamp in blue for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 18.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-08",
+    "name": "Sand LED Desk Lamp - Standard",
+    "description": "Standard led desk lamp in sand for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 19,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-09",
+    "name": "Yellow LED Desk Lamp - Standard",
+    "description": "Standard led desk lamp in yellow for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 19.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-10",
+    "name": "Lavender LED Desk Lamp - Standard",
+    "description": "Standard led desk lamp in lavender for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 20.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-11",
+    "name": "Black LED Desk Lamp - Deluxe",
+    "description": "Deluxe led desk lamp in black for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 21.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-12",
+    "name": "White LED Desk Lamp - Deluxe",
+    "description": "Deluxe led desk lamp in white for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 22.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-13",
+    "name": "Navy LED Desk Lamp - Deluxe",
+    "description": "Deluxe led desk lamp in navy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 23.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-14",
+    "name": "Teal LED Desk Lamp - Deluxe",
+    "description": "Deluxe led desk lamp in teal for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 24.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-15",
+    "name": "Grey LED Desk Lamp - Deluxe",
+    "description": "Deluxe led desk lamp in grey for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 25.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-16",
+    "name": "Burgundy LED Desk Lamp - Deluxe",
+    "description": "Deluxe led desk lamp in burgundy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 26.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-17",
+    "name": "Blue LED Desk Lamp - Deluxe",
+    "description": "Deluxe led desk lamp in blue for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 27.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-18",
+    "name": "Sand LED Desk Lamp - Deluxe",
+    "description": "Deluxe led desk lamp in sand for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 28.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-19",
+    "name": "Yellow LED Desk Lamp - Deluxe",
+    "description": "Deluxe led desk lamp in yellow for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 29.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-01-20",
+    "name": "Lavender LED Desk Lamp - Deluxe",
+    "description": "Deluxe led desk lamp in lavender for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 30.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-01",
+    "name": "Black Reading Light - Standard",
+    "description": "Standard reading light in black for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 15.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-02",
+    "name": "White Reading Light - Standard",
+    "description": "Standard reading light in white for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 16.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-03",
+    "name": "Navy Reading Light - Standard",
+    "description": "Standard reading light in navy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 17.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-04",
+    "name": "Teal Reading Light - Standard",
+    "description": "Standard reading light in teal for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 18.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-05",
+    "name": "Grey Reading Light - Standard",
+    "description": "Standard reading light in grey for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 19.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-06",
+    "name": "Burgundy Reading Light - Standard",
+    "description": "Standard reading light in burgundy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 20.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-07",
+    "name": "Blue Reading Light - Standard",
+    "description": "Standard reading light in blue for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 21.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-08",
+    "name": "Sand Reading Light - Standard",
+    "description": "Standard reading light in sand for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 22.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-09",
+    "name": "Yellow Reading Light - Standard",
+    "description": "Standard reading light in yellow for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 23.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-10",
+    "name": "Lavender Reading Light - Standard",
+    "description": "Standard reading light in lavender for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 24.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-11",
+    "name": "Black Reading Light - Deluxe",
+    "description": "Deluxe reading light in black for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 25.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-12",
+    "name": "White Reading Light - Deluxe",
+    "description": "Deluxe reading light in white for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 26.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-13",
+    "name": "Navy Reading Light - Deluxe",
+    "description": "Deluxe reading light in navy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 27,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-14",
+    "name": "Teal Reading Light - Deluxe",
+    "description": "Deluxe reading light in teal for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 27.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-15",
+    "name": "Grey Reading Light - Deluxe",
+    "description": "Deluxe reading light in grey for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 28.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-16",
+    "name": "Burgundy Reading Light - Deluxe",
+    "description": "Deluxe reading light in burgundy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 29.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-17",
+    "name": "Blue Reading Light - Deluxe",
+    "description": "Deluxe reading light in blue for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 30.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-18",
+    "name": "Sand Reading Light - Deluxe",
+    "description": "Deluxe reading light in sand for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 31.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-19",
+    "name": "Yellow Reading Light - Deluxe",
+    "description": "Deluxe reading light in yellow for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 32.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-02-20",
+    "name": "Lavender Reading Light - Deluxe",
+    "description": "Deluxe reading light in lavender for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 33.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-01",
+    "name": "Black Night Light - Standard",
+    "description": "Standard night light in black for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 18.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-02",
+    "name": "White Night Light - Standard",
+    "description": "Standard night light in white for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 19.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-03",
+    "name": "Navy Night Light - Standard",
+    "description": "Standard night light in navy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 20.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-04",
+    "name": "Teal Night Light - Standard",
+    "description": "Standard night light in teal for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 21.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-05",
+    "name": "Grey Night Light - Standard",
+    "description": "Standard night light in grey for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 22.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-06",
+    "name": "Burgundy Night Light - Standard",
+    "description": "Standard night light in burgundy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 23.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-07",
+    "name": "Blue Night Light - Standard",
+    "description": "Standard night light in blue for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 24.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-08",
+    "name": "Sand Night Light - Standard",
+    "description": "Standard night light in sand for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 25.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-09",
+    "name": "Yellow Night Light - Standard",
+    "description": "Standard night light in yellow for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 26.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-10",
+    "name": "Lavender Night Light - Standard",
+    "description": "Standard night light in lavender for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 27.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-11",
+    "name": "Black Night Light - Deluxe",
+    "description": "Deluxe night light in black for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 28.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-12",
+    "name": "White Night Light - Deluxe",
+    "description": "Deluxe night light in white for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 29.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-13",
+    "name": "Navy Night Light - Deluxe",
+    "description": "Deluxe night light in navy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 30.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-14",
+    "name": "Teal Night Light - Deluxe",
+    "description": "Deluxe night light in teal for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 31.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-15",
+    "name": "Grey Night Light - Deluxe",
+    "description": "Deluxe night light in grey for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 32.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-16",
+    "name": "Burgundy Night Light - Deluxe",
+    "description": "Deluxe night light in burgundy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 33.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-17",
+    "name": "Blue Night Light - Deluxe",
+    "description": "Deluxe night light in blue for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 34.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-18",
+    "name": "Sand Night Light - Deluxe",
+    "description": "Deluxe night light in sand for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-19",
+    "name": "Yellow Night Light - Deluxe",
+    "description": "Deluxe night light in yellow for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 35.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-03-20",
+    "name": "Lavender Night Light - Deluxe",
+    "description": "Deluxe night light in lavender for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 36.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-01",
+    "name": "Black Cabinet Light - Standard",
+    "description": "Standard cabinet light in black for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 22.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-02",
+    "name": "White Cabinet Light - Standard",
+    "description": "Standard cabinet light in white for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 23.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-03",
+    "name": "Navy Cabinet Light - Standard",
+    "description": "Standard cabinet light in navy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 24,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-04",
+    "name": "Teal Cabinet Light - Standard",
+    "description": "Standard cabinet light in teal for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 24.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-05",
+    "name": "Grey Cabinet Light - Standard",
+    "description": "Standard cabinet light in grey for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 25.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-06",
+    "name": "Burgundy Cabinet Light - Standard",
+    "description": "Standard cabinet light in burgundy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 26.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-07",
+    "name": "Blue Cabinet Light - Standard",
+    "description": "Standard cabinet light in blue for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 27.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-08",
+    "name": "Sand Cabinet Light - Standard",
+    "description": "Standard cabinet light in sand for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 28.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-09",
+    "name": "Yellow Cabinet Light - Standard",
+    "description": "Standard cabinet light in yellow for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 29.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-10",
+    "name": "Lavender Cabinet Light - Standard",
+    "description": "Standard cabinet light in lavender for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 30.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-11",
+    "name": "Black Cabinet Light - Deluxe",
+    "description": "Deluxe cabinet light in black for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 31.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-12",
+    "name": "White Cabinet Light - Deluxe",
+    "description": "Deluxe cabinet light in white for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 32.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-13",
+    "name": "Navy Cabinet Light - Deluxe",
+    "description": "Deluxe cabinet light in navy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 33.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-14",
+    "name": "Teal Cabinet Light - Deluxe",
+    "description": "Deluxe cabinet light in teal for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 34.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-15",
+    "name": "Grey Cabinet Light - Deluxe",
+    "description": "Deluxe cabinet light in grey for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 35.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-16",
+    "name": "Burgundy Cabinet Light - Deluxe",
+    "description": "Deluxe cabinet light in burgundy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 36.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-17",
+    "name": "Blue Cabinet Light - Deluxe",
+    "description": "Deluxe cabinet light in blue for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 37.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-18",
+    "name": "Sand Cabinet Light - Deluxe",
+    "description": "Deluxe cabinet light in sand for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 38.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-19",
+    "name": "Yellow Cabinet Light - Deluxe",
+    "description": "Deluxe cabinet light in yellow for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 39.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-04-20",
+    "name": "Lavender Cabinet Light - Deluxe",
+    "description": "Deluxe cabinet light in lavender for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 40.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-01",
+    "name": "Black Pendant Shade - Standard",
+    "description": "Standard pendant shade in black for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 25.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-02",
+    "name": "White Pendant Shade - Standard",
+    "description": "Standard pendant shade in white for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 26.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-03",
+    "name": "Navy Pendant Shade - Standard",
+    "description": "Standard pendant shade in navy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 27.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-04",
+    "name": "Teal Pendant Shade - Standard",
+    "description": "Standard pendant shade in teal for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 28.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-05",
+    "name": "Grey Pendant Shade - Standard",
+    "description": "Standard pendant shade in grey for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 29.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-06",
+    "name": "Burgundy Pendant Shade - Standard",
+    "description": "Standard pendant shade in burgundy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 30.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-07",
+    "name": "Blue Pendant Shade - Standard",
+    "description": "Standard pendant shade in blue for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 31.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-08",
+    "name": "Sand Pendant Shade - Standard",
+    "description": "Standard pendant shade in sand for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 32,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-09",
+    "name": "Yellow Pendant Shade - Standard",
+    "description": "Standard pendant shade in yellow for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 32.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-10",
+    "name": "Lavender Pendant Shade - Standard",
+    "description": "Standard pendant shade in lavender for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 33.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-11",
+    "name": "Black Pendant Shade - Deluxe",
+    "description": "Deluxe pendant shade in black for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 34.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-12",
+    "name": "White Pendant Shade - Deluxe",
+    "description": "Deluxe pendant shade in white for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 35.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-13",
+    "name": "Navy Pendant Shade - Deluxe",
+    "description": "Deluxe pendant shade in navy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 36.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-14",
+    "name": "Teal Pendant Shade - Deluxe",
+    "description": "Deluxe pendant shade in teal for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 37.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-15",
+    "name": "Grey Pendant Shade - Deluxe",
+    "description": "Deluxe pendant shade in grey for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 38.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-16",
+    "name": "Burgundy Pendant Shade - Deluxe",
+    "description": "Deluxe pendant shade in burgundy for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 39.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-17",
+    "name": "Blue Pendant Shade - Deluxe",
+    "description": "Deluxe pendant shade in blue for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 40.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-18",
+    "name": "Sand Pendant Shade - Deluxe",
+    "description": "Deluxe pendant shade in sand for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 41.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-19",
+    "name": "Yellow Pendant Shade - Deluxe",
+    "description": "Deluxe pendant shade in yellow for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 42.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-01-05-20",
+    "name": "Lavender Pendant Shade - Deluxe",
+    "description": "Deluxe pendant shade in lavender for everyday use.",
+    "category": "Lighting",
+    "price": {
+      "amount": 43.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  }
+]

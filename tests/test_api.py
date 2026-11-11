@@ -2,11 +2,13 @@
 
 The session dependency is replaced, and the service functions are stubbed where
 main.py looks them up. These tests pin down status codes, headers, the product
-representation, validation rules, and problem documents for Create Product, Get
-Product by ID, List Products, and Soft-delete Products. The service logic is unit
+representation, validation rules, and problem documents for Create Products (a JSON
+array of products, created atomically), Get Product by ID, List Products, and
+Soft-delete Products. The service logic is unit
 tested in test_service.py, and test_postgres.py runs the whole stack against PostgreSQL.
 """
 
+import asyncio
 import json
 import logging
 from datetime import UTC, datetime, timedelta, timezone
@@ -14,14 +16,20 @@ from decimal import Decimal
 from types import SimpleNamespace
 from uuid import UUID, uuid7
 
+import psycopg
 import pytest
 from fastapi.testclient import TestClient
 
 from inventory_management_service.db import get_session
-from inventory_management_service.main import PRODUCTS, app
+from inventory_management_service.main import MAX_LISTED_ERRORS, PRODUCTS, app, product_json
 from inventory_management_service.models import Product
-from inventory_management_service.schemas import MAX_DELETE_BATCH, ProductSort, SortDirection, Unit
-from inventory_management_service.service import DuplicateSku, ProductNotFound, ProductsNotFound, ProductSlice
+from inventory_management_service.schemas import (
+    MAX_DELETE_BATCH,
+    ProductSort,
+    SortDirection,
+    Unit,
+)
+from inventory_management_service.service import DuplicateSkus, ProductNotFound, ProductsNotFound, ProductSlice
 
 PROBLEM_MEDIA = "application/problem+json"
 SEEDED_ID = "01a1b052-ec7c-76db-a862-e0da4baa5110"
@@ -82,12 +90,12 @@ class ServiceStub:
 def services(monkeypatch):
     """Stub the four product services with realistic default results."""
     stubs = SimpleNamespace(
-        create=ServiceStub(lambda command: stored_product(sku=command.sku)),
+        create=ServiceStub(lambda commands: [stored_product(sku=command.sku) for command in commands]),
         get=ServiceStub(lambda product_id: stored_product(id=product_id)),
         list=ServiceStub(ProductSlice([], 0)),
         delete=ServiceStub(None),
     )
-    monkeypatch.setattr("inventory_management_service.main.create_product", stubs.create)
+    monkeypatch.setattr("inventory_management_service.main.create_products", stubs.create)
     monkeypatch.setattr("inventory_management_service.main.get_product", stubs.get)
     monkeypatch.setattr("inventory_management_service.main.list_products", stubs.list)
     monkeypatch.setattr("inventory_management_service.main.soft_delete_products", stubs.delete)
@@ -124,19 +132,27 @@ NUMBER_LEXEMES = {"parse_int": Number, "parse_float": Number}
 
 
 # ---------------------------------------------------------------------------
-# Create Product: success
+# Create Products: success
 # ---------------------------------------------------------------------------
 
-def test_create_returns_created_product_and_location(client, payload, services):
-    product = stored_product()
-    services.create.result = product
-    response = client.post(PRODUCTS, json=payload)
+def post_products(client, *products):
+    """POST the given product documents as the JSON array that the endpoint expects."""
+    return client.post(PRODUCTS, json=list(products))
+
+
+def test_create_returns_created_products_in_request_order(client, payload, services):
+    products = [stored_product(sku="LAP-DELL-1"), stored_product(sku="BOX-1", price_amount=Decimal("0.5000"))]
+    services.create.result = products
+    response = post_products(client, payload, payload | {"sku": "box-1"})
     assert response.status_code == 201, response.text
     assert response.headers["content-type"] == "application/json"
-    assert response.headers["location"] == f"http://testserver{PRODUCTS}/{product.id}"
+    # Several products are created, so no single Location applies; each item has its id.
+    assert "location" not in response.headers
     data = response.json(parse_float=Decimal)
-    assert data == {
-        "id": str(product.id),
+    assert isinstance(data, list)
+    assert [item["id"] for item in data] == [str(product.id) for product in products]
+    assert data[0] == {
+        "id": str(products[0].id),
         "sku": "LAP-DELL-1",
         "name": "Dell XPS",
         "description": None,
@@ -149,38 +165,79 @@ def test_create_returns_created_product_and_location(client, payload, services):
         "updatedAt": "2025-03-01T12:00:00.123456Z",
         "version": 0,
     }
+    assert (data[1]["sku"], data[1]["price"]["amount"]) == ("BOX-1", Decimal("0.5"))
 
 
-def test_create_passes_canonical_command_to_service(client, payload, services):
+def test_create_of_one_product_is_an_array_of_one(client, payload, services):
+    response = post_products(client, payload)
+    assert response.status_code == 201, response.text
+    (item,) = response.json()
+    assert set(item) == PRODUCT_FIELDS
+    assert len(services.create.calls) == 1 and len(services.create.calls[0]) == 1
+
+
+def test_create_passes_canonical_commands_to_service_in_order(client, payload, services):
     # A raw JSON number keeps all 19 digits; it is never parsed as a binary float.
-    raw = json.dumps(payload).replace('"999999999999999.9999"', "999999999999999.9999")
+    second = payload | {"sku": " box-1 ", "unitOfMeasure": "BOX", "attributes": {}}
+    raw = json.dumps([payload, second]).replace('"999999999999999.9999"', "999999999999999.9999")
     assert post_raw(client, raw).status_code == 201
-    (command,) = services.create.calls
-    assert command.sku == "LAP-DELL-1"
-    assert command.price.amount == Decimal("999999999999999.9999")
-    assert command.price.currency == "EUR"
-    assert command.unit_of_measure is Unit.PIECE
-    assert command.attributes == {"brand": "Dell"}
+    ((first, box),) = services.create.calls            # one service call for the whole request
+    assert first.sku == "LAP-DELL-1"
+    assert first.price.amount == Decimal("999999999999999.9999")
+    assert first.price.currency == "EUR"
+    assert first.unit_of_measure is Unit.PIECE
+    assert first.attributes == {"brand": "Dell"}
+    assert (box.sku, box.unit_of_measure, box.attributes) == ("BOX-1", Unit.BOX, {})
+
+
+@pytest.mark.parametrize("count", [1, 2, 100, 101, 10_000])
+def test_create_accepts_any_number_of_products(client, payload, services, count):
+    response = post_products(client, *(payload | {"sku": f"SKU-{n}"} for n in range(count)))
+    assert response.status_code == 201, response.text
+    assert [item["sku"] for item in response.json()] == [f"SKU-{n}" for n in range(count)]
+    (commands,) = services.create.calls                 # one service call for the whole request
+    assert [command.sku for command in commands] == [f"SKU-{n}" for n in range(count)]
+
+
+def test_create_validates_off_the_event_loop(client, payload, services, monkeypatch):
+    # Validating a large request is CPU-bound; on the event loop it would stall every
+    # other request. It must run in a worker thread, where no event loop is running.
+    from inventory_management_service import main
+    loops = []
+
+    def validate(body):
+        try:
+            loops.append(asyncio.get_running_loop())
+        except RuntimeError:
+            loops.append(None)
+        return original(body)
+
+    original = main.validate_products
+    monkeypatch.setattr(main, "validate_products", validate)
+    assert post_products(client, payload).status_code == 201
+    assert loops == [None]
 
 
 def test_create_normalizes_input_end_to_end(client, payload, fake_session):
     """Run the real create service on a fake session: request to response, no stubs."""
     app.dependency_overrides[get_session] = lambda: fake_session
-    response = client.post(PRODUCTS, json=payload)
+    response = post_products(client, payload, payload | {"sku": "lap-dell-2", "description": " 13-inch "})
     assert response.status_code == 201, response.text
-    data = response.json(parse_float=Decimal)
-    (product,) = fake_session.added
-    assert data["id"] == str(product.id)
-    assert UUID(data["id"]).version == 7
-    assert response.headers["location"].endswith(f"{PRODUCTS}/{data['id']}")
-    assert data["sku"] == "LAP-DELL-1"
-    assert data["name"] == "Dell XPS"
-    assert data["description"] is None
-    assert data["category"] == "ELECTRONICS"
-    assert data["price"] == {"amount": Decimal("999999999999999.9999"), "currency": "EUR"}
-    assert (data["status"], data["version"]) == ("ACTIVE", 0)
-    assert data["createdAt"] == data["updatedAt"]
-    assert data["createdAt"].endswith("Z")
+    first, second = response.json(parse_float=Decimal)
+    assert [item["id"] for item in (first, second)] == [str(row[0]) for row in fake_session.copied]
+    assert [event[0] for event in fake_session.events] == ["begin", "connection", "copy", "commit"]
+    assert UUID(first["id"]).version == 7
+    assert UUID(first["id"]) < UUID(second["id"])                              # request order
+    assert "location" not in response.headers
+    assert first["sku"] == "LAP-DELL-1"
+    assert first["name"] == "Dell XPS"
+    assert first["description"] is None
+    assert first["category"] == "ELECTRONICS"
+    assert first["price"] == {"amount": Decimal("999999999999999.9999"), "currency": "EUR"}
+    assert (first["status"], first["version"]) == ("ACTIVE", 0)
+    assert first["createdAt"] == first["updatedAt"] == second["createdAt"]     # one time per request
+    assert first["createdAt"].endswith("Z")
+    assert (second["sku"], second["description"]) == ("LAP-DELL-2", "13-inch")
 
 
 @pytest.mark.parametrize("content_type", [
@@ -190,7 +247,7 @@ def test_create_normalizes_input_end_to_end(client, payload, fake_session):
     "application/vnd.inventra.product+json",
 ])
 def test_create_accepts_json_media_types(client, payload, services, content_type):
-    assert post_raw(client, json.dumps(payload), content_type).status_code == 201
+    assert post_raw(client, json.dumps([payload]), content_type).status_code == 201
 
 
 @pytest.mark.parametrize("changes", [
@@ -215,42 +272,194 @@ def test_create_accepts_json_media_types(client, payload, services, content_type
     {"attributes": {"origin": "Zürich"}},
 ], ids=lambda changes: json.dumps(changes, ensure_ascii=False)[:40])
 def test_create_accepts_boundary_values(client, payload, services, changes):
-    response = client.post(PRODUCTS, json=payload | changes)
+    response = post_products(client, payload | changes)
     assert response.status_code == 201, response.text
     assert len(services.create.calls) == 1
 
 
 def test_create_description_is_optional(client, payload, services):
     del payload["description"]
-    assert client.post(PRODUCTS, json=payload).status_code == 201
-    assert services.create.calls[0].description is None
+    assert post_products(client, payload).status_code == 201
+    assert services.create.calls[0][0].description is None
 
 
 @pytest.mark.parametrize("unit", list(Unit))
 def test_create_accepts_every_unit_of_measure(client, payload, services, unit):
-    assert client.post(PRODUCTS, json=payload | {"unitOfMeasure": unit.value}).status_code == 201
-    assert services.create.calls[0].unit_of_measure is unit
+    assert post_products(client, payload | {"unitOfMeasure": unit.value}).status_code == 201
+    assert services.create.calls[0][0].unit_of_measure is unit
 
 
 # ---------------------------------------------------------------------------
-# Create Product: malformed requests (400 malformed-request)
+# Create Products: missing, null, empty, or non-array body
 # ---------------------------------------------------------------------------
+
+EXPECTED_BODY = "Send a JSON array of at least 1 product."
+
+
+@pytest.mark.parametrize(("raw", "content_type"), [
+    ("", None),                                 # no body at all
+    ("", "application/json"),                   # JSON declared, but no body
+    ("  \r\n\t ", "application/json"),          # only whitespace
+], ids=["no-body", "empty-json-body", "whitespace"])
+def test_create_rejects_a_missing_body(client, services, raw, content_type):
+    body = assert_problem(post_raw(client, raw, content_type), 400, "malformed-request")
+    assert body["title"] == "Malformed request body"
+    assert body["detail"] == f"The request body is missing. {EXPECTED_BODY}"
+    assert body["instance"] == PRODUCTS
+    assert "errors" not in body
+    assert services.create.calls == []
+
+
+@pytest.mark.parametrize("raw", ["null", " null\n"])
+def test_create_rejects_a_null_body(client, services, raw):
+    body = assert_problem(post_raw(client, raw), 400, "malformed-request")
+    assert body["detail"] == f"The request body is null. {EXPECTED_BODY}"
+    assert services.create.calls == []
+
+
+@pytest.mark.parametrize("raw", ["[]", "[ ]", " [\n] "])
+def test_create_rejects_an_empty_list(client, services, raw):
+    body = assert_problem(post_raw(client, raw), 400, "validation-error")
+    assert body["title"] == "Validation failed"
+    assert body["detail"] == f"The product list is empty. {EXPECTED_BODY}"
+    assert "errors" not in body
+    assert services.create.calls == []
+
+
+def test_create_rejects_a_single_product_object(client, payload, services):
+    # The former request format: one product object instead of an array of products.
+    body = assert_problem(client.post(PRODUCTS, json=payload), 400, "malformed-request")
+    assert body["detail"] == (
+        "The request body must be a JSON array of products, not a single product object. "
+        "To create one product, send an array that contains it."
+    )
+    assert services.create.calls == []
+
+
+@pytest.mark.parametrize("document", [{}, {"products": []}])
+def test_create_rejects_any_object_body(client, payload, services, document):
+    body = assert_problem(client.post(PRODUCTS, json=document), 400, "malformed-request")
+    assert body["detail"].startswith("The request body must be a JSON array of products, not a single product object.")
+    assert services.create.calls == []
+
+
+@pytest.mark.parametrize(("raw", "kind"), [
+    ('"product"', "string"), ('""', "string"), ("42", "number"), ("-1.5", "number"), ("0", "number"),
+    ("true", "boolean"), ("false", "boolean"),
+])
+def test_create_rejects_a_scalar_body(client, services, raw, kind):
+    body = assert_problem(post_raw(client, raw), 400, "malformed-request")
+    assert body["detail"] == f"The request body must be a JSON array of products, not a JSON {kind}."
+    assert services.create.calls == []
+
 
 @pytest.mark.parametrize("raw", [
-    "", "   ", "{", '{"sku": }', "null", "[]", '"product"', "42", "true",
-    '{"sku": NaN}', '{"sku": Infinity}', '{"sku": -Infinity}',
-    b'{"sku": "\xff"}',                       # invalid UTF-8
+    "{", "[", '[{"sku": }]', "[{}", "[{},]", "[,]", "'[]'",
+    '[{"sku": NaN}]', '[{"sku": Infinity}]', '[{"sku": -Infinity}]', "NaN",
+    b'[{"sku": "\xff"}]',                     # invalid UTF-8
     "[" * 100_000 + "]" * 100_000,            # nesting deep enough to hit the recursion limit
+    "[]]", "[] []", "null null",
 ], ids=lambda raw: repr(raw)[:20])
-def test_create_rejects_malformed_json(client, services, raw):
+def test_create_rejects_invalid_json(client, services, raw):
     body = assert_problem(post_raw(client, raw), 400, "malformed-request")
     assert body["title"] == "Malformed request body"
+    assert body["detail"] == f"The request body is not valid JSON. {EXPECTED_BODY}"
     assert body["instance"] == PRODUCTS
     assert services.create.calls == []
 
 
-def test_create_without_content_type_or_body_is_malformed(client, services):
-    assert_problem(post_raw(client, "", content_type=None), 400, "malformed-request")
+# ---------------------------------------------------------------------------
+# Create Products: large rejections and repeated SKUs
+# ---------------------------------------------------------------------------
+
+def test_create_lists_at_most_the_first_errors_of_a_large_request(client, services):
+    # Every element is invalid. The response stays small, lists the first errors in
+    # index order, and counts all of them.
+    count = 50_000
+    body = assert_problem(post_raw(client, "[" + ",".join(["null"] * count) + "]"), 400, "malformed-request")
+    assert len(body["errors"]) == MAX_LISTED_ERRORS
+    assert error_fields(body) == [str(index) for index in range(MAX_LISTED_ERRORS)]
+    assert body["detail"] == (
+        f"The request contains {count} invalid field(s) in {count} product(s). "
+        f"The first {MAX_LISTED_ERRORS} are listed. No product was created."
+    )
+    assert services.create.calls == []
+
+
+@pytest.mark.parametrize(("count", "listed"), [(MAX_LISTED_ERRORS, True), (MAX_LISTED_ERRORS + 1, False)])
+def test_create_lists_every_error_up_to_the_limit(client, payload, services, count, listed):
+    products = [payload | {"sku": f"SKU-{n}", "name": " "} for n in range(count)]
+    body = assert_problem(post_products(client, *products), 400, "validation-error")
+    assert len(body["errors"]) == min(count, MAX_LISTED_ERRORS)
+    assert ("are listed" not in body["detail"]) is listed
+    assert body["detail"].startswith(f"The request contains {count} invalid field(s) in {count} product(s).")
+
+
+def test_create_reports_a_bad_product_at_the_end_of_a_large_request(client, payload, services):
+    products = [payload | {"sku": f"SKU-{n}"} for n in range(20_000)]
+    products[-1] = products[-1] | {"price": {"amount": "-1", "currency": "EUR"}}
+    body = assert_problem(post_products(client, *products), 400, "validation-error")
+    assert error_fields(body) == ["19999.price.amount"]
+    assert services.create.calls == []
+
+
+def test_create_finds_repeated_skus_far_apart_in_a_large_request(client, payload, services):
+    products = [payload | {"sku": f"SKU-{n}"} for n in range(20_000)]
+    products[19_999] = products[19_999] | {"sku": "sku-3"}
+    body = assert_problem(post_products(client, *products), 400, "validation-error")
+    assert body["errors"] == [{"field": "19999.sku", "message": "repeats the SKU 'SKU-3' of product 3"}]
+
+
+@pytest.mark.parametrize("second_sku", ["LAP-DELL-1", "lap-dell-1", "  Lap-Dell-1  "])
+def test_create_rejects_repeated_skus(client, payload, services, second_sku):
+    # SKUs are compared after trimming and uppercasing, as they are stored.
+    body = assert_problem(post_products(client, payload, payload | {"sku": second_sku}), 400, "validation-error")
+    assert body["errors"] == [{"field": "1.sku", "message": "repeats the SKU 'LAP-DELL-1' of product 0"}]
+    assert body["detail"] == "The request contains 1 invalid field(s) in 1 product(s). No product was created."
+    assert services.create.calls == []
+
+
+def test_create_reports_every_repeated_sku(client, payload, services):
+    skus = ["A-1", "B-2", "a-1", "C-3", "b-2", "A-1"]
+    body = assert_problem(post_products(client, *(payload | {"sku": sku} for sku in skus)), 400, "validation-error")
+    assert body["errors"] == [
+        {"field": "2.sku", "message": "repeats the SKU 'A-1' of product 0"},
+        {"field": "4.sku", "message": "repeats the SKU 'B-2' of product 1"},
+        {"field": "5.sku", "message": "repeats the SKU 'A-1' of product 0"},
+    ]
+    assert body["detail"] == "The request contains 3 invalid field(s) in 3 product(s). No product was created."
+
+
+def test_create_reports_invalid_fields_before_repeated_skus(client, payload, services):
+    # Repeats are checked once every product is valid; a fixed request then reports them.
+    body = assert_problem(post_products(client, payload, payload | {"name": " "}), 400, "validation-error")
+    assert error_fields(body) == ["1.name"]
+
+
+# ---------------------------------------------------------------------------
+# Create Products: malformed products (400 malformed-request)
+# ---------------------------------------------------------------------------
+
+@pytest.mark.parametrize("element", [None, 1, "product", True, [], [{}]], ids=repr)
+def test_create_rejects_an_element_that_is_not_an_object(client, payload, services, element):
+    body = assert_problem(post_products(client, payload, element), 400, "malformed-request")
+    assert body["errors"] == [{"field": "1", "message": "must be a product object"}]
+    assert body["detail"] == "The request contains 1 invalid field(s) in 1 product(s). No product was created."
+    assert services.create.calls == []
+
+
+def test_create_rejects_a_list_of_nulls(client, services):
+    body = assert_problem(post_raw(client, "[null, null]"), 400, "malformed-request")
+    assert body["errors"] == [
+        {"field": "0", "message": "must be a product object"},
+        {"field": "1", "message": "must be a product object"},
+    ]
+
+
+def test_create_does_not_expose_internal_model_names(client, payload, services):
+    response = post_products(client, payload, None, payload | {"price": 5})
+    assert "CreateProduct" not in response.text
+    assert error_fields(assert_problem(response, 400, "malformed-request")) == ["1", "2.price"]
 
 
 @pytest.mark.parametrize(("changes", "field"), [
@@ -272,13 +481,13 @@ def test_create_without_content_type_or_body_is_malformed(client, services):
     ({"price": {"amount": 1, "currency": "EUR", "tax": 1}}, "price.tax"),
 ])
 def test_create_rejects_wrong_types_and_unknown_properties(client, payload, services, changes, field):
-    body = assert_problem(client.post(PRODUCTS, json=payload | changes), 400, "malformed-request")
-    assert field in error_fields(body)
+    body = assert_problem(post_products(client, payload | changes), 400, "malformed-request")
+    assert f"0.{field}" in error_fields(body)
     assert services.create.calls == []
 
 
 # ---------------------------------------------------------------------------
-# Create Product: invalid values (400 validation-error)
+# Create Products: invalid values (400 validation-error)
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize(("changes", "field"), [
@@ -323,75 +532,108 @@ def test_create_rejects_wrong_types_and_unknown_properties(client, payload, serv
     ({"attributes": {str(n): "" for n in range(51)}}, "attributes"),
 ], ids=lambda value: json.dumps(value, ensure_ascii=False)[:40] if isinstance(value, dict) else value)
 def test_create_rejects_invalid_values(client, payload, services, changes, field):
-    body = assert_problem(client.post(PRODUCTS, json=payload | changes), 400, "validation-error")
+    body = assert_problem(post_products(client, payload | changes), 400, "validation-error")
     assert body["title"] == "Validation failed"
-    assert any(name.startswith(field) for name in error_fields(body)), body
+    assert any(name.startswith(f"0.{field}") for name in error_fields(body)), body
     assert services.create.calls == []
 
 
 @pytest.mark.parametrize("field", ["sku", "name", "category", "price", "unitOfMeasure", "attributes"])
 def test_create_requires_field(client, payload, services, field):
     del payload[field]
-    body = assert_problem(client.post(PRODUCTS, json=payload), 400, "validation-error")
-    assert body["errors"] == [{"field": field, "message": "Field required"}]
+    body = assert_problem(post_products(client, payload), 400, "validation-error")
+    assert body["errors"] == [{"field": f"0.{field}", "message": "Field required"}]
 
 
 @pytest.mark.parametrize("field", ["amount", "currency"])
 def test_create_requires_price_field(client, payload, services, field):
     del payload["price"][field]
-    body = assert_problem(client.post(PRODUCTS, json=payload), 400, "validation-error")
-    assert body["errors"] == [{"field": f"price.{field}", "message": "Field required"}]
+    body = assert_problem(post_products(client, payload), 400, "validation-error")
+    assert body["errors"] == [{"field": f"0.price.{field}", "message": "Field required"}]
 
 
 def test_create_reports_every_invalid_field_sorted(client, payload, services):
     changes = {"sku": "-", "name": " ", "price": {"amount": -1, "currency": "ZZZ"}}
-    body = assert_problem(client.post(PRODUCTS, json=payload | changes), 400, "validation-error")
-    assert error_fields(body) == ["name", "price.amount", "price.currency", "sku"]
-    assert body["detail"] == "The request contains 4 invalid field(s)."
+    body = assert_problem(post_products(client, payload | changes), 400, "validation-error")
+    assert error_fields(body) == ["0.name", "0.price.amount", "0.price.currency", "0.sku"]
+    assert body["detail"] == "The request contains 4 invalid field(s) in 1 product(s). No product was created."
+
+
+def test_create_one_invalid_product_rejects_the_whole_batch(client, payload, services):
+    products = [payload | {"sku": f"SKU-{n}"} for n in range(5)]
+    products[3] = products[3] | {"price": {"amount": "-1", "currency": "EUR"}}
+    body = assert_problem(post_products(client, *products), 400, "validation-error")
+    assert error_fields(body) == ["3.price.amount"]
+    assert body["detail"] == "The request contains 1 invalid field(s) in 1 product(s). No product was created."
+    assert services.create.calls == []
+
+
+def test_create_reports_invalid_fields_of_every_product_in_index_order(client, payload, services):
+    products = [payload | {"sku": f"SKU-{n}"} for n in range(12)]
+    for index in (11, 2, 10):
+        products[index] = products[index] | {"name": " ", "category": ""}
+    body = assert_problem(post_products(client, *products), 400, "validation-error")
+    # Indexes sort numerically (2 before 10), then fields by name.
+    assert error_fields(body) == [
+        "2.category", "2.name", "10.category", "10.name", "11.category", "11.name",
+    ]
+    assert body["detail"] == "The request contains 6 invalid field(s) in 3 product(s). No product was created."
+
+
+def test_create_requires_every_field_of_an_empty_product(client, services):
+    body = assert_problem(post_products(client, {}), 400, "validation-error")
+    assert error_fields(body) == [
+        "0.attributes", "0.category", "0.name", "0.price", "0.sku", "0.unitOfMeasure",
+    ]
 
 
 def test_create_type_errors_make_the_whole_request_malformed(client, payload, services):
-    # One wrong JSON type classifies the request as malformed, but every error is still listed.
-    body = assert_problem(client.post(PRODUCTS, json=payload | {"sku": 5, "name": " "}), 400, "malformed-request")
-    assert error_fields(body) == ["name", "sku"]
+    # One wrong JSON type, in any product, classifies the request as malformed, but
+    # every error is still listed.
+    body = assert_problem(
+        post_products(client, payload | {"name": " "}, payload | {"sku": "other", "category": 5}),
+        400, "malformed-request",
+    )
+    assert error_fields(body) == ["0.name", "1.category"]
+    assert body["detail"] == "The request contains 2 invalid field(s) in 2 product(s). No product was created."
 
 
 def test_create_rejects_lone_surrogates(client, payload, services):
     # Lone UTF-16 surrogates are valid JSON escapes but cannot be stored as text.
-    raw = json.dumps(payload | {"name": "PLACEHOLDER"}).replace("PLACEHOLDER", "\\ud800")
-    assert error_fields(assert_problem(post_raw(client, raw), 400, "validation-error")) == ["name"]
+    raw = json.dumps([payload | {"name": "PLACEHOLDER"}]).replace("PLACEHOLDER", "\\ud800")
+    assert error_fields(assert_problem(post_raw(client, raw), 400, "validation-error")) == ["0.name"]
 
-    raw = json.dumps(payload | {"attributes": {"PLACEHOLDER": "x"}}).replace("PLACEHOLDER", "\\udfff")
+    raw = json.dumps([payload | {"attributes": {"PLACEHOLDER": "x"}}]).replace("PLACEHOLDER", "\\udfff")
     response = post_raw(client, raw)
     body = assert_problem(response, 400, "validation-error")
-    assert error_fields(body)[0].startswith("attributes.")
+    assert error_fields(body)[0].startswith("0.attributes.")
     response.content.decode("utf-8")   # the error document itself is valid UTF-8
 
 
 # ---------------------------------------------------------------------------
-# Create Product: media type, conflict, unexpected failure, methods
+# Create Products: media type, conflict, unexpected failure, methods
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("content_type", [
     "text/plain", "application/xml", "application/x-www-form-urlencoded", "multipart/form-data", None,
 ])
 def test_create_rejects_non_json_media_types(client, payload, services, content_type):
-    body = assert_problem(post_raw(client, json.dumps(payload), content_type), 415)
+    body = assert_problem(post_raw(client, json.dumps([payload]), content_type), 415)
     assert body["title"] == "Unsupported Media Type"
-    assert body["detail"] == "Send the product as JSON."
+    assert body["detail"] == "Send the products as JSON."
     assert services.create.calls == []
 
 
-def test_create_duplicate_sku(client, payload, services):
-    services.create.error = DuplicateSku("LAP-DELL-1")
-    response = client.post(PRODUCTS, json=payload)
+def test_create_duplicate_skus(client, payload, services):
+    services.create.error = DuplicateSkus(["LAP-DELL-1", "BOX-1"])
+    response = post_products(client, payload, payload | {"sku": "box-1"}, payload | {"sku": "new-1"})
     assert assert_problem(response, 409, "duplicate-sku") == {
         "type": "urn:inventra:problem:duplicate-sku",
         "title": "Duplicate SKU",
         "status": 409,
-        "detail": "A product with SKU 'LAP-DELL-1' already exists.",
+        "detail": "Products with these SKUs already exist: LAP-DELL-1, BOX-1. No product was created.",
         "instance": PRODUCTS,
-        "sku": "LAP-DELL-1",
+        "skus": ["LAP-DELL-1", "BOX-1"],
     }
     assert "location" not in response.headers
 
@@ -399,7 +641,7 @@ def test_create_duplicate_sku(client, payload, services):
 def test_create_unexpected_failure_is_generic_and_logged(client, payload, services, caplog):
     services.create.error = RuntimeError("connection to 10.0.0.5 failed: password=secret")
     with caplog.at_level(logging.ERROR, logger="inventory_management_service.main"):
-        response = client.post(PRODUCTS, json=payload)
+        response = post_products(client, payload)
     assert assert_problem(response, 500) == {
         "type": "about:blank",
         "title": "Internal Server Error",
@@ -411,6 +653,23 @@ def test_create_unexpected_failure_is_generic_and_logged(client, payload, servic
     # The details go to the log instead of the client.
     logged = [record.exc_info[1] for record in caplog.records if record.exc_info]
     assert [str(error) for error in logged] == ["connection to 10.0.0.5 failed: password=secret"]
+
+
+def test_create_duplicate_sku_end_to_end_creates_nothing(client, payload, fake_session):
+    """The real service on a fake session whose insert hits the unique SKU constraint."""
+    class SkuViolation(psycopg.errors.UniqueViolation):
+        diag = SimpleNamespace(constraint_name="uk_products_sku")
+
+    fake_session.commit_error = SkuViolation("duplicate key value violates unique constraint")
+    fake_session.results.append(["BOX-1"])                     # the SKU lookup after the rollback
+    app.dependency_overrides[get_session] = lambda: fake_session
+    response = post_products(client, payload, payload | {"sku": " box-1 "})
+    body = assert_problem(response, 409, "duplicate-sku")
+    assert body["skus"] == ["BOX-1"]
+    assert fake_session.copied == []                           # the COPY rolled back
+    assert [event[0] for event in fake_session.events] == [
+        "begin", "connection", "copy", "rollback", "begin", "scalars", "commit",  # then the read-only lookup
+    ]
 
 
 @pytest.mark.parametrize("method", ["PUT", "PATCH"])
@@ -758,6 +1017,13 @@ def test_delete_reports_every_invalid_id(client, services):
     assert body["detail"] == "The request contains 2 invalid field(s)."
 
 
+def test_delete_reports_invalid_ids_in_index_order(client, services):
+    ids = [str(uuid7()) for _ in range(12)]
+    ids[10], ids[2] = "x", "y"
+    body = assert_problem(delete_ids(client, ids), 400, "validation-error")
+    assert error_fields(body) == ["productIds.2", "productIds.10"]     # numeric, not textual, order
+
+
 def test_delete_rejects_more_than_the_maximum_number_of_ids(client, services):
     ids = [str(uuid7()) for _ in range(MAX_DELETE_BATCH + 1)]
     body = assert_problem(delete_ids(client, ids), 400, "validation-error")
@@ -852,8 +1118,8 @@ def represent(client, services, payload, endpoint, product, **json_hooks):
     By default numbers parse as Decimal; pass NUMBER_LEXEMES to see their exact text.
     """
     if endpoint == "create":
-        services.create.result = product
-        response = client.post(PRODUCTS, json=payload)
+        services.create.result = [product]
+        response = client.post(PRODUCTS, json=[payload])
         expected_status = 201
     elif endpoint == "get":
         services.get.result = product
@@ -865,6 +1131,9 @@ def represent(client, services, payload, endpoint, product, **json_hooks):
         expected_status = 200
     assert response.status_code == expected_status, response.text
     body = json.loads(response.text, **(json_hooks or {"parse_float": Decimal}))
+    if endpoint == "create":
+        (item,) = body
+        return item
     return body["items"][0] if endpoint == "list" else body
 
 
@@ -905,6 +1174,22 @@ def test_amount_is_an_exact_json_number(client, services, payload, endpoint, sto
     assert amount == emitted
 
 
+@pytest.mark.parametrize("text", [
+    'quote " and backslash \\', "tab\tnew line\ncarriage return\r", "control \x01\x1f\x7f",
+    "Käse 🧀 中文", "line separators \u2028\u2029", "</script><script>", "",
+])
+def test_serializer_round_trips_any_text(text):
+    product = stored_product(
+        sku="A-1", name=text or "x", description=text, category=text or "x", attributes={text: text, "k": text},
+    )
+    raw = product_json(product)
+    raw.encode("ascii")                                 # non-ASCII characters are escaped
+    data = json.loads(raw)
+    assert set(data) == PRODUCT_FIELDS
+    assert (data["name"], data["description"], data["category"]) == (text or "x", text, text or "x")
+    assert data["attributes"] == {text: text, "k": text}
+
+
 @pytest.mark.parametrize("endpoint", ENDPOINTS)
 def test_timestamps_are_utc(client, services, payload, endpoint):
     local = timezone(timedelta(hours=-5))
@@ -926,10 +1211,32 @@ def test_openapi(client):
     assert set(schema["paths"][PRODUCTS]) == {"get", "post", "delete"}
     operation = schema["paths"][PRODUCTS]["post"]
     assert set(operation["responses"]) == {"201", "400", "409", "415", "500"}
-    assert operation["requestBody"]["required"]
     assert "PriceResponse" in schema["components"]["schemas"]
-    assert "application/problem+json" in operation["responses"]["409"]["content"]
-    assert "Location" in operation["responses"]["201"]["headers"]
+    for code in ("400", "409", "415", "500"):
+        assert "application/problem+json" in operation["responses"][code]["content"]
+    conflict = operation["responses"]["409"]["content"]["application/problem+json"]["schema"]
+    assert conflict["properties"]["skus"] == {"type": "array", "items": {"type": "string"}}
+
+
+def test_openapi_create_operation_takes_and_returns_arrays(client):
+    schema = client.get("/openapi.json").json()
+    operation = schema["paths"][PRODUCTS]["post"]
+    assert operation["requestBody"]["required"]
+    body = operation["requestBody"]["content"]["application/json"]["schema"]
+    assert (body["type"], body["minItems"]) == ("array", 1)
+    assert "maxItems" not in body                       # any number of products
+    assert body["items"] == {"$ref": "#/components/schemas/CreateProduct"}
+    created = operation["responses"]["201"]
+    assert created["content"]["application/json"]["schema"]["items"] == {"$ref": "#/components/schemas/ProductResponse"}
+    assert created["content"]["application/json"]["schema"]["type"] == "array"
+    assert "headers" not in created                     # no single Location for several products
+    components = schema["components"]["schemas"]
+    # Every referenced request definition is registered.
+    product = components["CreateProduct"]
+    assert set(product["required"]) == {"sku", "name", "category", "price", "unitOfMeasure", "attributes"}
+    assert product["additionalProperties"] is False
+    assert product["properties"]["price"] == {"$ref": "#/components/schemas/Price"}
+    assert {"Price", "Unit"} <= set(components)
 
 
 def test_openapi_product_schema_documents_id(client):

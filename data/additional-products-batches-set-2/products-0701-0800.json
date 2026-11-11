@@ -1,0 +1,1602 @@
+[
+  {
+    "sku": "EXTRA2-08-01-01",
+    "name": "Black Silicone Spatula - Standard",
+    "description": "Standard silicone spatula in black for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 27.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-02",
+    "name": "White Silicone Spatula - Standard",
+    "description": "Standard silicone spatula in white for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 28.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-03",
+    "name": "Navy Silicone Spatula - Standard",
+    "description": "Standard silicone spatula in navy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 29.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-04",
+    "name": "Teal Silicone Spatula - Standard",
+    "description": "Standard silicone spatula in teal for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 30.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-05",
+    "name": "Grey Silicone Spatula - Standard",
+    "description": "Standard silicone spatula in grey for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 31.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-06",
+    "name": "Burgundy Silicone Spatula - Standard",
+    "description": "Standard silicone spatula in burgundy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 32.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-07",
+    "name": "Blue Silicone Spatula - Standard",
+    "description": "Standard silicone spatula in blue for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 33.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-08",
+    "name": "Sand Silicone Spatula - Standard",
+    "description": "Standard silicone spatula in sand for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 34.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-09",
+    "name": "Yellow Silicone Spatula - Standard",
+    "description": "Standard silicone spatula in yellow for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-10",
+    "name": "Lavender Silicone Spatula - Standard",
+    "description": "Standard silicone spatula in lavender for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 35.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-11",
+    "name": "Black Silicone Spatula - Deluxe",
+    "description": "Deluxe silicone spatula in black for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 36.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-12",
+    "name": "White Silicone Spatula - Deluxe",
+    "description": "Deluxe silicone spatula in white for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 37.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-13",
+    "name": "Navy Silicone Spatula - Deluxe",
+    "description": "Deluxe silicone spatula in navy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 38.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-14",
+    "name": "Teal Silicone Spatula - Deluxe",
+    "description": "Deluxe silicone spatula in teal for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 39.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-15",
+    "name": "Grey Silicone Spatula - Deluxe",
+    "description": "Deluxe silicone spatula in grey for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 40.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-16",
+    "name": "Burgundy Silicone Spatula - Deluxe",
+    "description": "Deluxe silicone spatula in burgundy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 41.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-17",
+    "name": "Blue Silicone Spatula - Deluxe",
+    "description": "Deluxe silicone spatula in blue for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 42.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-18",
+    "name": "Sand Silicone Spatula - Deluxe",
+    "description": "Deluxe silicone spatula in sand for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 43.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-19",
+    "name": "Yellow Silicone Spatula - Deluxe",
+    "description": "Deluxe silicone spatula in yellow for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 44.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-01-20",
+    "name": "Lavender Silicone Spatula - Deluxe",
+    "description": "Deluxe silicone spatula in lavender for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 45.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-01",
+    "name": "Black Whisk - Standard",
+    "description": "Standard whisk in black for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 30.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-02",
+    "name": "White Whisk - Standard",
+    "description": "Standard whisk in white for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 31.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-03",
+    "name": "Navy Whisk - Standard",
+    "description": "Standard whisk in navy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 32.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-04",
+    "name": "Teal Whisk - Standard",
+    "description": "Standard whisk in teal for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 33.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-05",
+    "name": "Grey Whisk - Standard",
+    "description": "Standard whisk in grey for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 34.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-06",
+    "name": "Burgundy Whisk - Standard",
+    "description": "Standard whisk in burgundy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 35.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-07",
+    "name": "Blue Whisk - Standard",
+    "description": "Standard whisk in blue for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 36.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-08",
+    "name": "Sand Whisk - Standard",
+    "description": "Standard whisk in sand for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 37.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-09",
+    "name": "Yellow Whisk - Standard",
+    "description": "Standard whisk in yellow for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 38.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-10",
+    "name": "Lavender Whisk - Standard",
+    "description": "Standard whisk in lavender for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 39.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-11",
+    "name": "Black Whisk - Deluxe",
+    "description": "Deluxe whisk in black for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 40.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-12",
+    "name": "White Whisk - Deluxe",
+    "description": "Deluxe whisk in white for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 41.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-13",
+    "name": "Navy Whisk - Deluxe",
+    "description": "Deluxe whisk in navy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 42.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-14",
+    "name": "Teal Whisk - Deluxe",
+    "description": "Deluxe whisk in teal for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 43,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-15",
+    "name": "Grey Whisk - Deluxe",
+    "description": "Deluxe whisk in grey for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 43.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-16",
+    "name": "Burgundy Whisk - Deluxe",
+    "description": "Deluxe whisk in burgundy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 44.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-17",
+    "name": "Blue Whisk - Deluxe",
+    "description": "Deluxe whisk in blue for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 45.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-18",
+    "name": "Sand Whisk - Deluxe",
+    "description": "Deluxe whisk in sand for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 46.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-19",
+    "name": "Yellow Whisk - Deluxe",
+    "description": "Deluxe whisk in yellow for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 47.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-02-20",
+    "name": "Lavender Whisk - Deluxe",
+    "description": "Deluxe whisk in lavender for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 48.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-01",
+    "name": "Black Pastry Brush - Standard",
+    "description": "Standard pastry brush in black for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 33.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-02",
+    "name": "White Pastry Brush - Standard",
+    "description": "Standard pastry brush in white for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 34.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-03",
+    "name": "Navy Pastry Brush - Standard",
+    "description": "Standard pastry brush in navy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 35.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-04",
+    "name": "Teal Pastry Brush - Standard",
+    "description": "Standard pastry brush in teal for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 36.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-05",
+    "name": "Grey Pastry Brush - Standard",
+    "description": "Standard pastry brush in grey for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 37.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-06",
+    "name": "Burgundy Pastry Brush - Standard",
+    "description": "Standard pastry brush in burgundy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 38.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-07",
+    "name": "Blue Pastry Brush - Standard",
+    "description": "Standard pastry brush in blue for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 39.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-08",
+    "name": "Sand Pastry Brush - Standard",
+    "description": "Standard pastry brush in sand for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 40.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-09",
+    "name": "Yellow Pastry Brush - Standard",
+    "description": "Standard pastry brush in yellow for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 41.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-10",
+    "name": "Lavender Pastry Brush - Standard",
+    "description": "Standard pastry brush in lavender for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 42.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-11",
+    "name": "Black Pastry Brush - Deluxe",
+    "description": "Deluxe pastry brush in black for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 43.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-12",
+    "name": "White Pastry Brush - Deluxe",
+    "description": "Deluxe pastry brush in white for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 44.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-13",
+    "name": "Navy Pastry Brush - Deluxe",
+    "description": "Deluxe pastry brush in navy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 45.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-14",
+    "name": "Teal Pastry Brush - Deluxe",
+    "description": "Deluxe pastry brush in teal for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 46.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-15",
+    "name": "Grey Pastry Brush - Deluxe",
+    "description": "Deluxe pastry brush in grey for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 47.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-16",
+    "name": "Burgundy Pastry Brush - Deluxe",
+    "description": "Deluxe pastry brush in burgundy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 48.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-17",
+    "name": "Blue Pastry Brush - Deluxe",
+    "description": "Deluxe pastry brush in blue for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 49.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-18",
+    "name": "Sand Pastry Brush - Deluxe",
+    "description": "Deluxe pastry brush in sand for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 50.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-19",
+    "name": "Yellow Pastry Brush - Deluxe",
+    "description": "Deluxe pastry brush in yellow for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 51,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-03-20",
+    "name": "Lavender Pastry Brush - Deluxe",
+    "description": "Deluxe pastry brush in lavender for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 51.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-01",
+    "name": "Black Cake Tin - Standard",
+    "description": "Standard cake tin in black for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 37.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-02",
+    "name": "White Cake Tin - Standard",
+    "description": "Standard cake tin in white for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 38.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-03",
+    "name": "Navy Cake Tin - Standard",
+    "description": "Standard cake tin in navy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 39.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-04",
+    "name": "Teal Cake Tin - Standard",
+    "description": "Standard cake tin in teal for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 40,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-05",
+    "name": "Grey Cake Tin - Standard",
+    "description": "Standard cake tin in grey for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 40.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-06",
+    "name": "Burgundy Cake Tin - Standard",
+    "description": "Standard cake tin in burgundy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 41.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-07",
+    "name": "Blue Cake Tin - Standard",
+    "description": "Standard cake tin in blue for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 42.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-08",
+    "name": "Sand Cake Tin - Standard",
+    "description": "Standard cake tin in sand for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 43.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-09",
+    "name": "Yellow Cake Tin - Standard",
+    "description": "Standard cake tin in yellow for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 44.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-10",
+    "name": "Lavender Cake Tin - Standard",
+    "description": "Standard cake tin in lavender for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 45.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-11",
+    "name": "Black Cake Tin - Deluxe",
+    "description": "Deluxe cake tin in black for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 46.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-12",
+    "name": "White Cake Tin - Deluxe",
+    "description": "Deluxe cake tin in white for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 47.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-13",
+    "name": "Navy Cake Tin - Deluxe",
+    "description": "Deluxe cake tin in navy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 48.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-14",
+    "name": "Teal Cake Tin - Deluxe",
+    "description": "Deluxe cake tin in teal for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 49.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-15",
+    "name": "Grey Cake Tin - Deluxe",
+    "description": "Deluxe cake tin in grey for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 50.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-16",
+    "name": "Burgundy Cake Tin - Deluxe",
+    "description": "Deluxe cake tin in burgundy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 51.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-17",
+    "name": "Blue Cake Tin - Deluxe",
+    "description": "Deluxe cake tin in blue for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 52.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-18",
+    "name": "Sand Cake Tin - Deluxe",
+    "description": "Deluxe cake tin in sand for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 53.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-19",
+    "name": "Yellow Cake Tin - Deluxe",
+    "description": "Deluxe cake tin in yellow for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 54.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-04-20",
+    "name": "Lavender Cake Tin - Deluxe",
+    "description": "Deluxe cake tin in lavender for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 55.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-01",
+    "name": "Black Cooling Rack - Standard",
+    "description": "Standard cooling rack in black for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 40.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-02",
+    "name": "White Cooling Rack - Standard",
+    "description": "Standard cooling rack in white for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 41.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-03",
+    "name": "Navy Cooling Rack - Standard",
+    "description": "Standard cooling rack in navy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 42.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-04",
+    "name": "Teal Cooling Rack - Standard",
+    "description": "Standard cooling rack in teal for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 43.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-05",
+    "name": "Grey Cooling Rack - Standard",
+    "description": "Standard cooling rack in grey for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 44.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-06",
+    "name": "Burgundy Cooling Rack - Standard",
+    "description": "Standard cooling rack in burgundy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 45.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-07",
+    "name": "Blue Cooling Rack - Standard",
+    "description": "Standard cooling rack in blue for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 46.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-08",
+    "name": "Sand Cooling Rack - Standard",
+    "description": "Standard cooling rack in sand for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 47.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-09",
+    "name": "Yellow Cooling Rack - Standard",
+    "description": "Standard cooling rack in yellow for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 48,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-10",
+    "name": "Lavender Cooling Rack - Standard",
+    "description": "Standard cooling rack in lavender for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 48.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-11",
+    "name": "Black Cooling Rack - Deluxe",
+    "description": "Deluxe cooling rack in black for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 49.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-12",
+    "name": "White Cooling Rack - Deluxe",
+    "description": "Deluxe cooling rack in white for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 50.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-13",
+    "name": "Navy Cooling Rack - Deluxe",
+    "description": "Deluxe cooling rack in navy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 51.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-14",
+    "name": "Teal Cooling Rack - Deluxe",
+    "description": "Deluxe cooling rack in teal for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 52.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-15",
+    "name": "Grey Cooling Rack - Deluxe",
+    "description": "Deluxe cooling rack in grey for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 53.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-16",
+    "name": "Burgundy Cooling Rack - Deluxe",
+    "description": "Deluxe cooling rack in burgundy for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 54.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-17",
+    "name": "Blue Cooling Rack - Deluxe",
+    "description": "Deluxe cooling rack in blue for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 55.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-18",
+    "name": "Sand Cooling Rack - Deluxe",
+    "description": "Deluxe cooling rack in sand for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 56.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-19",
+    "name": "Yellow Cooling Rack - Deluxe",
+    "description": "Deluxe cooling rack in yellow for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 57.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-08-05-20",
+    "name": "Lavender Cooling Rack - Deluxe",
+    "description": "Deluxe cooling rack in lavender for everyday use.",
+    "category": "Baking",
+    "price": {
+      "amount": 58.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  }
+]

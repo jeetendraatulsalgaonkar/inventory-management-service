@@ -41,16 +41,27 @@ def client(database, monkeypatch):
         app.dependency_overrides.clear()
 
 
+def post_products(client, *products):
+    """POST the product documents as the JSON array that the create endpoint expects."""
+    return client.post(PRODUCTS, json=list(products))
+
+
+def create_one(client, product):
+    """Create one product and return its representation."""
+    response = post_products(client, product)
+    assert response.status_code == 201, response.text
+    (created,) = response.json(parse_float=Decimal)
+    return created
+
+
 def test_persistence_and_duplicate(database, client, payload):
     engine, _ = database
-    first = client.post(PRODUCTS, json=payload)
-    assert first.status_code == 201, first.text
-    data = first.json(parse_float=Decimal)
-    duplicate = client.post(PRODUCTS, json=payload | {"sku": "LAP-DELL-1", "name": "Replacement"})
+    data = create_one(client, payload)
+    duplicate = post_products(client, payload | {"sku": "LAP-DELL-1", "name": "Replacement"})
     assert duplicate.status_code == 409, duplicate.text
     assert duplicate.headers["content-type"] == "application/problem+json"
     assert duplicate.json()["type"] == "urn:inventra:problem:duplicate-sku"
-    assert duplicate.json()["sku"] == "LAP-DELL-1"
+    assert duplicate.json()["skus"] == ["LAP-DELL-1"]
     with Session(engine) as session:
         product = session.scalars(select(Product).where(Product.sku == "LAP-DELL-1")).one()
         assert product.id == UUID(data["id"])
@@ -60,22 +71,274 @@ def test_persistence_and_duplicate(database, client, payload):
         assert product.version == data["version"] == 0
         assert product.created_at == product.updated_at
         assert product.deleted_at is None
-    assert client.post(PRODUCTS, json=payload | {"sku": "new-sku"}).status_code == 201
+    assert post_products(client, payload | {"sku": "new-sku"}).status_code == 201
 
 
 def test_concurrent_create_has_one_winner(database, client, payload):
     engine, _ = database
     barrier = Barrier(2)
 
-    def create(sku):
+    def create(skus):
         barrier.wait(timeout=10)
-        return client.post(PRODUCTS, json=payload | {"sku": sku})
+        return post_products(client, *(payload | {"sku": sku} for sku in skus))
 
+    # Two batches that share one SKU, spelled differently.
+    requests = [["lap-dell-1", "ONLY-FIRST"], ["ONLY-SECOND", " LAP-DELL-1 "]]
     with ThreadPoolExecutor(max_workers=2) as executor:
-        responses = list(executor.map(create, ["lap-dell-1", " LAP-DELL-1 "]))
+        responses = list(executor.map(create, requests))
     assert sorted(response.status_code for response in responses) == [201, 409]
+    loser = next(response for response in responses if response.status_code == 409)
+    assert loser.json()["skus"] == ["LAP-DELL-1"]
+    winner = next(response for response in responses if response.status_code == 201).json()
     with Session(engine) as session:
-        assert len(session.scalars(select(Product).where(Product.sku == "LAP-DELL-1")).all()) == 1
+        stored = session.scalars(select(Product.sku).where(Product.sku.in_(
+            ["LAP-DELL-1", "ONLY-FIRST", "ONLY-SECOND"]
+        ))).all()
+    # The whole winning batch, and nothing of the losing one.
+    assert sorted(stored) == sorted(item["sku"] for item in winner)
+
+
+# ---------------------------------------------------------------------------
+# Create Products: batches
+# ---------------------------------------------------------------------------
+
+def test_batch_is_created_atomically_in_request_order(database, client, payload):
+    engine, _ = database
+    products = [
+        payload | {"sku": "batch-c", "name": "Batch C"},
+        payload | {"sku": "batch-a", "name": "Batch A", "price": {"amount": "0.0001", "currency": "USD"}},
+        payload | {"sku": "batch-b", "name": "Batch B", "description": " Second ", "attributes": {}},
+    ]
+    response = post_products(client, *products)
+    assert response.status_code == 201, response.text
+    assert "location" not in response.headers
+    created = response.json(parse_float=Decimal)
+    assert [item["sku"] for item in created] == ["BATCH-C", "BATCH-A", "BATCH-B"]     # request order
+    assert created[1]["price"] == {"amount": Decimal("0.0001"), "currency": "USD"}
+    assert created[2]["description"] == "Second"
+
+    with engine.connect() as connection:
+        rows = connection.execute(text(
+            "SELECT id, sku, created_at, updated_at, status, version, xmin::text AS tx "
+            "FROM products WHERE sku LIKE 'BATCH-%' ORDER BY id"
+        )).all()
+    # Stored in one transaction, with one creation time, and ids in request order.
+    assert [row.sku for row in rows] == ["BATCH-C", "BATCH-A", "BATCH-B"]
+    assert [str(row.id) for row in rows] == [item["id"] for item in created]
+    assert len({row.tx for row in rows}) == 1
+    assert len({(row.created_at, row.updated_at) for row in rows}) == 1
+    assert {(row.status, row.version) for row in rows} == {("ACTIVE", 0)}
+    # Every product reads back exactly as the create response showed it ...
+    for item in created:
+        assert client.get(f"{PRODUCTS}/{item['id']}").json(parse_float=Decimal) == item
+    # ... and sorting by createdAt (ties broken by id) keeps the request order.
+    listed = client.get(PRODUCTS, params={"search": "batch", "sort": "createdAt"}).json(parse_float=Decimal)
+    assert listed["items"] == created
+
+
+@pytest.mark.parametrize("taken", ["seeded", "soft-deleted"])
+def test_batch_with_a_taken_sku_creates_nothing(database, client, payload, taken):
+    engine, _ = database
+    if taken == "soft-deleted":
+        # Soft-deleted products keep their SKUs reserved.
+        assert delete_ids(client, ids_of(engine, "DEMO-LAPTOP-001", "DEMO-MOUSE-001")).status_code == 204
+    before = rows_by_id(engine)
+    response = post_products(client, *(payload | {"sku": sku} for sku in [
+        "fresh-1", "demo-mouse-001", "fresh-2", " Demo-Laptop-001 ", "fresh-3",
+    ]))
+    assert response.status_code == 409, response.text
+    body = response.json()
+    assert body["type"] == "urn:inventra:problem:duplicate-sku"
+    # Every taken SKU, canonical and in request order, not only the first one the insert hit.
+    assert body["skus"] == ["DEMO-MOUSE-001", "DEMO-LAPTOP-001"]
+    assert body["detail"] == (
+        "Products with these SKUs already exist: DEMO-MOUSE-001, DEMO-LAPTOP-001. No product was created."
+    )
+    assert rows_by_id(engine) == before             # not even the fresh SKUs were stored
+    # The fresh SKUs are still free.
+    assert post_products(client, *(payload | {"sku": f"fresh-{n}"} for n in (1, 2, 3))).status_code == 201
+
+
+def test_batch_conflicting_with_a_product_created_by_an_earlier_batch(database, client, payload):
+    engine, _ = database
+    assert post_products(client, payload | {"sku": "A-1"}, payload | {"sku": "B-2"}).status_code == 201
+    before = rows_by_id(engine)
+    response = post_products(client, payload | {"sku": "C-3"}, payload | {"sku": "b-2"})
+    assert (response.status_code, response.json()["skus"]) == (409, ["B-2"])
+    assert rows_by_id(engine) == before
+
+
+@pytest.mark.parametrize(("raw", "kind", "detail"), [
+    ("", "malformed-request", "The request body is missing."),
+    ("null", "malformed-request", "The request body is null."),
+    ("[]", "validation-error", "The product list is empty."),
+    ("{", "malformed-request", "The request body is not valid JSON."),
+    ('"products"', "malformed-request", "The request body must be a JSON array of products, not a JSON string."),
+    ("SINGLE", "malformed-request", "The request body must be a JSON array of products, not a single product object."),
+    ("NULL-ELEMENT", "malformed-request", "The request contains 1 invalid field(s) in 1 product(s)."),
+    ("INVALID-ELEMENT", "validation-error", "The request contains 1 invalid field(s) in 1 product(s)."),
+    ("REPEATED-SKU", "validation-error", "The request contains 1 invalid field(s) in 1 product(s)."),
+])
+def test_rejected_create_requests_store_nothing(database, client, payload, raw, kind, detail):
+    engine, _ = database
+    valid = [payload | {"sku": f"REJECTED-{n}"} for n in range(3)]
+    raw = {
+        "SINGLE": json.dumps(payload),
+        "NULL-ELEMENT": json.dumps([valid[0], None, valid[2]]),
+        "INVALID-ELEMENT": json.dumps([valid[0], valid[1] | {"price": {"amount": -1, "currency": "EUR"}}, valid[2]]),
+        "REPEATED-SKU": json.dumps([valid[0], valid[1], valid[2] | {"sku": "rejected-0"}]),
+    }.get(raw, raw)
+    before = rows_by_id(engine)
+    response = client.post(PRODUCTS, content=raw, headers={"Content-Type": "application/json"})
+    assert response.status_code == 400, response.text
+    body = response.json()
+    assert body["type"] == f"urn:inventra:problem:{kind}"
+    assert body["detail"].startswith(detail)
+    assert rows_by_id(engine) == before
+
+
+def varied_products(payload, count, prefix):
+    """`count` distinct products whose fields vary: text that COPY must escape, optional
+    descriptions, every unit, prices with and without fractions, and attributes."""
+    units = ["PIECE", "BOX", "PACK", "PALLET", "GRAM", "KILOGRAM", "MILLILITER", "LITER",
+             "CENTIMETER", "METER", "SQUARE_METER", "CUBIC_METER"]
+    return [
+        payload | {
+            "sku": f"{prefix}-{n}",
+            "name": f"Product {n} \t tab \\ backslash \n line 'quote' \"double\" Käse 🧀",
+            "description": None if n % 3 == 0 else f"Description {n}\r\n",
+            "price": {"amount": f"{n}.{n % 10000:04}" if n % 2 else n, "currency": "USD" if n % 5 == 0 else "EUR"},
+            "unitOfMeasure": units[n % len(units)],
+            "attributes": {} if n % 4 == 0 else {"index": str(n), "note": "\\N and \t"},
+        }
+        for n in range(count)
+    ]
+
+
+def test_ten_thousand_products_are_created_in_one_request(database, client, payload):
+    engine, _ = database
+    products = varied_products(payload, 10_000, "BULK")
+    response = post_products(client, *products)
+    assert response.status_code == 201, response.text
+    created = response.json(parse_float=Decimal)
+    assert [item["sku"] for item in created] == [f"BULK-{n}" for n in range(10_000)]
+    with engine.connect() as connection:
+        rows = {row.sku: row for row in connection.execute(text(
+            "SELECT *, xmin::text AS tx FROM products WHERE sku LIKE 'BULK-%'"
+        ))}
+    assert len(rows) == 10_000
+    assert len({row.tx for row in rows.values()}) == 1            # one transaction
+    assert len({row.created_at for row in rows.values()}) == 1    # one creation time
+    # Every stored value matches the request exactly, including text that COPY escapes.
+    for product, item in zip(products, created):
+        row = rows[item["sku"]]
+        assert str(row.id) == item["id"]
+        assert (row.name, row.description) == (product["name"], (product["description"] or "").strip() or None)
+        assert row.price_amount == Decimal(str(product["price"]["amount"]))
+        assert (row.price_currency, row.unit_of_measure) == (product["price"]["currency"], product["unitOfMeasure"])
+        assert row.attributes == product["attributes"]
+        assert (row.status, row.version, row.deleted_at) == ("ACTIVE", 0, None)
+    # Get and List show each product exactly as the create response did.
+    for item in created[::997]:
+        assert client.get(f"{PRODUCTS}/{item['id']}").json(parse_float=Decimal) == item
+    for page in (1, 37, 100):
+        listed = client.get(PRODUCTS, params={"search": "BULK-", "sort": "createdAt", "size": 100, "page": page})
+        body = listed.json(parse_float=Decimal)
+        assert body["totalItems"] == 10_000
+        assert body["items"] == created[(page - 1) * 100:page * 100]      # request order
+
+
+def test_a_large_request_with_one_taken_sku_creates_nothing(database, client, payload):
+    engine, _ = database
+    before = rows_by_id(engine)
+    products = varied_products(payload, 5_000, "BULK")
+    products[4_321] = products[4_321] | {"sku": "demo-mouse-001"}
+    response = post_products(client, *products)
+    assert (response.status_code, response.json()["skus"]) == (409, ["DEMO-MOUSE-001"])
+    assert rows_by_id(engine) == before
+
+
+def test_a_large_request_with_an_invalid_product_creates_nothing(database, client, payload):
+    engine, _ = database
+    before = rows_by_id(engine)
+    products = varied_products(payload, 5_000, "BULK")
+    products[-1] = products[-1] | {"unitOfMeasure": "BARREL"}
+    response = post_products(client, *products)
+    assert response.status_code == 400, response.text
+    assert [item["field"] for item in response.json()["errors"]] == ["4999.unitOfMeasure"]
+    assert rows_by_id(engine) == before
+
+
+def test_concurrent_disjoint_batches_all_succeed(database, client, payload):
+    engine, _ = database
+    requests, size = 8, 25
+    barrier = Barrier(requests)
+
+    def create(request):
+        barrier.wait(timeout=10)
+        return post_products(client, *(payload | {"sku": f"PAR-{request}-{n}"} for n in range(size)))
+
+    with ThreadPoolExecutor(max_workers=requests) as executor:
+        responses = list(executor.map(create, range(requests)))
+    assert [response.status_code for response in responses] == [201] * requests
+    with engine.connect() as connection:
+        stored = connection.scalar(text("SELECT count(DISTINCT sku) FROM products WHERE sku LIKE 'PAR-%'"))
+    assert stored == requests * size
+
+
+@pytest.mark.parametrize("isolation", [None, "repeatable read", "serializable"],
+                         ids=["server-default", "repeatable-read", "serializable"])
+@pytest.mark.parametrize("other_transaction", ["commits", "rolls-back"])
+def test_batch_waits_for_a_concurrent_insert_of_its_sku(database, client, payload, isolation, other_transaction):
+    """Another transaction has inserted, but not committed, one SKU of the batch. The
+    insert waits for it. If it commits, the request reports that SKU as taken (409,
+    never a 500) and stores nothing; if it rolls back, the whole batch is created."""
+    engine, _ = database
+    with engine.connect() as connection:
+        schema = connection.scalar(text("SELECT current_schema()"))
+    settings = [f"search_path={schema}"] + ([f"default_transaction_isolation={isolation}"] if isolation else [])
+    name = "inventra-create-waiter"
+    waiter = create_engine(engine.url, connect_args={
+        "options": " ".join("-c" + setting.replace(" ", "\\ ") for setting in settings),
+        "application_name": name,
+    })
+
+    def session():
+        with Session(waiter, expire_on_commit=False) as value:
+            yield value
+
+    app.dependency_overrides[get_session] = session
+    batch = [payload | {"sku": sku} for sku in ("WAIT-1", "race-1", "WAIT-2")]
+    try:
+        with ThreadPoolExecutor(max_workers=1) as executor, engine.connect() as other:
+            other.execute(text("""
+                INSERT INTO products (id, sku, name, category, price_amount, price_currency, unit_of_measure,
+                                      attributes, status, created_at, updated_at)
+                VALUES (gen_random_uuid(), 'RACE-1', 'Racing product', 'RACE', 1, 'EUR', 'PIECE', '{}',
+                        'ACTIVE', now(), now())
+            """))
+            pending = executor.submit(post_products, client, *batch)
+            wait_until_waiting_for_a_lock(engine, name)
+            if other_transaction == "commits":
+                other.commit()
+            else:
+                other.rollback()
+            response = pending.result(timeout=30)
+    finally:
+        waiter.dispose()
+
+    with engine.connect() as connection:
+        stored = dict(connection.execute(text(
+            "SELECT sku, name FROM products WHERE sku IN ('WAIT-1', 'RACE-1', 'WAIT-2')"
+        )).all())
+    if other_transaction == "commits":
+        assert response.status_code == 409, response.text
+        assert response.json()["skus"] == ["RACE-1"]
+        assert stored == {"RACE-1": "Racing product"}          # the request stored nothing
+    else:
+        assert response.status_code == 201, response.text
+        assert [item["sku"] for item in response.json()] == ["WAIT-1", "RACE-1", "WAIT-2"]
+        assert stored == dict.fromkeys(["WAIT-1", "RACE-1", "WAIT-2"], "Dell XPS")
 
 
 def test_migration_roundtrip(database):
@@ -150,15 +413,14 @@ def matching_samples(search="", category=None, low=None, high=None):
     return {product["sku"] for product in SAMPLES if matches(product)}
 
 
-def test_get_by_location_returns_created_product(database, client, payload):
+def test_get_by_id_returns_created_product(database, client, payload):
     engine, _ = database
-    created = client.post(PRODUCTS, json=payload)
-    assert created.status_code == 201, created.text
-    fetched = client.get(created.headers["location"])
+    created = create_one(client, payload)
+    fetched = client.get(f"{PRODUCTS}/{created['id']}")
     assert fetched.status_code == 200, fetched.text
     # Stored values, including the 19-digit price and microsecond timestamps, round-trip exactly.
     data = fetched.json(parse_float=Decimal)
-    assert data == created.json(parse_float=Decimal)
+    assert data == created
     with engine.connect() as connection:
         stored_id = connection.scalar(text("SELECT id FROM products WHERE sku = 'LAP-DELL-1'"))
     assert data["id"] == str(stored_id)
@@ -208,7 +470,7 @@ def test_soft_deleted_products_are_hidden_and_preserved(database, client):
     with engine.connect() as connection:
         assert connection.scalar(text("SELECT count(*) FROM products")) == 115
     # The SKU stays reserved by the deleted row.
-    assert client.post(PRODUCTS, json={
+    assert post_products(client, {
         "sku": "demo-laptop-001", "name": "Replacement", "category": "ELECTRONICS",
         "price": {"amount": 1, "currency": "EUR"}, "unitOfMeasure": "PIECE", "attributes": {},
     }).status_code == 409
@@ -267,9 +529,11 @@ def test_search(client, search):
 
 
 def test_search_treats_wildcards_literally(client, payload):
-    for sku, name in [("TOWEL-1", "100% Cotton Towel"), ("TEA-1", "Tea_Bags"), ("PATH-1", "C:\\Temp")]:
-        created = client.post(PRODUCTS, json=payload | {"sku": sku, "name": name})
-        assert created.status_code == 201, created.text
+    created = post_products(client, *(
+        payload | {"sku": sku, "name": name}
+        for sku, name in [("TOWEL-1", "100% Cotton Towel"), ("TEA-1", "Tea_Bags"), ("PATH-1", "C:\\Temp")]
+    ))
+    assert created.status_code == 201, created.text
     assert skus(client.get(PRODUCTS, params={"search": "%"}).json()["items"]) == ["TOWEL-1"]
     assert skus(client.get(PRODUCTS, params={"search": "_"}).json()["items"]) == ["TEA-1"]
     assert skus(client.get(PRODUCTS, params={"search": "\\"}).json()["items"]) == ["PATH-1"]
@@ -310,8 +574,7 @@ def test_combined_filters_and_sort(client):
 
 
 def test_currency_filter(client, payload):
-    created = client.post(PRODUCTS, json=payload | {"sku": "usd-1", "price": {"amount": "10", "currency": "USD"}})
-    assert created.status_code == 201, created.text
+    create_one(client, payload | {"sku": "usd-1", "price": {"amount": "10", "currency": "USD"}})
     usd = client.get(PRODUCTS, params={"currency": "USD"}).json()
     assert skus(usd["items"]) == ["USD-1"]
     assert client.get(PRODUCTS, params={"currency": "EUR", "size": 1}).json()["totalItems"] == 115
@@ -322,8 +585,9 @@ def test_currency_filter(client, payload):
 
 def test_timestamps_are_utc_in_any_session_time_zone(database, client, payload):
     engine, _ = database
-    created = client.post(PRODUCTS, json=payload)
+    created = post_products(client, payload)
     assert created.status_code == 201, created.text
+    (created,) = created.json()
     with engine.connect() as connection:
         schema = connection.scalar(text("SELECT current_schema()"))
     local = create_engine(
@@ -336,11 +600,11 @@ def test_timestamps_are_utc_in_any_session_time_zone(database, client, payload):
 
     app.dependency_overrides[get_session] = session
     try:
-        fetched = client.get(created.headers["location"]).json()
+        fetched = client.get(f"{PRODUCTS}/{created['id']}").json()
         listed = client.get(PRODUCTS, params={"search": "LAP-DELL-1"}).json()["items"]
     finally:
         local.dispose()
-    assert fetched["createdAt"] == created.json()["createdAt"]
+    assert fetched["createdAt"] == created["createdAt"]
     assert fetched["createdAt"].endswith("Z")
     assert listed == [fetched]
 
@@ -404,7 +668,7 @@ def page_of(client, page, size=10, **params):
 
 
 def create_named(client, payload, sku, name):
-    assert client.post(PRODUCTS, json=payload | {"sku": sku, "name": name}).status_code == 201
+    assert post_products(client, payload | {"sku": sku, "name": name}).status_code == 201
 
 
 def soft_delete(engine, sku):
@@ -648,10 +912,9 @@ def test_delete_marks_products_deleted_and_keeps_them_stored(database, client):
 
 def test_created_product_can_be_deleted(database, client, payload):
     engine, _ = database
-    created = client.post(PRODUCTS, json=payload)
-    assert created.status_code == 201, created.text
-    assert delete_ids(client, [created.json()["id"]]).status_code == 204
-    assert client.get(created.headers["location"]).status_code == 404
+    created = create_one(client, payload)
+    assert delete_ids(client, [created["id"]]).status_code == 204
+    assert client.get(f"{PRODUCTS}/{created['id']}").status_code == 404
     with engine.connect() as connection:
         row = connection.execute(text("SELECT * FROM products WHERE sku = 'LAP-DELL-1'")).one()
     assert (row.status, row.version) == ("DELETED", 1)
@@ -725,9 +988,9 @@ def test_deleted_products_keep_their_sku(database, client, payload):
     engine, _ = database
     (laptop,) = ids_of(engine, "DEMO-LAPTOP-001")
     assert delete_ids(client, [laptop]).status_code == 204
-    conflict = client.post(PRODUCTS, json=payload | {"sku": "demo-laptop-001"})
+    conflict = post_products(client, payload | {"sku": "demo-laptop-001"})
     assert conflict.status_code == 409
-    assert conflict.json()["sku"] == "DEMO-LAPTOP-001"
+    assert conflict.json()["skus"] == ["DEMO-LAPTOP-001"]
 
 
 def test_reads_show_the_stored_status_until_a_product_is_deleted(database, client):
@@ -843,6 +1106,41 @@ def test_delete_waits_for_a_locked_product(database, client, isolation, other_tr
     else:
         assert response.status_code == 204, response.text
         assert states == [("DELETED", 1), ("DELETED", 1)]
+
+
+def test_running_server_creates_products_over_http(database, app_servers, payload):
+    """The JSON array travels over a real socket to uvicorn, as it does for users."""
+    engine, _ = database
+    with engine.connect() as connection:
+        schema = connection.scalar(text("SELECT current_schema()"))
+    url = engine.url.update_query_dict({"options": f"-csearch_path={schema}"})
+    server = app_servers(url.render_as_string(hide_password=False))
+    server.wait_until_serving()
+    with httpx.Client(base_url=server.base_url, timeout=10) as http:
+        created = http.post(PRODUCTS, json=[payload | {"sku": "http-1"}, payload | {"sku": "http-2"}])
+        assert created.status_code == 201, created.text
+        items = created.json(parse_float=Decimal)
+        assert [item["sku"] for item in items] == ["HTTP-1", "HTTP-2"]
+        for item in items:
+            assert http.get(f"{PRODUCTS}/{item['id']}").json(parse_float=Decimal) == item
+        headers = {"Content-Type": "application/json"}
+        for raw, detail in [("", "missing"), ("null", "null"), ("[]", "empty")]:
+            rejected = http.post(PRODUCTS, content=raw, headers=headers)
+            assert rejected.status_code == 400, rejected.text
+            assert detail in rejected.json()["detail"]
+        conflict = http.post(PRODUCTS, json=[payload | {"sku": "http-3"}, payload | {"sku": "HTTP-2"}])
+        assert (conflict.status_code, conflict.json()["skus"]) == (409, ["HTTP-2"])
+        assert http.get(PRODUCTS, params={"size": 1}).json()["totalItems"] == 117
+
+        # 10,000 products in one request, well within a 30-second timeout as gateways
+        # commonly apply; a slower response fails with httpx.ReadTimeout.
+        started = time.monotonic()
+        bulk = http.post(PRODUCTS, json=varied_products(payload, 10_000, "HTTP-BULK"), timeout=30)
+        elapsed = time.monotonic() - started
+        assert bulk.status_code == 201, bulk.text
+        assert len(bulk.json()) == 10_000
+        assert elapsed < 30
+        assert http.get(PRODUCTS, params={"size": 1}).json()["totalItems"] == 10_117
 
 
 def test_running_server_soft_deletes_over_http(database, app_servers):

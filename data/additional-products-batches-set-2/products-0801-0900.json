@@ -1,0 +1,1602 @@
+[
+  {
+    "sku": "EXTRA2-09-01-01",
+    "name": "Black Laundry Basket - Standard",
+    "description": "Standard laundry basket in black for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 29.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-02",
+    "name": "White Laundry Basket - Standard",
+    "description": "Standard laundry basket in white for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 30.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-03",
+    "name": "Navy Laundry Basket - Standard",
+    "description": "Standard laundry basket in navy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 31.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-04",
+    "name": "Teal Laundry Basket - Standard",
+    "description": "Standard laundry basket in teal for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 32.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-05",
+    "name": "Grey Laundry Basket - Standard",
+    "description": "Standard laundry basket in grey for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 33.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-06",
+    "name": "Burgundy Laundry Basket - Standard",
+    "description": "Standard laundry basket in burgundy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 34.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-07",
+    "name": "Blue Laundry Basket - Standard",
+    "description": "Standard laundry basket in blue for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 35.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-08",
+    "name": "Sand Laundry Basket - Standard",
+    "description": "Standard laundry basket in sand for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 36.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-09",
+    "name": "Yellow Laundry Basket - Standard",
+    "description": "Standard laundry basket in yellow for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 37.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-10",
+    "name": "Lavender Laundry Basket - Standard",
+    "description": "Standard laundry basket in lavender for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 38.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-11",
+    "name": "Black Laundry Basket - Deluxe",
+    "description": "Deluxe laundry basket in black for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 39.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-12",
+    "name": "White Laundry Basket - Deluxe",
+    "description": "Deluxe laundry basket in white for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 40,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-13",
+    "name": "Navy Laundry Basket - Deluxe",
+    "description": "Deluxe laundry basket in navy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 40.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-14",
+    "name": "Teal Laundry Basket - Deluxe",
+    "description": "Deluxe laundry basket in teal for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 41.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-15",
+    "name": "Grey Laundry Basket - Deluxe",
+    "description": "Deluxe laundry basket in grey for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 42.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-16",
+    "name": "Burgundy Laundry Basket - Deluxe",
+    "description": "Deluxe laundry basket in burgundy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 43.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-17",
+    "name": "Blue Laundry Basket - Deluxe",
+    "description": "Deluxe laundry basket in blue for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 44.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-18",
+    "name": "Sand Laundry Basket - Deluxe",
+    "description": "Deluxe laundry basket in sand for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 45.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-19",
+    "name": "Yellow Laundry Basket - Deluxe",
+    "description": "Deluxe laundry basket in yellow for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 46.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-01-20",
+    "name": "Lavender Laundry Basket - Deluxe",
+    "description": "Deluxe laundry basket in lavender for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 47.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-01",
+    "name": "Black Clothes Peg Set - Standard",
+    "description": "Standard clothes peg set in black for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 32.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-02",
+    "name": "White Clothes Peg Set - Standard",
+    "description": "Standard clothes peg set in white for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 33.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-03",
+    "name": "Navy Clothes Peg Set - Standard",
+    "description": "Standard clothes peg set in navy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 34.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-04",
+    "name": "Teal Clothes Peg Set - Standard",
+    "description": "Standard clothes peg set in teal for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 35.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-05",
+    "name": "Grey Clothes Peg Set - Standard",
+    "description": "Standard clothes peg set in grey for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 36.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-06",
+    "name": "Burgundy Clothes Peg Set - Standard",
+    "description": "Standard clothes peg set in burgundy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 37.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-07",
+    "name": "Blue Clothes Peg Set - Standard",
+    "description": "Standard clothes peg set in blue for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 38.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-08",
+    "name": "Sand Clothes Peg Set - Standard",
+    "description": "Standard clothes peg set in sand for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 39.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-09",
+    "name": "Yellow Clothes Peg Set - Standard",
+    "description": "Standard clothes peg set in yellow for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 40.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-10",
+    "name": "Lavender Clothes Peg Set - Standard",
+    "description": "Standard clothes peg set in lavender for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 41.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-11",
+    "name": "Black Clothes Peg Set - Deluxe",
+    "description": "Deluxe clothes peg set in black for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 42.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-12",
+    "name": "White Clothes Peg Set - Deluxe",
+    "description": "Deluxe clothes peg set in white for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 43.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-13",
+    "name": "Navy Clothes Peg Set - Deluxe",
+    "description": "Deluxe clothes peg set in navy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 44.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-14",
+    "name": "Teal Clothes Peg Set - Deluxe",
+    "description": "Deluxe clothes peg set in teal for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 45.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-15",
+    "name": "Grey Clothes Peg Set - Deluxe",
+    "description": "Deluxe clothes peg set in grey for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 46.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-16",
+    "name": "Burgundy Clothes Peg Set - Deluxe",
+    "description": "Deluxe clothes peg set in burgundy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 47.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-17",
+    "name": "Blue Clothes Peg Set - Deluxe",
+    "description": "Deluxe clothes peg set in blue for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 48,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-18",
+    "name": "Sand Clothes Peg Set - Deluxe",
+    "description": "Deluxe clothes peg set in sand for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 48.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-19",
+    "name": "Yellow Clothes Peg Set - Deluxe",
+    "description": "Deluxe clothes peg set in yellow for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 49.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-02-20",
+    "name": "Lavender Clothes Peg Set - Deluxe",
+    "description": "Deluxe clothes peg set in lavender for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 50.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-01",
+    "name": "Black Laundry Mesh Bag - Standard",
+    "description": "Standard laundry mesh bag in black for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 36.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-02",
+    "name": "White Laundry Mesh Bag - Standard",
+    "description": "Standard laundry mesh bag in white for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 37,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-03",
+    "name": "Navy Laundry Mesh Bag - Standard",
+    "description": "Standard laundry mesh bag in navy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 37.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-04",
+    "name": "Teal Laundry Mesh Bag - Standard",
+    "description": "Standard laundry mesh bag in teal for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 38.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-05",
+    "name": "Grey Laundry Mesh Bag - Standard",
+    "description": "Standard laundry mesh bag in grey for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 39.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-06",
+    "name": "Burgundy Laundry Mesh Bag - Standard",
+    "description": "Standard laundry mesh bag in burgundy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 40.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-07",
+    "name": "Blue Laundry Mesh Bag - Standard",
+    "description": "Standard laundry mesh bag in blue for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 41.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-08",
+    "name": "Sand Laundry Mesh Bag - Standard",
+    "description": "Standard laundry mesh bag in sand for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 42.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-09",
+    "name": "Yellow Laundry Mesh Bag - Standard",
+    "description": "Standard laundry mesh bag in yellow for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 43.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-10",
+    "name": "Lavender Laundry Mesh Bag - Standard",
+    "description": "Standard laundry mesh bag in lavender for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 44.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-11",
+    "name": "Black Laundry Mesh Bag - Deluxe",
+    "description": "Deluxe laundry mesh bag in black for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 45.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-12",
+    "name": "White Laundry Mesh Bag - Deluxe",
+    "description": "Deluxe laundry mesh bag in white for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 46.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-13",
+    "name": "Navy Laundry Mesh Bag - Deluxe",
+    "description": "Deluxe laundry mesh bag in navy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 47.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-14",
+    "name": "Teal Laundry Mesh Bag - Deluxe",
+    "description": "Deluxe laundry mesh bag in teal for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 48.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-15",
+    "name": "Grey Laundry Mesh Bag - Deluxe",
+    "description": "Deluxe laundry mesh bag in grey for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 49.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-16",
+    "name": "Burgundy Laundry Mesh Bag - Deluxe",
+    "description": "Deluxe laundry mesh bag in burgundy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 50.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-17",
+    "name": "Blue Laundry Mesh Bag - Deluxe",
+    "description": "Deluxe laundry mesh bag in blue for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 51.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-18",
+    "name": "Sand Laundry Mesh Bag - Deluxe",
+    "description": "Deluxe laundry mesh bag in sand for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 52.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-19",
+    "name": "Yellow Laundry Mesh Bag - Deluxe",
+    "description": "Deluxe laundry mesh bag in yellow for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 53.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-03-20",
+    "name": "Lavender Laundry Mesh Bag - Deluxe",
+    "description": "Deluxe laundry mesh bag in lavender for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 54.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-01",
+    "name": "Black Lint Brush - Standard",
+    "description": "Standard lint brush in black for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 39.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-02",
+    "name": "White Lint Brush - Standard",
+    "description": "Standard lint brush in white for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 40.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-03",
+    "name": "Navy Lint Brush - Standard",
+    "description": "Standard lint brush in navy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 41.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-04",
+    "name": "Teal Lint Brush - Standard",
+    "description": "Standard lint brush in teal for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 42.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-05",
+    "name": "Grey Lint Brush - Standard",
+    "description": "Standard lint brush in grey for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 43.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-06",
+    "name": "Burgundy Lint Brush - Standard",
+    "description": "Standard lint brush in burgundy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 44.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-07",
+    "name": "Blue Lint Brush - Standard",
+    "description": "Standard lint brush in blue for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-08",
+    "name": "Sand Lint Brush - Standard",
+    "description": "Standard lint brush in sand for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 45.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-09",
+    "name": "Yellow Lint Brush - Standard",
+    "description": "Standard lint brush in yellow for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 46.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-10",
+    "name": "Lavender Lint Brush - Standard",
+    "description": "Standard lint brush in lavender for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 47.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-11",
+    "name": "Black Lint Brush - Deluxe",
+    "description": "Deluxe lint brush in black for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 48.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-12",
+    "name": "White Lint Brush - Deluxe",
+    "description": "Deluxe lint brush in white for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 49.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-13",
+    "name": "Navy Lint Brush - Deluxe",
+    "description": "Deluxe lint brush in navy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 50.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-14",
+    "name": "Teal Lint Brush - Deluxe",
+    "description": "Deluxe lint brush in teal for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 51.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-15",
+    "name": "Grey Lint Brush - Deluxe",
+    "description": "Deluxe lint brush in grey for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 52.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-16",
+    "name": "Burgundy Lint Brush - Deluxe",
+    "description": "Deluxe lint brush in burgundy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 53.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-17",
+    "name": "Blue Lint Brush - Deluxe",
+    "description": "Deluxe lint brush in blue for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 54.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-18",
+    "name": "Sand Lint Brush - Deluxe",
+    "description": "Deluxe lint brush in sand for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 55.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-19",
+    "name": "Yellow Lint Brush - Deluxe",
+    "description": "Deluxe lint brush in yellow for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 56.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-04-20",
+    "name": "Lavender Lint Brush - Deluxe",
+    "description": "Deluxe lint brush in lavender for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 57.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-01",
+    "name": "Black Garment Hanger Set - Standard",
+    "description": "Standard garment hanger set in black for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 42.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-02",
+    "name": "White Garment Hanger Set - Standard",
+    "description": "Standard garment hanger set in white for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 43.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-03",
+    "name": "Navy Garment Hanger Set - Standard",
+    "description": "Standard garment hanger set in navy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 44.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-04",
+    "name": "Teal Garment Hanger Set - Standard",
+    "description": "Standard garment hanger set in teal for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 45.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-05",
+    "name": "Grey Garment Hanger Set - Standard",
+    "description": "Standard garment hanger set in grey for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 46.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-06",
+    "name": "Burgundy Garment Hanger Set - Standard",
+    "description": "Standard garment hanger set in burgundy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 47.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-07",
+    "name": "Blue Garment Hanger Set - Standard",
+    "description": "Standard garment hanger set in blue for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 48.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-08",
+    "name": "Sand Garment Hanger Set - Standard",
+    "description": "Standard garment hanger set in sand for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 49.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-09",
+    "name": "Yellow Garment Hanger Set - Standard",
+    "description": "Standard garment hanger set in yellow for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 50.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-10",
+    "name": "Lavender Garment Hanger Set - Standard",
+    "description": "Standard garment hanger set in lavender for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 51.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-11",
+    "name": "Black Garment Hanger Set - Deluxe",
+    "description": "Deluxe garment hanger set in black for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 52.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-12",
+    "name": "White Garment Hanger Set - Deluxe",
+    "description": "Deluxe garment hanger set in white for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 53,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-13",
+    "name": "Navy Garment Hanger Set - Deluxe",
+    "description": "Deluxe garment hanger set in navy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 53.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-14",
+    "name": "Teal Garment Hanger Set - Deluxe",
+    "description": "Deluxe garment hanger set in teal for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 54.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-15",
+    "name": "Grey Garment Hanger Set - Deluxe",
+    "description": "Deluxe garment hanger set in grey for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 55.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-16",
+    "name": "Burgundy Garment Hanger Set - Deluxe",
+    "description": "Deluxe garment hanger set in burgundy for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 56.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-17",
+    "name": "Blue Garment Hanger Set - Deluxe",
+    "description": "Deluxe garment hanger set in blue for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 57.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-18",
+    "name": "Sand Garment Hanger Set - Deluxe",
+    "description": "Deluxe garment hanger set in sand for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 58.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-19",
+    "name": "Yellow Garment Hanger Set - Deluxe",
+    "description": "Deluxe garment hanger set in yellow for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 59.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-09-05-20",
+    "name": "Lavender Garment Hanger Set - Deluxe",
+    "description": "Deluxe garment hanger set in lavender for everyday use.",
+    "category": "Laundry",
+    "price": {
+      "amount": 60.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  }
+]

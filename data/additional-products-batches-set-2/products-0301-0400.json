@@ -1,0 +1,1602 @@
+[
+  {
+    "sku": "EXTRA2-04-01-01",
+    "name": "Black Bicycle Bell - Standard",
+    "description": "Standard bicycle bell in black for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 18.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-02",
+    "name": "White Bicycle Bell - Standard",
+    "description": "Standard bicycle bell in white for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 19.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-03",
+    "name": "Navy Bicycle Bell - Standard",
+    "description": "Standard bicycle bell in navy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 20.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-04",
+    "name": "Teal Bicycle Bell - Standard",
+    "description": "Standard bicycle bell in teal for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 21.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-05",
+    "name": "Grey Bicycle Bell - Standard",
+    "description": "Standard bicycle bell in grey for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 22.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-06",
+    "name": "Burgundy Bicycle Bell - Standard",
+    "description": "Standard bicycle bell in burgundy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 23.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-07",
+    "name": "Blue Bicycle Bell - Standard",
+    "description": "Standard bicycle bell in blue for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 24.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-08",
+    "name": "Sand Bicycle Bell - Standard",
+    "description": "Standard bicycle bell in sand for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 25.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-09",
+    "name": "Yellow Bicycle Bell - Standard",
+    "description": "Standard bicycle bell in yellow for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 26.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-10",
+    "name": "Lavender Bicycle Bell - Standard",
+    "description": "Standard bicycle bell in lavender for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 27.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-11",
+    "name": "Black Bicycle Bell - Deluxe",
+    "description": "Deluxe bicycle bell in black for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 28.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-12",
+    "name": "White Bicycle Bell - Deluxe",
+    "description": "Deluxe bicycle bell in white for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 29.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-13",
+    "name": "Navy Bicycle Bell - Deluxe",
+    "description": "Deluxe bicycle bell in navy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 30.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-14",
+    "name": "Teal Bicycle Bell - Deluxe",
+    "description": "Deluxe bicycle bell in teal for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 31.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-15",
+    "name": "Grey Bicycle Bell - Deluxe",
+    "description": "Deluxe bicycle bell in grey for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 32.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-16",
+    "name": "Burgundy Bicycle Bell - Deluxe",
+    "description": "Deluxe bicycle bell in burgundy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 33.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-17",
+    "name": "Blue Bicycle Bell - Deluxe",
+    "description": "Deluxe bicycle bell in blue for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 34,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-18",
+    "name": "Sand Bicycle Bell - Deluxe",
+    "description": "Deluxe bicycle bell in sand for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 34.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-19",
+    "name": "Yellow Bicycle Bell - Deluxe",
+    "description": "Deluxe bicycle bell in yellow for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 35.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-01-20",
+    "name": "Lavender Bicycle Bell - Deluxe",
+    "description": "Deluxe bicycle bell in lavender for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 36.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-01",
+    "name": "Black Bottle Cage - Standard",
+    "description": "Standard bottle cage in black for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 22.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-02",
+    "name": "White Bottle Cage - Standard",
+    "description": "Standard bottle cage in white for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 23,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-03",
+    "name": "Navy Bottle Cage - Standard",
+    "description": "Standard bottle cage in navy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 23.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-04",
+    "name": "Teal Bottle Cage - Standard",
+    "description": "Standard bottle cage in teal for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 24.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-05",
+    "name": "Grey Bottle Cage - Standard",
+    "description": "Standard bottle cage in grey for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 25.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-06",
+    "name": "Burgundy Bottle Cage - Standard",
+    "description": "Standard bottle cage in burgundy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 26.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-07",
+    "name": "Blue Bottle Cage - Standard",
+    "description": "Standard bottle cage in blue for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 27.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-08",
+    "name": "Sand Bottle Cage - Standard",
+    "description": "Standard bottle cage in sand for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 28.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-09",
+    "name": "Yellow Bottle Cage - Standard",
+    "description": "Standard bottle cage in yellow for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 29.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-10",
+    "name": "Lavender Bottle Cage - Standard",
+    "description": "Standard bottle cage in lavender for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 30.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-11",
+    "name": "Black Bottle Cage - Deluxe",
+    "description": "Deluxe bottle cage in black for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 31.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-12",
+    "name": "White Bottle Cage - Deluxe",
+    "description": "Deluxe bottle cage in white for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 32.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-13",
+    "name": "Navy Bottle Cage - Deluxe",
+    "description": "Deluxe bottle cage in navy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 33.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-14",
+    "name": "Teal Bottle Cage - Deluxe",
+    "description": "Deluxe bottle cage in teal for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 34.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-15",
+    "name": "Grey Bottle Cage - Deluxe",
+    "description": "Deluxe bottle cage in grey for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 35.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-16",
+    "name": "Burgundy Bottle Cage - Deluxe",
+    "description": "Deluxe bottle cage in burgundy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 36.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-17",
+    "name": "Blue Bottle Cage - Deluxe",
+    "description": "Deluxe bottle cage in blue for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 37.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-18",
+    "name": "Sand Bottle Cage - Deluxe",
+    "description": "Deluxe bottle cage in sand for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 38.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-19",
+    "name": "Yellow Bottle Cage - Deluxe",
+    "description": "Deluxe bottle cage in yellow for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 39.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-02-20",
+    "name": "Lavender Bottle Cage - Deluxe",
+    "description": "Deluxe bottle cage in lavender for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 40.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-01",
+    "name": "Black Handlebar Grip Set - Standard",
+    "description": "Standard handlebar grip set in black for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 25.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-02",
+    "name": "White Handlebar Grip Set - Standard",
+    "description": "Standard handlebar grip set in white for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 26.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-03",
+    "name": "Navy Handlebar Grip Set - Standard",
+    "description": "Standard handlebar grip set in navy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 27.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-04",
+    "name": "Teal Handlebar Grip Set - Standard",
+    "description": "Standard handlebar grip set in teal for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 28.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-05",
+    "name": "Grey Handlebar Grip Set - Standard",
+    "description": "Standard handlebar grip set in grey for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 29.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-06",
+    "name": "Burgundy Handlebar Grip Set - Standard",
+    "description": "Standard handlebar grip set in burgundy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 30.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-07",
+    "name": "Blue Handlebar Grip Set - Standard",
+    "description": "Standard handlebar grip set in blue for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 31,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-08",
+    "name": "Sand Handlebar Grip Set - Standard",
+    "description": "Standard handlebar grip set in sand for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 31.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-09",
+    "name": "Yellow Handlebar Grip Set - Standard",
+    "description": "Standard handlebar grip set in yellow for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 32.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-10",
+    "name": "Lavender Handlebar Grip Set - Standard",
+    "description": "Standard handlebar grip set in lavender for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 33.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-11",
+    "name": "Black Handlebar Grip Set - Deluxe",
+    "description": "Deluxe handlebar grip set in black for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 34.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-12",
+    "name": "White Handlebar Grip Set - Deluxe",
+    "description": "Deluxe handlebar grip set in white for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 35.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-13",
+    "name": "Navy Handlebar Grip Set - Deluxe",
+    "description": "Deluxe handlebar grip set in navy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 36.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-14",
+    "name": "Teal Handlebar Grip Set - Deluxe",
+    "description": "Deluxe handlebar grip set in teal for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 37.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-15",
+    "name": "Grey Handlebar Grip Set - Deluxe",
+    "description": "Deluxe handlebar grip set in grey for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 38.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-16",
+    "name": "Burgundy Handlebar Grip Set - Deluxe",
+    "description": "Deluxe handlebar grip set in burgundy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 39.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-17",
+    "name": "Blue Handlebar Grip Set - Deluxe",
+    "description": "Deluxe handlebar grip set in blue for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 40.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-18",
+    "name": "Sand Handlebar Grip Set - Deluxe",
+    "description": "Deluxe handlebar grip set in sand for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 41.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-19",
+    "name": "Yellow Handlebar Grip Set - Deluxe",
+    "description": "Deluxe handlebar grip set in yellow for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 42.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-03-20",
+    "name": "Lavender Handlebar Grip Set - Deluxe",
+    "description": "Deluxe handlebar grip set in lavender for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 43.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-01",
+    "name": "Black Saddle Bag - Standard",
+    "description": "Standard saddle bag in black for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 28.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-02",
+    "name": "White Saddle Bag - Standard",
+    "description": "Standard saddle bag in white for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 29.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-03",
+    "name": "Navy Saddle Bag - Standard",
+    "description": "Standard saddle bag in navy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 30.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-04",
+    "name": "Teal Saddle Bag - Standard",
+    "description": "Standard saddle bag in teal for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 31.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-05",
+    "name": "Grey Saddle Bag - Standard",
+    "description": "Standard saddle bag in grey for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 32.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-06",
+    "name": "Burgundy Saddle Bag - Standard",
+    "description": "Standard saddle bag in burgundy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 33.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-07",
+    "name": "Blue Saddle Bag - Standard",
+    "description": "Standard saddle bag in blue for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 34.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-08",
+    "name": "Sand Saddle Bag - Standard",
+    "description": "Standard saddle bag in sand for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 35.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-09",
+    "name": "Yellow Saddle Bag - Standard",
+    "description": "Standard saddle bag in yellow for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 36.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-10",
+    "name": "Lavender Saddle Bag - Standard",
+    "description": "Standard saddle bag in lavender for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 37.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-11",
+    "name": "Black Saddle Bag - Deluxe",
+    "description": "Deluxe saddle bag in black for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 38.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-12",
+    "name": "White Saddle Bag - Deluxe",
+    "description": "Deluxe saddle bag in white for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 39,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-13",
+    "name": "Navy Saddle Bag - Deluxe",
+    "description": "Deluxe saddle bag in navy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 39.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-14",
+    "name": "Teal Saddle Bag - Deluxe",
+    "description": "Deluxe saddle bag in teal for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 40.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-15",
+    "name": "Grey Saddle Bag - Deluxe",
+    "description": "Deluxe saddle bag in grey for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 41.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-16",
+    "name": "Burgundy Saddle Bag - Deluxe",
+    "description": "Deluxe saddle bag in burgundy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 42.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-17",
+    "name": "Blue Saddle Bag - Deluxe",
+    "description": "Deluxe saddle bag in blue for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 43.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-18",
+    "name": "Sand Saddle Bag - Deluxe",
+    "description": "Deluxe saddle bag in sand for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 44.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-19",
+    "name": "Yellow Saddle Bag - Deluxe",
+    "description": "Deluxe saddle bag in yellow for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 45.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-04-20",
+    "name": "Lavender Saddle Bag - Deluxe",
+    "description": "Deluxe saddle bag in lavender for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 46.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-01",
+    "name": "Black Bicycle Reflector Set - Standard",
+    "description": "Standard bicycle reflector set in black for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 31.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-02",
+    "name": "White Bicycle Reflector Set - Standard",
+    "description": "Standard bicycle reflector set in white for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 32.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-03",
+    "name": "Navy Bicycle Reflector Set - Standard",
+    "description": "Standard bicycle reflector set in navy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 33.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-04",
+    "name": "Teal Bicycle Reflector Set - Standard",
+    "description": "Standard bicycle reflector set in teal for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 34.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-05",
+    "name": "Grey Bicycle Reflector Set - Standard",
+    "description": "Standard bicycle reflector set in grey for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 35.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-06",
+    "name": "Burgundy Bicycle Reflector Set - Standard",
+    "description": "Standard bicycle reflector set in burgundy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 36.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-07",
+    "name": "Blue Bicycle Reflector Set - Standard",
+    "description": "Standard bicycle reflector set in blue for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 37.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-08",
+    "name": "Sand Bicycle Reflector Set - Standard",
+    "description": "Standard bicycle reflector set in sand for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 38.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-09",
+    "name": "Yellow Bicycle Reflector Set - Standard",
+    "description": "Standard bicycle reflector set in yellow for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 39.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-10",
+    "name": "Lavender Bicycle Reflector Set - Standard",
+    "description": "Standard bicycle reflector set in lavender for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 40.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-11",
+    "name": "Black Bicycle Reflector Set - Deluxe",
+    "description": "Deluxe bicycle reflector set in black for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 41.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-12",
+    "name": "White Bicycle Reflector Set - Deluxe",
+    "description": "Deluxe bicycle reflector set in white for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 42.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-13",
+    "name": "Navy Bicycle Reflector Set - Deluxe",
+    "description": "Deluxe bicycle reflector set in navy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 43.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-14",
+    "name": "Teal Bicycle Reflector Set - Deluxe",
+    "description": "Deluxe bicycle reflector set in teal for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 44.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-15",
+    "name": "Grey Bicycle Reflector Set - Deluxe",
+    "description": "Deluxe bicycle reflector set in grey for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 45.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-16",
+    "name": "Burgundy Bicycle Reflector Set - Deluxe",
+    "description": "Deluxe bicycle reflector set in burgundy for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 46.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-17",
+    "name": "Blue Bicycle Reflector Set - Deluxe",
+    "description": "Deluxe bicycle reflector set in blue for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 47,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-18",
+    "name": "Sand Bicycle Reflector Set - Deluxe",
+    "description": "Deluxe bicycle reflector set in sand for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 47.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-19",
+    "name": "Yellow Bicycle Reflector Set - Deluxe",
+    "description": "Deluxe bicycle reflector set in yellow for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 48.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-04-05-20",
+    "name": "Lavender Bicycle Reflector Set - Deluxe",
+    "description": "Deluxe bicycle reflector set in lavender for everyday use.",
+    "category": "Cycling",
+    "price": {
+      "amount": 49.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  }
+]

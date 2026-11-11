@@ -1,6 +1,6 @@
 # Inventory Management Service
 
-Inventory Management Service is a product catalog API built with Python 3.14, FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL 18, and Alembic. It implements **Create Product**, **Get Product by ID**, **List Products** with search, filters, sorting, and pagination, and **Soft-delete Products**. Python 3.14 supplies the standard-library UUIDv7 generator. The schema uses no PostgreSQL 17/18-specific features; the full test suite also passes on PostgreSQL 16.
+Inventory Management Service is a product catalog API built with Python 3.14, FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL 18, and Alembic. It implements **Create Products** (one or more per request), **Get Product by ID**, **List Products** with search, filters, sorting, and pagination, and **Soft-delete Products**. Python 3.14 supplies the standard-library UUIDv7 generator. The schema uses no PostgreSQL 17/18-specific features; the full test suite also passes on PostgreSQL 16.
 
 ## Run Python directly on Windows
 
@@ -81,32 +81,88 @@ To apply migrations without starting the API:
 .\.venv\Scripts\python.exe -m alembic current
 ```
 
-## Create a product
+## Create products
+
+`POST /api/v1/products` creates any number of products: there is no upper limit, so a request with 10,000 or 100,000 products succeeds like one with a single product. The body is a JSON array of product objects, even for a single product:
 
 ```powershell
 $body = @'
-{
-  "sku": " lap-dell-1 ",
-  "name": "Dell XPS 15",
-  "description": "15-inch business laptop",
-  "category": "ELECTRONICS",
-  "price": {"amount": 1499.99, "currency": "EUR"},
-  "unitOfMeasure": "PIECE",
-  "attributes": {"brand": "Dell"}
-}
+[
+  {
+    "sku": " lap-dell-1 ",
+    "name": "Dell XPS 15",
+    "description": "15-inch business laptop",
+    "category": "ELECTRONICS",
+    "price": {"amount": 1499.99, "currency": "EUR"},
+    "unitOfMeasure": "PIECE",
+    "attributes": {"brand": "Dell"}
+  },
+  {
+    "sku": "dock-usb-c-1",
+    "name": "USB-C Dock",
+    "category": "ELECTRONICS",
+    "price": {"amount": "89.99", "currency": "EUR"},
+    "unitOfMeasure": "PIECE",
+    "attributes": {}
+  }
+]
 '@
 $result = Invoke-WebRequest -Method Post -Uri http://localhost:8000/api/v1/products -ContentType application/json -Body $body
 $result.StatusCode
-$result.Headers.Location
 $result.Content
 ```
 
-- **201 Created** returns the persisted product and an absolute `Location` that resolves with [Get a product](#get-a-product). The body includes a UUIDv7 `id`, canonical `sku`, `status: ACTIVE`, UTC `createdAt` and `updatedAt`, and optimistic-locking `version: 0`.
-- **400 Bad Request** covers malformed JSON, missing fields, invalid values, and unknown properties. Field-level errors include `errors` entries with `field` and `message`.
-- **409 Conflict** includes the canonical `sku` and uses `urn:inventra:problem:duplicate-sku`. PostgreSQL enforces uniqueness during insert, including when requests race.
+```bash
+curl -s -X POST http://localhost:8000/api/v1/products -H 'Content-Type: application/json' \
+  -d '[{"sku":"lap-dell-2","name":"Dell XPS 13","category":"ELECTRONICS","price":{"amount":1199.5,"currency":"EUR"},"unitOfMeasure":"PIECE","attributes":{}}]'
+```
+
+The request is atomic: the products are stored in one transaction, so either every product is created or none is, however many there are. They share one `createdAt`, and their UUIDv7 ids increase in request order, so sorting by `createdAt` or `id` keeps the request order. See [Large requests](#large-requests) for how large requests are processed and how long they take.
+
+- **201 Created** returns a JSON array of the created products, in request order. Each has a UUIDv7 `id`, canonical `sku`, `status: ACTIVE`, UTC `createdAt` and `updatedAt`, and optimistic-locking `version: 0`. Read a product at `/api/v1/products/{id}` ([Get a product](#get-a-product)). The response has no `Location` header, because a request can create several resources.
+- **400 Bad Request**: nothing was created. The `detail` names the cause:
+
+  | Request | `type` | `detail` |
+  | --- | --- | --- |
+  | No body, or only whitespace | `malformed-request` | `The request body is missing. Send a JSON array of at least 1 product.` |
+  | JSON `null` | `malformed-request` | `The request body is null. Send a JSON array of at least 1 product.` |
+  | Invalid JSON, including `NaN` and `Infinity` | `malformed-request` | `The request body is not valid JSON. ...` |
+  | A JSON object, such as a single product without the array (the former request format) | `malformed-request` | `The request body must be a JSON array of products, not a single product object. ...` |
+  | A JSON string, number, or boolean | `malformed-request` | `The request body must be a JSON array of products, not a JSON string.` (or `number`, `boolean`) |
+  | `[]` | `validation-error` | `The product list is empty. Send a JSON array of at least 1 product.` |
+  | Invalid products | `malformed-request` if any error is a wrong JSON type, an element that is not an object, or an unknown property; otherwise `validation-error` | `The request contains 3 invalid field(s) in 2 product(s). No product was created.` |
+  | Two products with the same SKU after trimming and uppercasing | `validation-error` | As for invalid products, with `{"field": "2.sku", "message": "repeats the SKU 'LAP-DELL-1' of product 0"}` |
+
+  The number of products never causes a 400. The `errors` entries name each field by the product's zero-based index in the array, such as `0.sku`, `1.price.amount`, or `3` for an element that is not an object. They are sorted by index, then by field. At most the first 1,000 are listed, so that a large rejected request does not produce a huge response; the `detail` still counts all of them and then says `The first 1000 are listed.`
+- **409 Conflict** with `urn:inventra:problem:duplicate-sku` when a SKU is already used, also by a soft-deleted product. `skus` lists every such canonical SKU in request order, not only the first one found. Nothing was created. PostgreSQL enforces uniqueness during insert, including when requests race: a request that inserts a SKU that a concurrent request has inserted but not yet committed waits for it, then returns this 409 if that request committed, at every default isolation level.
 - **415 Unsupported Media Type** covers a body sent without a JSON media type. Unexpected failures return a generic **500**. Errors use RFC 9457 `application/problem+json`.
 
+### Large requests
+
+Every step is streamlined for large requests:
+
+- **Storage.** All rows are streamed to PostgreSQL with a single `COPY` in one transaction, instead of one `INSERT` per product or per batch. `COPY` enforces the same constraints, unique index, and row locks as `INSERT`. Measured against the alternatives for 10,000 products, `COPY` took 0.19 s, the previous ORM inserts 2.9 s, and multi-row `INSERT` statements of 100 products each 5.0 s; for 100,000 products, 2.0 s against 23 to 53 s. Splitting the request into separately committed batches would not be faster, and a failure halfway would leave part of the request stored.
+- **Concurrency.** Parsing and validating the body is CPU-bound work in proportion to its size. It runs in a worker thread, like the database work, so the event loop keeps serving other requests while a large request is processed. Concurrent requests run in parallel; the tests create eight batches at the same time.
+- **Validation** uses precompiled patterns and a fast path for currency codes. It checks every product and repeated SKUs across the whole request before anything is stored.
+- **Serialization.** Create, get, and list share one serializer that assembles each product from values encoded by the standard library's C JSON encoder. It keeps exact JSON-number prices, and its output is byte for byte the same as before.
+- **Conflicts.** The SKU lookup after a unique violation passes all SKUs as one array parameter, so it works for any number of products. PostgreSQL accepts at most 65,535 bind parameters per statement.
+
+End-to-end times over HTTP against one uvicorn process and PostgreSQL 16, measured on a 4-core development VM with shared storage. The range covers repeated runs:
+
+| Products | Request body | Response | Time | Server memory (peak RSS) |
+| --- | --- | --- | --- | --- |
+| 10,000 | 2.4 MB | 4.1 MB | 0.6 to 1.1 s | 150 MB |
+| 50,000 | 12 MB | 21 MB | 4.1 to 4.6 s | 330 MB |
+| 100,000 | 25 MB | 41 MB | 11 to 14 s | 580 MB |
+| 200,000 | 49 MB | 82 MB | about 36 s | 1 GB |
+
+Up to about 50,000 products, the time grows in proportion to the number of products. Beyond that, Python's garbage collector spends more time on the larger heap. While the VM's disk was contended, some runs took several times longer. Before these changes, 10,000 products took about 3.8 s and 100,000 about 58 s in-process, without HTTP. A test posts 10,000 products to a running server with a 30-second client timeout.
+
+A synchronous request is still limited by server memory, about 5 KB per product at peak, and by the timeouts of proxies and clients. Clients with millions of products, or deployments behind short proxy timeouts, should send them in several requests of, for example, 10,000 to 50,000 products. Each request is atomic on its own. See [Extension points](#extension-points) for an asynchronous import.
+
 ### Validation rules
+
+The fields of each product follow these rules:
 
 | Field | Rules |
 | --- | --- |
@@ -120,18 +176,17 @@ $result.Content
 
 ## Get a product
 
-`GET /api/v1/products/{productId}` returns the product with the same representation as the create response: `id` first, then the product fields, with an exact JSON-number price, canonical SKU, UTC timestamps, and `version`. Create, get, and list share one serializer, so the three representations are identical. `status` can be `ACTIVE`, `INACTIVE`, or `DISCONTINUED`; create always returns `ACTIVE`.
+`GET /api/v1/products/{productId}` returns the product with the same representation as each item of the create response: `id` first, then the product fields, with an exact JSON-number price, canonical SKU, UTC timestamps, and `version`. Create, get, and list share one serializer, so the three representations are identical. `status` can be `ACTIVE`, `INACTIVE`, or `DISCONTINUED`; create always returns `ACTIVE`.
 
 ```bash
 B=http://localhost:8000/api/v1/products
 # A seeded product (sample IDs are fixed by the seed migration).
 curl -s "$B/01a1b052-ec7c-76db-a862-e0da4baa5110"
-# Follow the Location header of a create request.
-LOCATION=$(curl -si -X POST "$B" -H 'Content-Type: application/json' \
-  -d '{"sku":"lap-dell-2","name":"Dell XPS 13","category":"ELECTRONICS","price":{"amount":1199.5,"currency":"EUR"},"unitOfMeasure":"PIECE","attributes":{}}' \
-  | tr -d '\r' | sed -n 's/^[Ll]ocation: //p')
-echo "$LOCATION"
-curl -s "$LOCATION"
+# Read a product that a create request returned.
+ID=$(curl -s -X POST "$B" -H 'Content-Type: application/json' \
+  -d '[{"sku":"lap-dell-3","name":"Dell XPS 13","category":"ELECTRONICS","price":{"amount":1199.5,"currency":"EUR"},"unitOfMeasure":"PIECE","attributes":{}}]' \
+  | python3 -c 'import json, sys; print(json.load(sys.stdin)[0]["id"])')
+curl -s "$B/$ID"
 ```
 
 ```powershell
@@ -272,8 +327,8 @@ Some HTTP clients and proxies do not forward a DELETE body; such a request fails
 
 The unit tests need no database:
 
-- `tests/test_api.py` covers the HTTP contract of create, get, list, and soft delete through FastAPI's in-process client with stubbed services: success responses and `Location`, every validation rule and its boundary values, malformed JSON, unknown properties, media types, 404/405/409/415/500 problem documents, parameter validation, and the OpenAPI document. It also checks that all three read and create endpoints return the same product representation, including `id` and `status`, with exact JSON-number prices and UTC timestamps. For soft delete, it covers the 204 response, missing and `null` bodies, missing, `null`, empty, oversized, and repeated ID lists, invalid IDs, and the 404 that lists every missing ID, and it runs the real service on a `FakeSession` end to end. Tests compare JSON member sets, not member order.
-- `tests/test_service.py` runs the service layer against an in-memory `FakeSession` (in `tests/conftest.py`): how a create command becomes a stored product, duplicate-SKU translation, not-found handling, and the rules that must hold even without PostgreSQL. These are the soft-delete filter, identical criteria for the count and the page, the `id` tiebreaker, and the REPEATABLE READ snapshot. For soft deletion, they check all or nothing with missing IDs reported in request order, the fields it changes and keeps, one deletion time per request that never precedes a product's previous `updated_at`, the READ COMMITTED transaction, and the row-lock query in id order. Statements are compared structurally, not as SQL text. What the filters, search, ordering, and paging actually return is verified against PostgreSQL.
+- `tests/test_api.py` covers the HTTP contract of create, get, list, and soft delete through FastAPI's in-process client with stubbed services: success responses, every validation rule and its boundary values, malformed JSON, unknown properties, media types, 404/405/409/415/500 problem documents, parameter validation, and the OpenAPI document. For create, it covers requests of 1 to 10,000 products returned in request order without a `Location`; validation in a worker thread instead of the event loop; the specific 400 for a missing, whitespace-only, `null`, or empty body, a single object instead of an array, scalars, and invalid JSON; elements that are not objects; errors reported per product index in numeric order, capped at the first 1,000 with the total counted; one invalid product, even the last of 20,000, rejecting the whole request; SKUs repeated after normalization, even far apart; the 409 listing every taken SKU; and a serializer that round-trips any text. It also checks that all three read and create endpoints return the same product representation, including `id` and `status`, with exact JSON-number prices and UTC timestamps. For soft delete, it covers the 204 response, missing and `null` bodies, missing, `null`, empty, oversized, and repeated ID lists, invalid IDs, and the 404 that lists every missing ID, and it runs the real service on a `FakeSession` end to end. Tests compare JSON member sets, not member order.
+- `tests/test_service.py` runs the service layer against an in-memory `FakeSession` (in `tests/conftest.py`): how create commands become the rows of one `COPY` in one transaction, for up to 10,000 products, with one creation time and ids in request order, the translation of a unique violation into every taken SKU (looked up after the rollback with one array parameter, even for 70,000 SKUs, deleted products included), re-raising other integrity and database errors, not-found handling, and the rules that must hold even without PostgreSQL. These are the soft-delete filter, identical criteria for the count and the page, the `id` tiebreaker, and the REPEATABLE READ snapshot. For soft deletion, they check all or nothing with missing IDs reported in request order, the fields it changes and keeps, one deletion time per request that never precedes a product's previous `updated_at`, the READ COMMITTED transaction, and the row-lock query in id order. Statements are compared structurally, not as SQL text. What the filters, search, ordering, and paging actually return is verified against PostgreSQL.
 - `tests/test_startup.py` checks that startup runs the migrations and stops when they fail. Its PostgreSQL tests start the real application (uvicorn in separate processes) against isolated schemas. They cover a fresh database, repeated restarts after products were edited, soft-deleted, or removed, an upgrade from release `0001` that already holds products (including one with a sample SKU), four concurrent startups under each isolation level, that no request is answered while migrations are in progress (one process and `--workers 2`), and failed migrations that roll back without opening the port. A fixture holds the migration lock so that the tests control when startup may proceed.
 
 Run them from the project root after installing `requirements-dev.txt`.
@@ -330,7 +385,7 @@ After the run, it fails if any test failed, any PostgreSQL test was skipped, no 
 
 The verification touches only the test database: each PostgreSQL test creates its own `test_<random>` schema and drops it. `DATABASE_URL` is removed from the test process after the checks, so no test can reach the development database through the application. One test starts the application with uvicorn on a free port, pointed at its test schema, and stops that process itself. A server you have running on port 8000 is not affected.
 
-The PostgreSQL tests cover Alembic upgrade, downgrade and re-upgrade, committed rows, exact prices, normalized duplicate rejection, and concurrent inserts. For reads, they cover create-then-get round trips, hiding soft-deleted products, gap-free and duplicate-free paging over unchanged data for every sort field and direction over the seeded catalog, search (including literal `%`, `_` and `\`), category, price and currency filters checked against `data/sample-products.json`, and UTC output under a non-UTC session time zone. For soft delete, they check that deleted rows stay stored with only `status`, `deleted_at`, `updated_at`, and `version` changed, that Get and List hide them, that a request with an unknown or already deleted ID and a request without product IDs leave every row unchanged, that SKUs stay reserved, that rows written by a server whose clock runs ahead can be deleted, that Get and List show each stored status, that concurrent requests delete a product once, that a request waiting for a locked product reports it as not found if it was deleted meanwhile, at every default isolation level, and that DELETE works over HTTP against uvicorn. For paging under change, they apply creations, soft deletions, sort-key updates, other updates, and filter-membership changes between page requests. Each resulting page must equal the slice of the current ordering, and the tests check the exact repeat or omission that follows. A commit injected between the count and the page query of one request shows that a response never mixes two states. Each test migrates a fresh schema and drops only that schema at cleanup. The fixture requires an explicit test URL and a dedicated `inventra_test` database and role. The role has permission to create schemas in that database and has neither superuser nor CREATEDB privileges. Without the test URL, a plain pytest run reports the PostgreSQL tests as skipped; `--require-postgres` refuses to run instead.
+The PostgreSQL tests cover Alembic upgrade, downgrade and re-upgrade, committed rows, exact prices, normalized duplicate rejection, and concurrent inserts. For batch creation, they check that a batch is stored in one transaction with one creation time and ids in request order, that a batch with a SKU already used by a seeded, soft-deleted, or earlier-created product stores nothing and lists every taken SKU, that every rejected request (missing, `null`, empty, non-array, invalid, or repeated-SKU) leaves every row unchanged, that 10,000 varied products, including text that `COPY` must escape, are stored exactly as sent in one transaction and read back identically, that a request of 5,000 products with one taken SKU or one invalid product stores nothing, that concurrent disjoint batches all succeed and overlapping ones have one winner, that a batch waiting for another transaction's uncommitted insert of one of its SKUs returns 409 if that transaction commits and 201 if it rolls back, at every default isolation level, and that POST works over HTTP against uvicorn, including 10,000 products within a 30-second client timeout. For reads, they cover create-then-get round trips, hiding soft-deleted products, gap-free and duplicate-free paging over unchanged data for every sort field and direction over the seeded catalog, search (including literal `%`, `_` and `\`), category, price and currency filters checked against `data/sample-products.json`, and UTC output under a non-UTC session time zone. For soft delete, they check that deleted rows stay stored with only `status`, `deleted_at`, `updated_at`, and `version` changed, that Get and List hide them, that a request with an unknown or already deleted ID and a request without product IDs leave every row unchanged, that SKUs stay reserved, that rows written by a server whose clock runs ahead can be deleted, that Get and List show each stored status, that concurrent requests delete a product once, that a request waiting for a locked product reports it as not found if it was deleted meanwhile, at every default isolation level, and that DELETE works over HTTP against uvicorn. For paging under change, they apply creations, soft deletions, sort-key updates, other updates, and filter-membership changes between page requests. Each resulting page must equal the slice of the current ordering, and the tests check the exact repeat or omission that follows. A commit injected between the count and the page query of one request shows that a response never mixes two states. Each test migrates a fresh schema and drops only that schema at cleanup. The fixture requires an explicit test URL and a dedicated `inventra_test` database and role. The role has permission to create schemas in that database and has neither superuser nor CREATEDB privileges. Without the test URL, a plain pytest run reports the PostgreSQL tests as skipped; `--require-postgres` refuses to run instead.
 
 IDE test runners such as PyCharm do not inherit variables set in a terminal. Instead of setting `INVENTRA_TEST_DATABASE_URL` in each run configuration, you can put it in a `.env` file in the project root. The file is git-ignored, and a variable set in the environment takes precedence:
 
@@ -364,6 +419,6 @@ The report lists the lines and branches that no test ran. The full suite current
 - **Read indexes.** The list queries do not add indexes; the sample catalog is small, and each list request counts all matching rows. For large catalogs, add a new Alembic revision with partial indexes `WHERE deleted_at IS NULL` on the sort keys plus `id`, for example `(name, id)`, and on `lower(category)`. Substring search needs a `pg_trgm` GIN index to avoid sequential scans. For deep paging, consider keyset (cursor) pagination on the same `(sort key, id)` order.
 - **Update** can reuse the mapped version column for stale-write detection. Define the request and concurrency contract when implementing the route.
 - **Restore** of soft-deleted products would clear `deleted_at` and set a non-deleted status in one update, as `ck_products_deleted_state` requires. Their SKUs are still reserved, so restoring cannot create duplicates.
-- **Bulk create** can use a separate request schema and service operation, as soft delete does for several products. The current service owns the single-create transaction. Extract transaction-neutral insertion logic before implementing atomic batches.
+- **Asynchronous import.** Create accepts any number of products, but a synchronous request is bounded by server memory and proxy timeouts. For millions of products, an import job would accept the body with `202 Accepted`, store it with the same `COPY`, and report progress at a status URL. A deployment that needs hard request-size limits can cap the body size at the reverse proxy. Soft delete still accepts at most 100 IDs per request.
 
 The registered product operations are POST, GET by ID, GET list, and DELETE (soft delete). The project separates HTTP handling and Pydantic schemas (`main.py`, `schemas.py`) from the transactions and queries (`service.py`) and the ORM model.

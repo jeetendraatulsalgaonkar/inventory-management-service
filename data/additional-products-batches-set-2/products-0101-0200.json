@@ -1,0 +1,1602 @@
+[
+  {
+    "sku": "EXTRA2-02-01-01",
+    "name": "Black Soap Dispenser - Standard",
+    "description": "Standard soap dispenser in black for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 14.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-02",
+    "name": "White Soap Dispenser - Standard",
+    "description": "Standard soap dispenser in white for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 15.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-03",
+    "name": "Navy Soap Dispenser - Standard",
+    "description": "Standard soap dispenser in navy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 16.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-04",
+    "name": "Teal Soap Dispenser - Standard",
+    "description": "Standard soap dispenser in teal for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 17.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-05",
+    "name": "Grey Soap Dispenser - Standard",
+    "description": "Standard soap dispenser in grey for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 18.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-06",
+    "name": "Burgundy Soap Dispenser - Standard",
+    "description": "Standard soap dispenser in burgundy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 19.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-07",
+    "name": "Blue Soap Dispenser - Standard",
+    "description": "Standard soap dispenser in blue for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 20.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-08",
+    "name": "Sand Soap Dispenser - Standard",
+    "description": "Standard soap dispenser in sand for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 21.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-09",
+    "name": "Yellow Soap Dispenser - Standard",
+    "description": "Standard soap dispenser in yellow for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 22.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-10",
+    "name": "Lavender Soap Dispenser - Standard",
+    "description": "Standard soap dispenser in lavender for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 23.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-11",
+    "name": "Black Soap Dispenser - Deluxe",
+    "description": "Deluxe soap dispenser in black for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 24,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-12",
+    "name": "White Soap Dispenser - Deluxe",
+    "description": "Deluxe soap dispenser in white for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 24.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-13",
+    "name": "Navy Soap Dispenser - Deluxe",
+    "description": "Deluxe soap dispenser in navy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 25.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-14",
+    "name": "Teal Soap Dispenser - Deluxe",
+    "description": "Deluxe soap dispenser in teal for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 26.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-15",
+    "name": "Grey Soap Dispenser - Deluxe",
+    "description": "Deluxe soap dispenser in grey for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 27.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-16",
+    "name": "Burgundy Soap Dispenser - Deluxe",
+    "description": "Deluxe soap dispenser in burgundy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 28.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-17",
+    "name": "Blue Soap Dispenser - Deluxe",
+    "description": "Deluxe soap dispenser in blue for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 29.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-18",
+    "name": "Sand Soap Dispenser - Deluxe",
+    "description": "Deluxe soap dispenser in sand for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 30.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-19",
+    "name": "Yellow Soap Dispenser - Deluxe",
+    "description": "Deluxe soap dispenser in yellow for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 31.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-01-20",
+    "name": "Lavender Soap Dispenser - Deluxe",
+    "description": "Deluxe soap dispenser in lavender for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 32.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-01",
+    "name": "Black Toothbrush Holder - Standard",
+    "description": "Standard toothbrush holder in black for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 17.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-02",
+    "name": "White Toothbrush Holder - Standard",
+    "description": "Standard toothbrush holder in white for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 18.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-03",
+    "name": "Navy Toothbrush Holder - Standard",
+    "description": "Standard toothbrush holder in navy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 19.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-04",
+    "name": "Teal Toothbrush Holder - Standard",
+    "description": "Standard toothbrush holder in teal for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 20.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-05",
+    "name": "Grey Toothbrush Holder - Standard",
+    "description": "Standard toothbrush holder in grey for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 21.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-06",
+    "name": "Burgundy Toothbrush Holder - Standard",
+    "description": "Standard toothbrush holder in burgundy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 22.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-07",
+    "name": "Blue Toothbrush Holder - Standard",
+    "description": "Standard toothbrush holder in blue for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 23.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-08",
+    "name": "Sand Toothbrush Holder - Standard",
+    "description": "Standard toothbrush holder in sand for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 24.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-09",
+    "name": "Yellow Toothbrush Holder - Standard",
+    "description": "Standard toothbrush holder in yellow for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 25.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-10",
+    "name": "Lavender Toothbrush Holder - Standard",
+    "description": "Standard toothbrush holder in lavender for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 26.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-11",
+    "name": "Black Toothbrush Holder - Deluxe",
+    "description": "Deluxe toothbrush holder in black for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 27.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-12",
+    "name": "White Toothbrush Holder - Deluxe",
+    "description": "Deluxe toothbrush holder in white for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 28.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-13",
+    "name": "Navy Toothbrush Holder - Deluxe",
+    "description": "Deluxe toothbrush holder in navy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 29.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-14",
+    "name": "Teal Toothbrush Holder - Deluxe",
+    "description": "Deluxe toothbrush holder in teal for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 30.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-15",
+    "name": "Grey Toothbrush Holder - Deluxe",
+    "description": "Deluxe toothbrush holder in grey for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 31.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-16",
+    "name": "Burgundy Toothbrush Holder - Deluxe",
+    "description": "Deluxe toothbrush holder in burgundy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 32,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-17",
+    "name": "Blue Toothbrush Holder - Deluxe",
+    "description": "Deluxe toothbrush holder in blue for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 32.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-18",
+    "name": "Sand Toothbrush Holder - Deluxe",
+    "description": "Deluxe toothbrush holder in sand for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 33.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-19",
+    "name": "Yellow Toothbrush Holder - Deluxe",
+    "description": "Deluxe toothbrush holder in yellow for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 34.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-02-20",
+    "name": "Lavender Toothbrush Holder - Deluxe",
+    "description": "Deluxe toothbrush holder in lavender for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 35.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-01",
+    "name": "Black Shower Caddy - Standard",
+    "description": "Standard shower caddy in black for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 21,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-02",
+    "name": "White Shower Caddy - Standard",
+    "description": "Standard shower caddy in white for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 21.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-03",
+    "name": "Navy Shower Caddy - Standard",
+    "description": "Standard shower caddy in navy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 22.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-04",
+    "name": "Teal Shower Caddy - Standard",
+    "description": "Standard shower caddy in teal for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 23.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-05",
+    "name": "Grey Shower Caddy - Standard",
+    "description": "Standard shower caddy in grey for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 24.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-06",
+    "name": "Burgundy Shower Caddy - Standard",
+    "description": "Standard shower caddy in burgundy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 25.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-07",
+    "name": "Blue Shower Caddy - Standard",
+    "description": "Standard shower caddy in blue for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 26.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-08",
+    "name": "Sand Shower Caddy - Standard",
+    "description": "Standard shower caddy in sand for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 27.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-09",
+    "name": "Yellow Shower Caddy - Standard",
+    "description": "Standard shower caddy in yellow for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 28.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-10",
+    "name": "Lavender Shower Caddy - Standard",
+    "description": "Standard shower caddy in lavender for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 29.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-11",
+    "name": "Black Shower Caddy - Deluxe",
+    "description": "Deluxe shower caddy in black for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 30.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-12",
+    "name": "White Shower Caddy - Deluxe",
+    "description": "Deluxe shower caddy in white for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 31.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-13",
+    "name": "Navy Shower Caddy - Deluxe",
+    "description": "Deluxe shower caddy in navy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 32.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-14",
+    "name": "Teal Shower Caddy - Deluxe",
+    "description": "Deluxe shower caddy in teal for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 33.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-15",
+    "name": "Grey Shower Caddy - Deluxe",
+    "description": "Deluxe shower caddy in grey for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 34.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-16",
+    "name": "Burgundy Shower Caddy - Deluxe",
+    "description": "Deluxe shower caddy in burgundy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 35.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-17",
+    "name": "Blue Shower Caddy - Deluxe",
+    "description": "Deluxe shower caddy in blue for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 36.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-18",
+    "name": "Sand Shower Caddy - Deluxe",
+    "description": "Deluxe shower caddy in sand for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 37.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-19",
+    "name": "Yellow Shower Caddy - Deluxe",
+    "description": "Deluxe shower caddy in yellow for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 38.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-03-20",
+    "name": "Lavender Shower Caddy - Deluxe",
+    "description": "Deluxe shower caddy in lavender for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 39.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-01",
+    "name": "Black Bath Mat - Standard",
+    "description": "Standard bath mat in black for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 24.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-02",
+    "name": "White Bath Mat - Standard",
+    "description": "Standard bath mat in white for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 25.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-03",
+    "name": "Navy Bath Mat - Standard",
+    "description": "Standard bath mat in navy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 26.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-04",
+    "name": "Teal Bath Mat - Standard",
+    "description": "Standard bath mat in teal for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 27.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-05",
+    "name": "Grey Bath Mat - Standard",
+    "description": "Standard bath mat in grey for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 28.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-06",
+    "name": "Burgundy Bath Mat - Standard",
+    "description": "Standard bath mat in burgundy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 29,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-07",
+    "name": "Blue Bath Mat - Standard",
+    "description": "Standard bath mat in blue for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 29.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-08",
+    "name": "Sand Bath Mat - Standard",
+    "description": "Standard bath mat in sand for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 30.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-09",
+    "name": "Yellow Bath Mat - Standard",
+    "description": "Standard bath mat in yellow for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 31.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-10",
+    "name": "Lavender Bath Mat - Standard",
+    "description": "Standard bath mat in lavender for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 32.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-11",
+    "name": "Black Bath Mat - Deluxe",
+    "description": "Deluxe bath mat in black for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 33.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-12",
+    "name": "White Bath Mat - Deluxe",
+    "description": "Deluxe bath mat in white for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 34.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-13",
+    "name": "Navy Bath Mat - Deluxe",
+    "description": "Deluxe bath mat in navy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 35.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-14",
+    "name": "Teal Bath Mat - Deluxe",
+    "description": "Deluxe bath mat in teal for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 36.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-15",
+    "name": "Grey Bath Mat - Deluxe",
+    "description": "Deluxe bath mat in grey for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 37.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-16",
+    "name": "Burgundy Bath Mat - Deluxe",
+    "description": "Deluxe bath mat in burgundy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 38.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-17",
+    "name": "Blue Bath Mat - Deluxe",
+    "description": "Deluxe bath mat in blue for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 39.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-18",
+    "name": "Sand Bath Mat - Deluxe",
+    "description": "Deluxe bath mat in sand for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 40.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-19",
+    "name": "Yellow Bath Mat - Deluxe",
+    "description": "Deluxe bath mat in yellow for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 41.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-04-20",
+    "name": "Lavender Bath Mat - Deluxe",
+    "description": "Deluxe bath mat in lavender for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 42.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-01",
+    "name": "Black Towel Ring - Standard",
+    "description": "Standard towel ring in black for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 27.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-02",
+    "name": "White Towel Ring - Standard",
+    "description": "Standard towel ring in white for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 28.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-03",
+    "name": "Navy Towel Ring - Standard",
+    "description": "Standard towel ring in navy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 29.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-04",
+    "name": "Teal Towel Ring - Standard",
+    "description": "Standard towel ring in teal for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 30.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-05",
+    "name": "Grey Towel Ring - Standard",
+    "description": "Standard towel ring in grey for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 31.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-06",
+    "name": "Burgundy Towel Ring - Standard",
+    "description": "Standard towel ring in burgundy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 32.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-07",
+    "name": "Blue Towel Ring - Standard",
+    "description": "Standard towel ring in blue for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 33.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-08",
+    "name": "Sand Towel Ring - Standard",
+    "description": "Standard towel ring in sand for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 34.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-09",
+    "name": "Yellow Towel Ring - Standard",
+    "description": "Standard towel ring in yellow for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 35.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-10",
+    "name": "Lavender Towel Ring - Standard",
+    "description": "Standard towel ring in lavender for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 36.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-11",
+    "name": "Black Towel Ring - Deluxe",
+    "description": "Deluxe towel ring in black for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 37,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-12",
+    "name": "White Towel Ring - Deluxe",
+    "description": "Deluxe towel ring in white for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 37.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-13",
+    "name": "Navy Towel Ring - Deluxe",
+    "description": "Deluxe towel ring in navy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 38.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-14",
+    "name": "Teal Towel Ring - Deluxe",
+    "description": "Deluxe towel ring in teal for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 39.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-15",
+    "name": "Grey Towel Ring - Deluxe",
+    "description": "Deluxe towel ring in grey for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 40.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-16",
+    "name": "Burgundy Towel Ring - Deluxe",
+    "description": "Deluxe towel ring in burgundy for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 41.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-17",
+    "name": "Blue Towel Ring - Deluxe",
+    "description": "Deluxe towel ring in blue for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 42.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-18",
+    "name": "Sand Towel Ring - Deluxe",
+    "description": "Deluxe towel ring in sand for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 43.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-19",
+    "name": "Yellow Towel Ring - Deluxe",
+    "description": "Deluxe towel ring in yellow for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 44.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-02-05-20",
+    "name": "Lavender Towel Ring - Deluxe",
+    "description": "Deluxe towel ring in lavender for everyday use.",
+    "category": "Bathroom",
+    "price": {
+      "amount": 45.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  }
+]

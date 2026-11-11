@@ -1,0 +1,1602 @@
+[
+  {
+    "sku": "EXTRA2-06-01-01",
+    "name": "Black Sketchbook - Standard",
+    "description": "Standard sketchbook in black for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 23.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-02",
+    "name": "White Sketchbook - Standard",
+    "description": "Standard sketchbook in white for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 24.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-03",
+    "name": "Navy Sketchbook - Standard",
+    "description": "Standard sketchbook in navy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-04",
+    "name": "Teal Sketchbook - Standard",
+    "description": "Standard sketchbook in teal for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 25.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-05",
+    "name": "Grey Sketchbook - Standard",
+    "description": "Standard sketchbook in grey for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 26.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-06",
+    "name": "Burgundy Sketchbook - Standard",
+    "description": "Standard sketchbook in burgundy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 27.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-07",
+    "name": "Blue Sketchbook - Standard",
+    "description": "Standard sketchbook in blue for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 28.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-08",
+    "name": "Sand Sketchbook - Standard",
+    "description": "Standard sketchbook in sand for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 29.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-09",
+    "name": "Yellow Sketchbook - Standard",
+    "description": "Standard sketchbook in yellow for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 30.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-10",
+    "name": "Lavender Sketchbook - Standard",
+    "description": "Standard sketchbook in lavender for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 31.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-11",
+    "name": "Black Sketchbook - Deluxe",
+    "description": "Deluxe sketchbook in black for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 32.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-12",
+    "name": "White Sketchbook - Deluxe",
+    "description": "Deluxe sketchbook in white for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 33.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-13",
+    "name": "Navy Sketchbook - Deluxe",
+    "description": "Deluxe sketchbook in navy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 34.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-14",
+    "name": "Teal Sketchbook - Deluxe",
+    "description": "Deluxe sketchbook in teal for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 35.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-15",
+    "name": "Grey Sketchbook - Deluxe",
+    "description": "Deluxe sketchbook in grey for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 36.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-16",
+    "name": "Burgundy Sketchbook - Deluxe",
+    "description": "Deluxe sketchbook in burgundy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 37.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-17",
+    "name": "Blue Sketchbook - Deluxe",
+    "description": "Deluxe sketchbook in blue for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 38.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-18",
+    "name": "Sand Sketchbook - Deluxe",
+    "description": "Deluxe sketchbook in sand for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 39.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-19",
+    "name": "Yellow Sketchbook - Deluxe",
+    "description": "Deluxe sketchbook in yellow for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 40.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-01-20",
+    "name": "Lavender Sketchbook - Deluxe",
+    "description": "Deluxe sketchbook in lavender for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 41.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-01",
+    "name": "Black Paintbrush Set - Standard",
+    "description": "Standard paintbrush set in black for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 26.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-02",
+    "name": "White Paintbrush Set - Standard",
+    "description": "Standard paintbrush set in white for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 27.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-03",
+    "name": "Navy Paintbrush Set - Standard",
+    "description": "Standard paintbrush set in navy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 28.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-04",
+    "name": "Teal Paintbrush Set - Standard",
+    "description": "Standard paintbrush set in teal for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 29.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-05",
+    "name": "Grey Paintbrush Set - Standard",
+    "description": "Standard paintbrush set in grey for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 30.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-06",
+    "name": "Burgundy Paintbrush Set - Standard",
+    "description": "Standard paintbrush set in burgundy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 31.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-07",
+    "name": "Blue Paintbrush Set - Standard",
+    "description": "Standard paintbrush set in blue for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 32.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-08",
+    "name": "Sand Paintbrush Set - Standard",
+    "description": "Standard paintbrush set in sand for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 33,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-09",
+    "name": "Yellow Paintbrush Set - Standard",
+    "description": "Standard paintbrush set in yellow for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 33.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-10",
+    "name": "Lavender Paintbrush Set - Standard",
+    "description": "Standard paintbrush set in lavender for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 34.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-11",
+    "name": "Black Paintbrush Set - Deluxe",
+    "description": "Deluxe paintbrush set in black for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 35.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-12",
+    "name": "White Paintbrush Set - Deluxe",
+    "description": "Deluxe paintbrush set in white for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 36.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-13",
+    "name": "Navy Paintbrush Set - Deluxe",
+    "description": "Deluxe paintbrush set in navy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 37.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-14",
+    "name": "Teal Paintbrush Set - Deluxe",
+    "description": "Deluxe paintbrush set in teal for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 38.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-15",
+    "name": "Grey Paintbrush Set - Deluxe",
+    "description": "Deluxe paintbrush set in grey for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 39.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-16",
+    "name": "Burgundy Paintbrush Set - Deluxe",
+    "description": "Deluxe paintbrush set in burgundy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 40.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-17",
+    "name": "Blue Paintbrush Set - Deluxe",
+    "description": "Deluxe paintbrush set in blue for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 41.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-18",
+    "name": "Sand Paintbrush Set - Deluxe",
+    "description": "Deluxe paintbrush set in sand for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 42.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-19",
+    "name": "Yellow Paintbrush Set - Deluxe",
+    "description": "Deluxe paintbrush set in yellow for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 43.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-02-20",
+    "name": "Lavender Paintbrush Set - Deluxe",
+    "description": "Deluxe paintbrush set in lavender for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 44.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-01",
+    "name": "Black Craft Scissors - Standard",
+    "description": "Standard craft scissors in black for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 29.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-02",
+    "name": "White Craft Scissors - Standard",
+    "description": "Standard craft scissors in white for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 30.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-03",
+    "name": "Navy Craft Scissors - Standard",
+    "description": "Standard craft scissors in navy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 31.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-04",
+    "name": "Teal Craft Scissors - Standard",
+    "description": "Standard craft scissors in teal for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 32.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-05",
+    "name": "Grey Craft Scissors - Standard",
+    "description": "Standard craft scissors in grey for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 33.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-06",
+    "name": "Burgundy Craft Scissors - Standard",
+    "description": "Standard craft scissors in burgundy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 34.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-07",
+    "name": "Blue Craft Scissors - Standard",
+    "description": "Standard craft scissors in blue for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 35.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-08",
+    "name": "Sand Craft Scissors - Standard",
+    "description": "Standard craft scissors in sand for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 36.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-09",
+    "name": "Yellow Craft Scissors - Standard",
+    "description": "Standard craft scissors in yellow for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 37.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-10",
+    "name": "Lavender Craft Scissors - Standard",
+    "description": "Standard craft scissors in lavender for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 38.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-11",
+    "name": "Black Craft Scissors - Deluxe",
+    "description": "Deluxe craft scissors in black for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 39.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-12",
+    "name": "White Craft Scissors - Deluxe",
+    "description": "Deluxe craft scissors in white for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 40.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-13",
+    "name": "Navy Craft Scissors - Deluxe",
+    "description": "Deluxe craft scissors in navy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 41,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-14",
+    "name": "Teal Craft Scissors - Deluxe",
+    "description": "Deluxe craft scissors in teal for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 41.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-15",
+    "name": "Grey Craft Scissors - Deluxe",
+    "description": "Deluxe craft scissors in grey for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 42.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-16",
+    "name": "Burgundy Craft Scissors - Deluxe",
+    "description": "Deluxe craft scissors in burgundy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 43.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-17",
+    "name": "Blue Craft Scissors - Deluxe",
+    "description": "Deluxe craft scissors in blue for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 44.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-18",
+    "name": "Sand Craft Scissors - Deluxe",
+    "description": "Deluxe craft scissors in sand for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 45.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-19",
+    "name": "Yellow Craft Scissors - Deluxe",
+    "description": "Deluxe craft scissors in yellow for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 46.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-03-20",
+    "name": "Lavender Craft Scissors - Deluxe",
+    "description": "Deluxe craft scissors in lavender for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 47.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-01",
+    "name": "Black Pencil Case - Standard",
+    "description": "Standard pencil case in black for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 32.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-02",
+    "name": "White Pencil Case - Standard",
+    "description": "Standard pencil case in white for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 33.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-03",
+    "name": "Navy Pencil Case - Standard",
+    "description": "Standard pencil case in navy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 34.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-04",
+    "name": "Teal Pencil Case - Standard",
+    "description": "Standard pencil case in teal for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 35.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-05",
+    "name": "Grey Pencil Case - Standard",
+    "description": "Standard pencil case in grey for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 36.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-06",
+    "name": "Burgundy Pencil Case - Standard",
+    "description": "Standard pencil case in burgundy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 37.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-07",
+    "name": "Blue Pencil Case - Standard",
+    "description": "Standard pencil case in blue for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 38.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-08",
+    "name": "Sand Pencil Case - Standard",
+    "description": "Standard pencil case in sand for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 39.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-09",
+    "name": "Yellow Pencil Case - Standard",
+    "description": "Standard pencil case in yellow for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 40.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-10",
+    "name": "Lavender Pencil Case - Standard",
+    "description": "Standard pencil case in lavender for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 41.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-11",
+    "name": "Black Pencil Case - Deluxe",
+    "description": "Deluxe pencil case in black for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 42.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-12",
+    "name": "White Pencil Case - Deluxe",
+    "description": "Deluxe pencil case in white for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 43.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-13",
+    "name": "Navy Pencil Case - Deluxe",
+    "description": "Deluxe pencil case in navy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 44.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-14",
+    "name": "Teal Pencil Case - Deluxe",
+    "description": "Deluxe pencil case in teal for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 45.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-15",
+    "name": "Grey Pencil Case - Deluxe",
+    "description": "Deluxe pencil case in grey for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 46.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-16",
+    "name": "Burgundy Pencil Case - Deluxe",
+    "description": "Deluxe pencil case in burgundy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 47.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-17",
+    "name": "Blue Pencil Case - Deluxe",
+    "description": "Deluxe pencil case in blue for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 48.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-18",
+    "name": "Sand Pencil Case - Deluxe",
+    "description": "Deluxe pencil case in sand for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 49,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-19",
+    "name": "Yellow Pencil Case - Deluxe",
+    "description": "Deluxe pencil case in yellow for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 49.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-04-20",
+    "name": "Lavender Pencil Case - Deluxe",
+    "description": "Deluxe pencil case in lavender for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 50.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-01",
+    "name": "Black Bead Organizer - Standard",
+    "description": "Standard bead organizer in black for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 36.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-02",
+    "name": "White Bead Organizer - Standard",
+    "description": "Standard bead organizer in white for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 37.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-03",
+    "name": "Navy Bead Organizer - Standard",
+    "description": "Standard bead organizer in navy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 38,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-04",
+    "name": "Teal Bead Organizer - Standard",
+    "description": "Standard bead organizer in teal for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 38.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-05",
+    "name": "Grey Bead Organizer - Standard",
+    "description": "Standard bead organizer in grey for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 39.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-06",
+    "name": "Burgundy Bead Organizer - Standard",
+    "description": "Standard bead organizer in burgundy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 40.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-07",
+    "name": "Blue Bead Organizer - Standard",
+    "description": "Standard bead organizer in blue for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 41.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-08",
+    "name": "Sand Bead Organizer - Standard",
+    "description": "Standard bead organizer in sand for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 42.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-09",
+    "name": "Yellow Bead Organizer - Standard",
+    "description": "Standard bead organizer in yellow for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 43.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-10",
+    "name": "Lavender Bead Organizer - Standard",
+    "description": "Standard bead organizer in lavender for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 44.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-11",
+    "name": "Black Bead Organizer - Deluxe",
+    "description": "Deluxe bead organizer in black for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 45.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-12",
+    "name": "White Bead Organizer - Deluxe",
+    "description": "Deluxe bead organizer in white for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 46.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-13",
+    "name": "Navy Bead Organizer - Deluxe",
+    "description": "Deluxe bead organizer in navy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 47.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-14",
+    "name": "Teal Bead Organizer - Deluxe",
+    "description": "Deluxe bead organizer in teal for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 48.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-15",
+    "name": "Grey Bead Organizer - Deluxe",
+    "description": "Deluxe bead organizer in grey for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 49.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-16",
+    "name": "Burgundy Bead Organizer - Deluxe",
+    "description": "Deluxe bead organizer in burgundy for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 50.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-17",
+    "name": "Blue Bead Organizer - Deluxe",
+    "description": "Deluxe bead organizer in blue for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 51.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-18",
+    "name": "Sand Bead Organizer - Deluxe",
+    "description": "Deluxe bead organizer in sand for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 52.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-19",
+    "name": "Yellow Bead Organizer - Deluxe",
+    "description": "Deluxe bead organizer in yellow for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 53.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-06-05-20",
+    "name": "Lavender Bead Organizer - Deluxe",
+    "description": "Deluxe bead organizer in lavender for everyday use.",
+    "category": "Craft Supplies",
+    "price": {
+      "amount": 54.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  }
+]

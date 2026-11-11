@@ -6,12 +6,27 @@ from typing import Annotated, Literal
 from uuid import UUID
 
 from iso4217 import Currency
-from pydantic import AfterValidator, BaseModel, ConfigDict, Field, StrictStr, field_validator
+from pydantic import AfterValidator, BaseModel, ConfigDict, Field, RootModel, StrictStr, field_validator
+
+
+# Validation runs for every product of a request, which can hold thousands, so the
+# patterns are compiled once and the common cases take a fast path.
+SURROGATE = re.compile(r"[\ud800-\udfff]")
+SKU = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*")
+DECIMAL_TEXT = re.compile(r"[+-]?[0-9]+(?:\.[0-9]+)?")
+CURRENCY_CODES = frozenset(currency.code for currency in Currency)
 
 
 def postgres_text(value: str) -> str:
-    if "\0" in value or re.search(r"[\ud800-\udfff]", value):
+    # ASCII text cannot contain surrogates, so only other text needs the search.
+    if "\0" in value or (not value.isascii() and SURROGATE.search(value)):
         raise ValueError("must contain valid Unicode text without NUL")
+    return value
+
+
+def iso_currency(value: str) -> str:
+    if value not in CURRENCY_CODES:
+        Currency(value)                 # raises the library's error for an unknown code
     return value
 
 
@@ -53,7 +68,7 @@ class Price(BaseModel):
     def decimal_input(cls, value):
         if type(value) not in (int, Decimal, str):
             raise ValueError("must be a decimal amount")
-        if isinstance(value, str) and not re.fullmatch(r"[+-]?[0-9]+(?:\.[0-9]+)?", value):
+        if isinstance(value, str) and not DECIMAL_TEXT.fullmatch(value):
             raise ValueError("must be a decimal amount")
         return value
 
@@ -67,8 +82,7 @@ class Price(BaseModel):
     @field_validator("currency")
     @classmethod
     def iso_currency(cls, value: str) -> str:
-        Currency(value)
-        return value
+        return iso_currency(value)
 
 
 class CreateProduct(BaseModel):
@@ -86,9 +100,33 @@ class CreateProduct(BaseModel):
     @classmethod
     def canonical_sku(cls, value: str) -> str:
         stripped = value.strip()
-        if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", stripped):
+        if not SKU.fullmatch(stripped):
             raise ValueError("must start with a letter or digit and use only letters, digits, '.', '_' or '-'")
         return stripped.upper()
+
+
+class CreateProducts(RootModel[list[CreateProduct]]):
+    """Body of the create request: a JSON array of the products to create."""
+
+    root: list[CreateProduct] = Field(
+        min_length=1,
+        description=(
+            "Products to create: at least one, with distinct SKUs after trimming and uppercasing. "
+            "There is no upper limit. The request is atomic: either every product is created or none is."
+        ),
+    )
+
+    def repeated_skus(self) -> list[tuple[int, int, str]]:
+        """(index, index of the first product with that SKU, SKU) for every product whose
+        canonical SKU an earlier product of the request already uses."""
+        first: dict[str, int] = {}
+        repeats = []
+        for index, product in enumerate(self.root):
+            if product.sku in first:
+                repeats.append((index, first[product.sku], product.sku))
+            else:
+                first[product.sku] = index
+        return repeats
 
 
 MAX_DELETE_BATCH = 100
@@ -183,9 +221,7 @@ class ProductQuery(BaseModel):
     @field_validator("currency")
     @classmethod
     def iso_currency(cls, value: str | None) -> str | None:
-        if value is not None:
-            Currency(value)
-        return value
+        return value if value is None else iso_currency(value)
 
 
 class ProductPage(BaseModel):

@@ -1,0 +1,1602 @@
+[
+  {
+    "sku": "EXTRA2-05-01-01",
+    "name": "Black Camping Cup - Standard",
+    "description": "Standard camping cup in black for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 20.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-02",
+    "name": "White Camping Cup - Standard",
+    "description": "Standard camping cup in white for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 21.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-03",
+    "name": "Navy Camping Cup - Standard",
+    "description": "Standard camping cup in navy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 22.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-04",
+    "name": "Teal Camping Cup - Standard",
+    "description": "Standard camping cup in teal for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 23.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-05",
+    "name": "Grey Camping Cup - Standard",
+    "description": "Standard camping cup in grey for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 24.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-06",
+    "name": "Burgundy Camping Cup - Standard",
+    "description": "Standard camping cup in burgundy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 25.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-07",
+    "name": "Blue Camping Cup - Standard",
+    "description": "Standard camping cup in blue for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 26.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-08",
+    "name": "Sand Camping Cup - Standard",
+    "description": "Standard camping cup in sand for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 27.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-09",
+    "name": "Yellow Camping Cup - Standard",
+    "description": "Standard camping cup in yellow for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 28.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-10",
+    "name": "Lavender Camping Cup - Standard",
+    "description": "Standard camping cup in lavender for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 29.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-11",
+    "name": "Black Camping Cup - Deluxe",
+    "description": "Deluxe camping cup in black for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 30.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-12",
+    "name": "White Camping Cup - Deluxe",
+    "description": "Deluxe camping cup in white for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 31.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-13",
+    "name": "Navy Camping Cup - Deluxe",
+    "description": "Deluxe camping cup in navy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 32.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-14",
+    "name": "Teal Camping Cup - Deluxe",
+    "description": "Deluxe camping cup in teal for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 33.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-15",
+    "name": "Grey Camping Cup - Deluxe",
+    "description": "Deluxe camping cup in grey for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 34.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-16",
+    "name": "Burgundy Camping Cup - Deluxe",
+    "description": "Deluxe camping cup in burgundy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 35.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-17",
+    "name": "Blue Camping Cup - Deluxe",
+    "description": "Deluxe camping cup in blue for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 36.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-18",
+    "name": "Sand Camping Cup - Deluxe",
+    "description": "Deluxe camping cup in sand for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 37.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-19",
+    "name": "Yellow Camping Cup - Deluxe",
+    "description": "Deluxe camping cup in yellow for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 38.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-01-20",
+    "name": "Lavender Camping Cup - Deluxe",
+    "description": "Deluxe camping cup in lavender for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 39,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-01",
+    "name": "Black Tent Peg Set - Standard",
+    "description": "Standard tent peg set in black for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 24.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-02",
+    "name": "White Tent Peg Set - Standard",
+    "description": "Standard tent peg set in white for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 25.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-03",
+    "name": "Navy Tent Peg Set - Standard",
+    "description": "Standard tent peg set in navy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 26.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-04",
+    "name": "Teal Tent Peg Set - Standard",
+    "description": "Standard tent peg set in teal for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 27.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-05",
+    "name": "Grey Tent Peg Set - Standard",
+    "description": "Standard tent peg set in grey for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 28,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-06",
+    "name": "Burgundy Tent Peg Set - Standard",
+    "description": "Standard tent peg set in burgundy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 28.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-07",
+    "name": "Blue Tent Peg Set - Standard",
+    "description": "Standard tent peg set in blue for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 29.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-08",
+    "name": "Sand Tent Peg Set - Standard",
+    "description": "Standard tent peg set in sand for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 30.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-09",
+    "name": "Yellow Tent Peg Set - Standard",
+    "description": "Standard tent peg set in yellow for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 31.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-10",
+    "name": "Lavender Tent Peg Set - Standard",
+    "description": "Standard tent peg set in lavender for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 32.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-11",
+    "name": "Black Tent Peg Set - Deluxe",
+    "description": "Deluxe tent peg set in black for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 33.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-12",
+    "name": "White Tent Peg Set - Deluxe",
+    "description": "Deluxe tent peg set in white for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 34.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-13",
+    "name": "Navy Tent Peg Set - Deluxe",
+    "description": "Deluxe tent peg set in navy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 35.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-14",
+    "name": "Teal Tent Peg Set - Deluxe",
+    "description": "Deluxe tent peg set in teal for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 36.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-15",
+    "name": "Grey Tent Peg Set - Deluxe",
+    "description": "Deluxe tent peg set in grey for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 37.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-16",
+    "name": "Burgundy Tent Peg Set - Deluxe",
+    "description": "Deluxe tent peg set in burgundy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 38.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-17",
+    "name": "Blue Tent Peg Set - Deluxe",
+    "description": "Deluxe tent peg set in blue for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 39.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-18",
+    "name": "Sand Tent Peg Set - Deluxe",
+    "description": "Deluxe tent peg set in sand for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 40.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-19",
+    "name": "Yellow Tent Peg Set - Deluxe",
+    "description": "Deluxe tent peg set in yellow for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 41.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-02-20",
+    "name": "Lavender Tent Peg Set - Deluxe",
+    "description": "Deluxe tent peg set in lavender for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 42.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-01",
+    "name": "Black Dry Bag - Standard",
+    "description": "Standard dry bag in black for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 27.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-02",
+    "name": "White Dry Bag - Standard",
+    "description": "Standard dry bag in white for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 28.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-03",
+    "name": "Navy Dry Bag - Standard",
+    "description": "Standard dry bag in navy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 29.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-04",
+    "name": "Teal Dry Bag - Standard",
+    "description": "Standard dry bag in teal for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 30.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-05",
+    "name": "Grey Dry Bag - Standard",
+    "description": "Standard dry bag in grey for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 31.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-06",
+    "name": "Burgundy Dry Bag - Standard",
+    "description": "Standard dry bag in burgundy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 32.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-07",
+    "name": "Blue Dry Bag - Standard",
+    "description": "Standard dry bag in blue for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 33.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-08",
+    "name": "Sand Dry Bag - Standard",
+    "description": "Standard dry bag in sand for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 34.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-09",
+    "name": "Yellow Dry Bag - Standard",
+    "description": "Standard dry bag in yellow for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 35.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-10",
+    "name": "Lavender Dry Bag - Standard",
+    "description": "Standard dry bag in lavender for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 36,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-11",
+    "name": "Black Dry Bag - Deluxe",
+    "description": "Deluxe dry bag in black for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 36.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-12",
+    "name": "White Dry Bag - Deluxe",
+    "description": "Deluxe dry bag in white for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 37.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-13",
+    "name": "Navy Dry Bag - Deluxe",
+    "description": "Deluxe dry bag in navy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 38.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-14",
+    "name": "Teal Dry Bag - Deluxe",
+    "description": "Deluxe dry bag in teal for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 39.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-15",
+    "name": "Grey Dry Bag - Deluxe",
+    "description": "Deluxe dry bag in grey for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 40.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-16",
+    "name": "Burgundy Dry Bag - Deluxe",
+    "description": "Deluxe dry bag in burgundy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 41.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-17",
+    "name": "Blue Dry Bag - Deluxe",
+    "description": "Deluxe dry bag in blue for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 42.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-18",
+    "name": "Sand Dry Bag - Deluxe",
+    "description": "Deluxe dry bag in sand for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 43.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-19",
+    "name": "Yellow Dry Bag - Deluxe",
+    "description": "Deluxe dry bag in yellow for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 44.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-03-20",
+    "name": "Lavender Dry Bag - Deluxe",
+    "description": "Deluxe dry bag in lavender for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 45.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-01",
+    "name": "Black Camping Pillow - Standard",
+    "description": "Standard camping pillow in black for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 30.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-02",
+    "name": "White Camping Pillow - Standard",
+    "description": "Standard camping pillow in white for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 31.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-03",
+    "name": "Navy Camping Pillow - Standard",
+    "description": "Standard camping pillow in navy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 32.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-04",
+    "name": "Teal Camping Pillow - Standard",
+    "description": "Standard camping pillow in teal for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 33.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-05",
+    "name": "Grey Camping Pillow - Standard",
+    "description": "Standard camping pillow in grey for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 34.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-06",
+    "name": "Burgundy Camping Pillow - Standard",
+    "description": "Standard camping pillow in burgundy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 35.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-07",
+    "name": "Blue Camping Pillow - Standard",
+    "description": "Standard camping pillow in blue for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 36.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-08",
+    "name": "Sand Camping Pillow - Standard",
+    "description": "Standard camping pillow in sand for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 37.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-09",
+    "name": "Yellow Camping Pillow - Standard",
+    "description": "Standard camping pillow in yellow for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 38.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-10",
+    "name": "Lavender Camping Pillow - Standard",
+    "description": "Standard camping pillow in lavender for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 39.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-11",
+    "name": "Black Camping Pillow - Deluxe",
+    "description": "Deluxe camping pillow in black for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 40.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-12",
+    "name": "White Camping Pillow - Deluxe",
+    "description": "Deluxe camping pillow in white for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 41.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-13",
+    "name": "Navy Camping Pillow - Deluxe",
+    "description": "Deluxe camping pillow in navy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 42.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-14",
+    "name": "Teal Camping Pillow - Deluxe",
+    "description": "Deluxe camping pillow in teal for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 43.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-15",
+    "name": "Grey Camping Pillow - Deluxe",
+    "description": "Deluxe camping pillow in grey for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 44,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-16",
+    "name": "Burgundy Camping Pillow - Deluxe",
+    "description": "Deluxe camping pillow in burgundy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 44.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-17",
+    "name": "Blue Camping Pillow - Deluxe",
+    "description": "Deluxe camping pillow in blue for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 45.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-18",
+    "name": "Sand Camping Pillow - Deluxe",
+    "description": "Deluxe camping pillow in sand for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 46.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-19",
+    "name": "Yellow Camping Pillow - Deluxe",
+    "description": "Deluxe camping pillow in yellow for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 47.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-04-20",
+    "name": "Lavender Camping Pillow - Deluxe",
+    "description": "Deluxe camping pillow in lavender for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 48.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-01",
+    "name": "Black Picnic Blanket - Standard",
+    "description": "Standard picnic blanket in black for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 33.95,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-02",
+    "name": "White Picnic Blanket - Standard",
+    "description": "Standard picnic blanket in white for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 34.9,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-03",
+    "name": "Navy Picnic Blanket - Standard",
+    "description": "Standard picnic blanket in navy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 35.85,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-04",
+    "name": "Teal Picnic Blanket - Standard",
+    "description": "Standard picnic blanket in teal for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 36.8,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-05",
+    "name": "Grey Picnic Blanket - Standard",
+    "description": "Standard picnic blanket in grey for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 37.75,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-06",
+    "name": "Burgundy Picnic Blanket - Standard",
+    "description": "Standard picnic blanket in burgundy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 38.7,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-07",
+    "name": "Blue Picnic Blanket - Standard",
+    "description": "Standard picnic blanket in blue for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 39.65,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-08",
+    "name": "Sand Picnic Blanket - Standard",
+    "description": "Standard picnic blanket in sand for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 40.6,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-09",
+    "name": "Yellow Picnic Blanket - Standard",
+    "description": "Standard picnic blanket in yellow for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 41.55,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-10",
+    "name": "Lavender Picnic Blanket - Standard",
+    "description": "Standard picnic blanket in lavender for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 42.5,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Standard",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-11",
+    "name": "Black Picnic Blanket - Deluxe",
+    "description": "Deluxe picnic blanket in black for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 43.45,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Black",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-12",
+    "name": "White Picnic Blanket - Deluxe",
+    "description": "Deluxe picnic blanket in white for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 44.4,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "White",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-13",
+    "name": "Navy Picnic Blanket - Deluxe",
+    "description": "Deluxe picnic blanket in navy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 45.35,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Navy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-14",
+    "name": "Teal Picnic Blanket - Deluxe",
+    "description": "Deluxe picnic blanket in teal for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 46.3,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Teal",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-15",
+    "name": "Grey Picnic Blanket - Deluxe",
+    "description": "Deluxe picnic blanket in grey for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 47.25,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Grey",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-16",
+    "name": "Burgundy Picnic Blanket - Deluxe",
+    "description": "Deluxe picnic blanket in burgundy for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 48.2,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Burgundy",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-17",
+    "name": "Blue Picnic Blanket - Deluxe",
+    "description": "Deluxe picnic blanket in blue for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 49.15,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Blue",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-18",
+    "name": "Sand Picnic Blanket - Deluxe",
+    "description": "Deluxe picnic blanket in sand for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 50.1,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Sand",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-19",
+    "name": "Yellow Picnic Blanket - Deluxe",
+    "description": "Deluxe picnic blanket in yellow for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 51.05,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Yellow",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  },
+  {
+    "sku": "EXTRA2-05-05-20",
+    "name": "Lavender Picnic Blanket - Deluxe",
+    "description": "Deluxe picnic blanket in lavender for everyday use.",
+    "category": "Camping",
+    "price": {
+      "amount": 52,
+      "currency": "EUR"
+    },
+    "unitOfMeasure": "PIECE",
+    "attributes": {
+      "color": "Lavender",
+      "edition": "Deluxe",
+      "collection": "Everyday Living"
+    }
+  }
+]

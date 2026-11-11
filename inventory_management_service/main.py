@@ -3,14 +3,14 @@ import logging
 from contextlib import asynccontextmanager
 from datetime import UTC, datetime
 from decimal import Decimal, InvalidOperation
+from functools import lru_cache
 from http import HTTPStatus
 from typing import Annotated
 from uuid import UUID
 
-import simplejson
 from fastapi import Depends, FastAPI, Path, Query, Request, Response
 from fastapi.exceptions import RequestValidationError
-from pydantic import BaseModel, TypeAdapter, ValidationError
+from pydantic import BaseModel, ValidationError
 from sqlalchemy.orm import Session
 from starlette.exceptions import HTTPException
 from starlette.responses import JSONResponse
@@ -21,16 +21,17 @@ from inventory_management_service.migration import run_migrations
 from inventory_management_service.models import Product
 from inventory_management_service.schemas import (
     CreateProduct,
+    CreateProducts,
     DeleteProducts,
     ProductPage,
     ProductQuery,
     ProductResponse,
 )
 from inventory_management_service.service import (
-    DuplicateSku,
+    DuplicateSkus,
     ProductNotFound,
     ProductsNotFound,
-    create_product,
+    create_products,
     get_product,
     list_products,
     soft_delete_products,
@@ -65,9 +66,13 @@ def problem(request, status, detail, *, kind=None, title=None, headers=None, **e
 
 
 class InvalidBody(Exception):
-    def __init__(self, errors=None, malformed=True):
+    """A 400 for the request body. ``malformed`` selects the problem type; ``detail``
+    replaces the default detail of that type."""
+
+    def __init__(self, errors=None, malformed=True, detail=None):
         self.errors = errors or []
         self.malformed = malformed
+        self.detail = detail
 
 
 @app.exception_handler(InvalidBody)
@@ -75,20 +80,21 @@ async def invalid_body(request, error):
     extensions = {"errors": error.errors} if error.errors else {}
     if error.malformed:
         return problem(
-            request, 400, "The request body is missing or has invalid JSON fields or types.",
+            request, 400, error.detail or "The request body is missing or has invalid JSON fields or types.",
             kind="malformed-request", title="Malformed request body", **extensions,
         )
     return problem(
-        request, 400, f"The request contains {len(error.errors)} invalid field(s).",
+        request, 400, error.detail or f"The request contains {len(error.errors)} invalid field(s).",
         kind="validation-error", title="Validation failed", **extensions,
     )
 
 
-@app.exception_handler(DuplicateSku)
+@app.exception_handler(DuplicateSkus)
 async def duplicate(request, error):
     return problem(
-        request, 409, f"A product with SKU '{error.sku}' already exists.",
-        kind="duplicate-sku", title="Duplicate SKU", sku=error.sku,
+        request, 409,
+        f"Products with these SKUs already exist: {', '.join(error.skus)}. No product was created.",
+        kind="duplicate-sku", title="Duplicate SKU", skus=error.skus,
     )
 
 
@@ -147,45 +153,136 @@ def reject_constant(token):
     raise ValueError("Non-finite JSON number")
 
 
-async def parse_body[Model: BaseModel](request: Request, model: type[Model], content: str) -> Model:
-    """Validate a JSON object body. A missing body, JSON null, or any other non-object
-    is malformed. ``content`` names what the client sends, for the 415 detail."""
+MISSING = object()
+
+
+async def read_body(request: Request, content: str) -> bytes:
+    """Return the raw body, rejecting a body without a JSON media type (415).
+    ``content`` names what the client sends, for the 415 detail."""
     body = await request.body()
     media = request.headers.get("content-type", "").partition(";")[0].strip().lower()
     if body and media != "application/json" and not (
         media.startswith("application/") and media.endswith("+json")
     ):
         raise HTTPException(415, f"Send the {content} as JSON.")
+    return body
+
+
+def parse_json(body: bytes, invalid_detail: str | None = None):
+    """Return the parsed JSON body, or MISSING if it is empty or only whitespace."""
+    if not body.strip():
+        return MISSING
     try:
-        payload = json.loads(body, parse_float=Decimal, parse_constant=reject_constant)
+        return json.loads(body, parse_float=Decimal, parse_constant=reject_constant)
     except (ValueError, RecursionError, InvalidOperation) as error:
-        raise InvalidBody() from error
+        raise InvalidBody(detail=invalid_detail) from error
+
+
+def location_key(loc):
+    """Sort key for error locations: list indexes numerically, so 2 precedes 10."""
+    return tuple((0, part, "") if isinstance(part, int) else (1, 0, str(part)) for part in loc)
+
+
+def validation_failure(error: ValidationError, message=None) -> InvalidBody:
+    """Translate a Pydantic error into a 400 listing every invalid field.
+
+    ``message(item)`` can replace the message of an error item by returning a string.
+    """
+    errors = error.errors(include_input=False, include_context=False, include_url=False)
+    errors.sort(key=lambda item: (location_key(item["loc"]), item["msg"]))
+    violations = [
+        {
+            # Invalid input can contain lone UTF-16 surrogates in property names.
+            "field": ".".join(str(part) for part in item["loc"]).encode("utf-8", "replace").decode("utf-8"),
+            "message": (message and message(item)) or item["msg"].removeprefix("Value error, "),
+        }
+        for item in errors
+    ]
+    malformed = any(
+        item["type"] == "extra_forbidden" or item["type"].endswith("_type")
+        for item in errors
+    )
+    return InvalidBody(violations, malformed)
+
+
+async def parse_body[Model: BaseModel](request: Request, model: type[Model], content: str) -> Model:
+    """Validate a JSON object body. A missing body, JSON null, or any other non-object
+    is malformed. ``content`` names what the client sends, for the 415 detail."""
+    payload = parse_json(await read_body(request, content))
     if not isinstance(payload, dict):
         raise InvalidBody()
     try:
         return model.model_validate(payload)
     except ValidationError as error:
-        errors = error.errors(include_input=False, include_context=False, include_url=False)
-        violations = [
-            {
-                "field": ".".join(str(part) for part in item["loc"]),
-                "message": item["msg"].removeprefix("Value error, "),
-            }
-            for item in errors
-        ]
-        # Invalid input can contain lone UTF-16 surrogates in property names.
-        for item in violations:
-            item["field"] = item["field"].encode("utf-8", "replace").decode("utf-8")
-        violations.sort(key=lambda item: (item["field"], item["message"]))
-        malformed = any(
-            item["type"] == "extra_forbidden" or item["type"].endswith("_type")
-            for item in errors
-        )
-        raise InvalidBody(violations, malformed) from error
+        raise validation_failure(error) from error
 
 
-async def parse_product(request: Request) -> CreateProduct:
-    return await parse_body(request, CreateProduct, "product")
+def json_type(value) -> str:
+    if isinstance(value, str):
+        return "string"
+    if isinstance(value, bool):
+        return "boolean"
+    return "number"
+
+
+def product_item_message(item) -> str | None:
+    # A list element that is not an object: name it without internal model names.
+    if len(item["loc"]) == 1 and item["type"] == "model_type":
+        return "must be a product object"
+    return None
+
+
+# A request can hold any number of products, so a rejection could list millions of
+# invalid fields. The response lists the first ones, in index order, and counts all.
+MAX_LISTED_ERRORS = 1000
+EXPECTED_PRODUCTS = "Send a JSON array of at least 1 product."
+
+
+def validate_products(body: bytes) -> list[CreateProduct]:
+    """Parse and validate the body of a create request: a non-empty JSON array of
+    products with distinct SKUs. Every rejection names its cause.
+
+    This is CPU-bound work proportional to the number of products, so it runs in a
+    worker thread instead of the event loop, which keeps serving other requests.
+    """
+    payload = parse_json(body, f"The request body is not valid JSON. {EXPECTED_PRODUCTS}")
+    if payload is MISSING:
+        raise InvalidBody(detail=f"The request body is missing. {EXPECTED_PRODUCTS}")
+    if payload is None:
+        raise InvalidBody(detail=f"The request body is null. {EXPECTED_PRODUCTS}")
+    if isinstance(payload, dict):
+        raise InvalidBody(detail=(
+            "The request body must be a JSON array of products, not a single product object. "
+            "To create one product, send an array that contains it."
+        ))
+    if not isinstance(payload, list):
+        raise InvalidBody(detail=f"The request body must be a JSON array of products, not a JSON {json_type(payload)}.")
+    if not payload:
+        raise InvalidBody(malformed=False, detail=f"The product list is empty. {EXPECTED_PRODUCTS}")
+    try:
+        products = CreateProducts.model_validate(payload)
+    except ValidationError as error:
+        failure = validation_failure(error, product_item_message)
+    else:
+        repeats = products.repeated_skus()
+        if not repeats:
+            return products.root
+        failure = InvalidBody([
+            {"field": f"{index}.sku", "message": f"repeats the SKU '{sku}' of product {first}"}
+            for index, first, sku in repeats
+        ], malformed=False)
+    count = len(failure.errors)
+    invalid_products = len({item["field"].partition(".")[0] for item in failure.errors})
+    failure.detail = f"The request contains {count} invalid field(s) in {invalid_products} product(s)."
+    if count > MAX_LISTED_ERRORS:
+        failure.errors = failure.errors[:MAX_LISTED_ERRORS]
+        failure.detail += f" The first {MAX_LISTED_ERRORS} are listed."
+    failure.detail += " No product was created."
+    raise failure
+
+
+async def parse_products(request: Request) -> list[CreateProduct]:
+    return await run_in_threadpool(validate_products, await read_body(request, "products"))
 
 
 async def parse_product_ids(request: Request) -> DeleteProducts:
@@ -227,26 +324,27 @@ def problem_docs(descriptions, **extensions):
     }
 
 
-problem_responses = problem_docs({
-    400: "Malformed body or validation failure",
-    409: "Duplicate normalized SKU",
-    415: "Unsupported media type",
-    500: "Unexpected server error",
-}, sku={"type": "string"})
-
 # Parsing the body ourselves preserves every digit before validation. Move the
 # generated request schema definitions into OpenAPI's shared component registry.
-request_schema = CreateProduct.model_json_schema(ref_template="#/components/schemas/{model}")
+request_schema = CreateProducts.model_json_schema(ref_template="#/components/schemas/{model}")
 request_definitions = request_schema.pop("$defs", {})
 
 
 @app.post(
     PRODUCTS,
     status_code=201,
-    response_model=ProductResponse,
+    response_model=list[ProductResponse],
     responses={
-        201: {"headers": {"Location": {"schema": {"type": "string", "format": "uri"}}}},
-        **problem_responses,
+        201: {"description": "Every product was created. The items are in request order."},
+        **problem_docs({
+            400: "Missing, null, or empty body, not an array, repeated SKUs, or invalid fields. "
+                 "Nothing was created.",
+        }),
+        **problem_docs(
+            {409: "A SKU is already used, also by a soft-deleted product. Nothing was created."},
+            skus={"type": "array", "items": {"type": "string"}},
+        ),
+        **problem_docs({415: "Unsupported media type", 500: "Unexpected server error"}),
     },
     openapi_extra={
         "requestBody": {
@@ -255,61 +353,65 @@ request_definitions = request_schema.pop("$defs", {})
         }
     },
     tags=["Products"],
+    summary="Create products",
+    description=(
+        "Creates any number of products (at least one), sent as a JSON array. The request is atomic: "
+        "if any product is invalid or its SKU is already used, nothing is created. The response "
+        "lists the created products in request order; each can be read at /api/v1/products/{id}."
+    ),
 )
-def post_product(
-    command: Annotated[CreateProduct, Depends(parse_product)],
+def post_products(
+    commands: Annotated[list[CreateProduct], Depends(parse_products)],
     session: Annotated[Session, Depends(get_session)],
-    request: Request,
 ):
-    product = create_product(session, command)
-    base = str(request.base_url).rstrip("/")
-    return json_response(
-        product_data(product),
-        status_code=201,
-        headers={"Location": f"{base}{PRODUCTS}/{product.id}"},
-    )
+    products = create_products(session, commands)
+    # Several resources are created, so there is no single Location.
+    return json_response(products_json(products), status_code=201)
 
 
-def exact_amount(amount: Decimal) -> Decimal:
-    """Drop insignificant zeros (249.0000 -> 249) without losing any digit."""
-    return Decimal(format(amount.normalize(), "f"))
+# The standard library's C encoder, with the same output as json.dumps defaults.
+encode = json.JSONEncoder().encode
 
 
-timestamp_json = TypeAdapter(datetime)
+def exact_amount(amount: Decimal) -> str:
+    """The amount as an exact JSON number literal, without insignificant zeros
+    (249.0000 -> 249), never in exponent notation, and without losing any digit."""
+    return format(amount.normalize(), "f")
 
 
-def product_data(product: Product) -> dict:
+@lru_cache(maxsize=4096)
+def timestamp_json(value: datetime) -> str:
+    # The driver returns timestamptz in the session time zone; the API emits UTC.
+    # Cached: the products of one create request, for example, share one timestamp.
+    return encode(value.astimezone(UTC).isoformat().replace("+00:00", "Z"))
+
+
+def product_json(product: Product) -> str:
     """Serialize a product for every response: create, get by ID, and list items.
 
     Sharing one serializer keeps the representations identical. The id comes first
     so that clients and Swagger UI show the identifier before the product details.
+    The JSON is assembled from values encoded by the standard library's C encoder,
+    which keeps large responses fast. The price amount is written as an exact JSON
+    number literal, which no standard encoder can do for a Decimal.
     """
-    return {
-        "id": str(product.id),
-        "sku": product.sku,
-        "name": product.name,
-        "description": product.description,
-        "category": product.category,
-        # Keep the decimal exact and emit a JSON number, as in the original API.
-        "price": {"amount": exact_amount(product.price_amount), "currency": product.price_currency},
-        "unitOfMeasure": product.unit_of_measure,
-        "attributes": product.attributes,
-        "status": product.status,
-        # The driver returns timestamptz in the session time zone; the API emits UTC.
-        "createdAt": timestamp_json.dump_python(product.created_at.astimezone(UTC), mode="json"),
-        "updatedAt": timestamp_json.dump_python(product.updated_at.astimezone(UTC), mode="json"),
-        "version": product.version,
-    }
-
-
-def json_response(data, status_code=200, headers=None) -> Response:
-    # simplejson writes Decimal values as exact JSON numbers.
-    return Response(
-        simplejson.dumps(data, use_decimal=True),
-        status_code=status_code,
-        media_type="application/json",
-        headers=headers,
+    return (
+        f'{{"id": "{product.id}", "sku": {encode(product.sku)}, '
+        f'"name": {encode(product.name)}, "description": {encode(product.description)}, '
+        f'"category": {encode(product.category)}, '
+        f'"price": {{"amount": {exact_amount(product.price_amount)}, "currency": {encode(product.price_currency)}}}, '
+        f'"unitOfMeasure": {encode(product.unit_of_measure)}, "attributes": {encode(product.attributes)}, '
+        f'"status": {encode(product.status)}, "createdAt": {timestamp_json(product.created_at)}, '
+        f'"updatedAt": {timestamp_json(product.updated_at)}, "version": {int(product.version)}}}'
     )
+
+
+def products_json(products) -> str:
+    return "[" + ", ".join(map(product_json, products)) + "]"
+
+
+def json_response(content: str, status_code=200, headers=None) -> Response:
+    return Response(content, status_code=status_code, media_type="application/json", headers=headers)
 
 
 def product_query(query: Annotated[ProductQuery, Query()]) -> ProductQuery:
@@ -348,13 +450,10 @@ def get_products(
     session: Annotated[Session, Depends(get_session)],
 ):
     result = list_products(session, query)
-    return json_response({
-        "items": [product_data(product) for product in result.items],
-        "page": query.page,
-        "size": query.size,
-        "totalItems": result.total,
-        "totalPages": -(-result.total // query.size),
-    })
+    return json_response(
+        f'{{"items": {products_json(result.items)}, "page": {query.page}, "size": {query.size}, '
+        f'"totalItems": {result.total}, "totalPages": {-(-result.total // query.size)}}}'
+    )
 
 
 @app.get(
@@ -372,7 +471,7 @@ def get_product_by_id(
     product_id: Annotated[UUID, Path(alias="productId", description="Product UUID.")],
     session: Annotated[Session, Depends(get_session)],
 ):
-    return json_response(product_data(get_product(session, product_id)))
+    return json_response(product_json(get_product(session, product_id)))
 
 
 delete_request_schema = DeleteProducts.model_json_schema(ref_template="#/components/schemas/{model}")
@@ -425,7 +524,7 @@ def openapi():
     product_schema = components["ProductResponse"]
     product_schema["properties"]["price"] = {"$ref": "#/components/schemas/PriceResponse"}
     # ProductResponse inherits the request fields first. List id first, matching
-    # product_data, so Swagger UI examples have the same order as real responses.
+    # product_json, so Swagger UI examples have the same order as real responses.
     properties = product_schema["properties"]
     product_schema["properties"] = {"id": properties.pop("id"), **properties}
     product_schema["required"] = ["id", *(name for name in product_schema["required"] if name != "id")]
